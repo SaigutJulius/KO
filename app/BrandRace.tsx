@@ -2,14 +2,14 @@
 
 import { useEffect, useRef, useState } from "react";
 
-type Routine = "Legacy Launch" | "Aror to the World" | "Heritage × Technology" | "Twelve-Pillar Orbit" | "Homecoming Finish";
-const routineNames: Routine[] = ["Legacy Launch", "Aror to the World", "Heritage × Technology", "Twelve-Pillar Orbit", "Homecoming Finish"];
+type Routine = "Legacy Launch" | "ARROR to the World" | "Heritage × Technology" | "Twelve-Pillar Orbit" | "Homecoming Finish";
+const routineNames: Routine[] = ["Legacy Launch", "ARROR to the World", "Heritage × Technology", "Twelve-Pillar Orbit", "Homecoming Finish"];
 const wait = (ms: number) => new Promise<void>(resolve => window.setTimeout(resolve, ms));
 
 export function Crest({ compact = false }: { compact?: boolean }) {
   return <span className={`koCrest${compact ? " compact" : ""}`} aria-hidden="true">
     <span className="crestOrbit">{Array.from({ length: 12 }, (_, i) => <i key={i} />)}</span>
-    <span className="crestCore"><b>KO</b><small>AROR</small></span>
+    <span className="crestCore"><b>KO</b><small>ARROR</small></span>
   </span>;
 }
 
@@ -47,7 +47,7 @@ export default function BrandRace() {
           { transform: `translate3d(${distance}px,-3px,0) rotate(10deg)`, offset: .43 }, { transform: `translate3d(${distance}px,0,0) rotate(-5deg)`, offset: .52 },
           { transform: "translate3d(0,-10px,0) rotate(-360deg)", offset: .78 }, { transform: "translate3d(0,0,0) rotate(-360deg)" }
         ];
-        else if (current === "Aror to the World") { duration = 10800; familyFrames = [
+        else if (current === "ARROR to the World") { duration = 10800; familyFrames = [
           { transform: "translate3d(0,0,0)" }, { transform: `translate3d(${distance * .25}px,-16px,0) rotate(90deg)`, offset: .22 },
           { transform: `translate3d(${distance * .55}px,5px,0) rotate(190deg)`, offset: .42 }, { transform: `translate3d(${distance}px,-14px,0) rotate(360deg)`, offset: .62 },
           { transform: `translate3d(${distance * .45}px,-22px,0) rotate(540deg)`, offset: .79 }, { transform: "translate3d(0,0,0) rotate(720deg)" }
@@ -82,7 +82,7 @@ export default function BrandRace() {
 
   return <a ref={brandRef} className={`brandRace${racing ? " isRacing" : ""}`} href="#top" aria-label="Kap Ossen Family — Home">
     <span ref={familyRef} className="raceChip familyChip"><Crest compact /></span>
-    <span className="brandWords"><strong>Kap Ossen</strong><small>Family Legacy · Aror</small></span>
+    <span className="brandWords"><strong>Kap Ossen</strong><small>Family Legacy · ARROR</small></span>
     <span className="brandTimes" aria-hidden="true">×</span>
     <span ref={techRef} className="raceChip techChip"><img src="/st-firm-logo.png" alt="" width="260" height="280" /></span>
     <span className="routineName" aria-hidden="true">{routine}</span>

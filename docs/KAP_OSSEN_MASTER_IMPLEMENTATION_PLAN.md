@@ -17,7 +17,7 @@ Build a future-facing digital family institution that does four jobs exceptional
 3. presents the proposed 30-acre Eldama Ravine development professionally;
 4. provides a secure operational environment for family decisions, opportunities and projects.
 
-The product will combine an elegant public **Family Embassy** with a protected **Family Situation Room**. The design will feel ceremonial, technologically advanced and internationally credible while remaining grounded in Aror, Baringo, agriculture, family service and stewardship.
+The product will combine an elegant public **Family Embassy** with a protected **Family Situation Room**. The design will feel ceremonial, technologically advanced and internationally credible while remaining grounded in ARROR, Baringo, agriculture, family service and stewardship.
 
 ## 2. Project principles
 
@@ -152,7 +152,7 @@ Purpose: preserve the founding story and family lineage.
 
 Required sections:
 
-- Aror and Baringo North origins;
+- ARROR and Baringo North origins;
 - the late Dickson Ossen Cherogony;
 - stewardship and responsibility;
 - approved family chronology;
@@ -190,7 +190,7 @@ Purpose: connect Kenya, Berlin, Estonia, Switzerland, Canada and the wider diasp
 Lead chapter:
 
 - Engineer Saigut Julius Kiprario Ichkame;
-- Aror/Baringo origin;
+- ARROR/Baringo origin;
 - professional journey and opportunity hunting;
 - lessons from European systems;
 - return of knowledge into family and property development.
@@ -429,7 +429,7 @@ The permanent header uses:
 ### Race routines
 
 1. Legacy Launch.
-2. Aror to the World.
+2. ARROR to the World.
 3. Heritage × Technology Relay.
 4. Twelve-Pillar Orbit.
 5. Homecoming Finish.
@@ -708,7 +708,7 @@ The first expanded public release is complete when:
 ## 21. Decisions required before implementation
 
 1. Confirm **Kap Ossen** as the public spelling.
-2. Confirm **Aror** spelling for the crest.
+2. Use the confirmed spelling **ARROR** on the crest and throughout the product.
 3. Approve crest wording and motto.
 4. Approve the twelve-marker, land contour and coffee-leaf symbolism.
 5. Approve ST-Firm’s exact role and wording.

@@ -38,7 +38,7 @@ The Kap Ossen version should reuse this interaction idea and engineering logic, 
 - Circular family seal representing unity and continuity.
 - Interlocking **K** and **O** monogram at the centre.
 - Twelve restrained outer markers representing the twelve family-development pillars.
-- A subtle lower contour inspired by the land and hills of Aror/Baringo.
+- A subtle lower contour inspired by the land and hills of ARROR/Baringo.
 - A small growth/coffee-leaf detail representing agriculture and future prosperity.
 
 ### Crest wording
@@ -49,7 +49,7 @@ Primary wordmark:
 
 Supporting line:
 
-**FAMILY LEGACY · AROR · 2026–2035**
+**FAMILY LEGACY · ARROR · 2026–2035**
 
 Possible ceremonial motto version:
 
@@ -116,7 +116,7 @@ The animation should communicate family history and forward movement rather than
 - It crouches slightly, accelerates across the safe header lane and returns.
 - A restrained plum-and-gold trail represents movement from heritage into opportunity.
 
-### Routine 2 — Aror to the World
+### Routine 2 — ARROR to the World
 
 - The KO crest begins at the family-home position.
 - It travels through three subtle waypoints representing Kenya, Europe and the wider diaspora.
@@ -222,7 +222,7 @@ The Kap Ossen component will be written for the current React/vinext project rat
 ### Step 1 — Approve identity direction
 
 - Confirm crest wording.
-- Confirm whether the location should be written Aror or ArrOr.
+- Use the confirmed public spelling **ARROR**.
 - Confirm use of the coffee leaf and twelve-pillar markers.
 
 ### Step 2 — Produce logo assets
@@ -241,7 +241,7 @@ The Kap Ossen component will be written for the current React/vinext project rat
 ### Step 4 — Build the race choreography
 
 - Legacy Launch.
-- Aror to the World.
+- ARROR to the World.
 - Heritage × Technology relay.
 - Twelve-Pillar Orbit.
 - Homecoming Finish.

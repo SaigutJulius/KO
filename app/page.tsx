@@ -36,14 +36,14 @@ const bulletin = [
 ];
 
 const heritageChapters = [
-  ["01", "Origins", "Aror and Baringo North—the landscape, values and community from which the family story grows."],
+  ["01", "Origins", "ARROR and Baringo North—the landscape, values and community from which the family story grows."],
   ["02", "The founder", "The legacy of the late Dickson Ossen Cherogony and the responsibility carried by succeeding generations."],
   ["03", "Many branches", "Agriculture, engineering, education, faith, enterprise and public service across Kenya and the diaspora."],
   ["04", "The living archive", "Approved photographs, oral histories and documents preserved with consent for future generations."],
 ];
 
 const journey = [
-  ["AROR", "Roots", "A family identity grounded in Baringo North."],
+  ["ARROR", "Roots", "A family identity grounded in Baringo North."],
   ["KENYA", "Foundation", "Engineering, enterprise, agriculture and service."],
   ["ESTONIA", "Exploration", "Learning how smaller digital nations organise opportunity."],
   ["SWITZERLAND", "Hunt", "Proactive, lawful professional networking and opportunity discovery."],
@@ -87,7 +87,7 @@ export default function Home() {
           <h1>One family. <em>Shared roots.</em> A future we build together.</h1>
           <p className="lede">A living family embassy for heritage, education, agriculture, technology, enterprise and a proposed 30-acre legacy destination.</p>
           <div className="actions"><a className="btn primary" href="#land-vision">Enter the land vision</a><a className="btn ghost" href="#heritage">Explore our heritage</a></div>
-          <div className="tags"><span>Aror roots</span><span>Global knowledge</span><span>Shared prosperity</span><span>Future generations</span></div>
+          <div className="tags"><span>ARROR roots</span><span>Global knowledge</span><span>Shared prosperity</span><span>Future generations</span></div>
         </div>
         <aside className="motto"><div className="seal"><Crest /><small>2026–2035</small></div><p>Our family motto</p><blockquote>“United in Heritage. Empowered by Knowledge. Building the Future Together.”</blockquote><hr /><small>Every member has something valuable to contribute.</small></aside>
       </div>
@@ -111,7 +111,7 @@ export default function Home() {
         {heritageChapters.map(([number, title, description]) => <article key={number}><span>{number}</span><div><h3>{title}</h3><p>{description}</p></div></article>)}
       </div>
       <div className="archiveRail" aria-label="Planned family archive chapters">
-        <article><b>AROR</b><small>Origins and land</small></article>
+        <article><b>ARROR</b><small>Origins and land</small></article>
         <article><b>SERVICE</b><small>Faith and leadership</small></article>
         <article><b>ENTERPRISE</b><small>Farming and construction</small></article>
         <article><b>DIASPORA</b><small>Knowledge across borders</small></article>
@@ -120,7 +120,7 @@ export default function Home() {
     </section>
 
     <section className="section journey" id="journey">
-      <div className="journeyIntro"><div><p className="eyebrow">Engineer Julius · Global journey</p><h2>Go out. Learn the system. Bring the knowledge home.</h2></div><p>Engineer Saigut Julius Kiprario Ichkame carries an Aror-to-Berlin story of mobility, observation and determined opportunity hunting—translated into technology and development for the family.</p></div>
+      <div className="journeyIntro"><div><p className="eyebrow">Engineer Julius · Global journey</p><h2>Go out. Learn the system. Bring the knowledge home.</h2></div><p>Engineer Saigut Julius Kiprario Ichkame carries an ARROR-to-Berlin story of mobility, observation and determined opportunity hunting—translated into technology and development for the family.</p></div>
       <div className="journeyLine">{journey.map(([place, stage, description], index) => <article key={place}><span>{String(index + 1).padStart(2, "0")}</span><b>{place}</b><small>{stage}</small><p>{description}</p></article>)}</div>
       <blockquote className="journeyQuote">“The objective is not simply to travel. It is to understand what works, build visibility ethically, and convert experience into opportunity for the people who come after us.”</blockquote>
     </section>

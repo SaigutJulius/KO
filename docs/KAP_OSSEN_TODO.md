@@ -24,7 +24,7 @@
 ## B. Family confirmation register
 
 - [ ] **P0 · OWNER: Family heritage approver** Confirm the public spelling **Kap Ossen**.
-- [ ] **P0 · OWNER: Engineer Julius/family** Confirm **Aror** versus the orally spelled **A-R-R-O-R**.
+- [x] **P0 · OWNER: Engineer Julius/family** Confirm the correct public spelling: **ARROR**.
 - [ ] **P0 · OWNER: Engineer Julius** Confirm complete preferred professional name and title.
 - [ ] **P0 · OWNER: Family heritage approver** Confirm the late Dickson Ossen Cherogony’s approved public biography.
 - [ ] **P0 · OWNER: Family heritage approver** Confirm full family birth order.
@@ -56,7 +56,7 @@
 - [ ] **P0 · OWNER: Family approver** Approve crest wording.
 - [ ] **P0 · OWNER: Family approver** Approve motto wording.
 - [ ] **P0 · OWNER: Family approver** Approve twelve outer markers.
-- [ ] **P0 · OWNER: Family approver** Approve Aror/Baringo land contour.
+- [ ] **P0 · OWNER: Family approver** Approve ARROR/Baringo land contour.
 - [ ] **P0 · OWNER: Family approver** Approve the coffee/growth leaf.
 - [ ] **P0 · OWNER: ST-Firm authority** Confirm exact ST-Firm relationship wording.
 - [ ] **P0 · OWNER: Partnership authority** Confirm whether and where KENAFF may appear.
@@ -100,7 +100,7 @@
 - [x] **P1** Build a stationary, accessible desktop navigation.
 - [x] **P1** Build the protected race-effects layer.
 - [x] **P1** Implement Legacy Launch routine.
-- [x] **P1** Implement Aror to the World routine.
+- [x] **P1** Implement ARROR to the World routine.
 - [x] **P1 · BLOCKED BY: final ST-Firm relationship wording before publication** Implement Heritage × Technology relay locally.
 - [x] **P1** Implement Twelve-Pillar Orbit routine.
 - [x] **P1** Implement Homecoming Finish routine.
@@ -263,7 +263,7 @@
 
 ## Immediate execution queue after approval
 
-1. Lock crest wording and Aror spelling.
+1. Lock crest wording; ARROR spelling is confirmed.
 2. Produce the KO crest and wordmark asset set.
 3. Build the static header and navigation.
 4. Implement the accessible logo race.
