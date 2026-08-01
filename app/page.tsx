@@ -120,7 +120,7 @@ export default function Home() {
     </section>
 
     <section className="section journey" id="journey">
-      <div className="journeyIntro"><div><p className="eyebrow">Engineer Julius · Global journey</p><h2>Go out. Learn the system. Bring the knowledge home.</h2></div><p>Engineer Saigut Julius Kiprario Ichkame carries an ARROR-to-Berlin story of mobility, observation and determined opportunity hunting—translated into technology and development for the family.</p></div>
+      <div className="journeyIntro"><div><p className="eyebrow">Engineer Saigut Julius Kipkorir · Global journey</p><h2>Go out. Learn the system. Bring the knowledge home.</h2></div><p>Engineer Saigut Julius Kipkorir is an AI & Python Automation Engineer, Founder & CEO of ST-Firm, based in Berlin, Germany. His ARROR-to-Berlin story of mobility, observation and determined opportunity hunting is being translated into technology and development for the family.</p></div>
       <div className="journeyLine">{journey.map(([place, stage, description], index) => <article key={place}><span>{String(index + 1).padStart(2, "0")}</span><b>{place}</b><small>{stage}</small><p>{description}</p></article>)}</div>
       <blockquote className="journeyQuote">“The objective is not simply to travel. It is to understand what works, build visibility ethically, and convert experience into opportunity for the people who come after us.”</blockquote>
     </section>

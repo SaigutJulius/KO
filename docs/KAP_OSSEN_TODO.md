@@ -24,20 +24,20 @@
 ## B. Family confirmation register
 
 - [ ] **P0 · OWNER: Family heritage approver** Confirm the public spelling **Kap Ossen**.
-- [x] **P0 · OWNER: Engineer Julius/family** Confirm the correct public spelling: **ARROR**.
-- [ ] **P0 · OWNER: Engineer Julius** Confirm complete preferred professional name and title.
+- [x] **P0 · OWNER: Engineer Saigut Julius Kipkorir/family** Confirm the correct public spelling: **ARROR**.
+- [x] **P0 · OWNER: Engineer Saigut Julius Kipkorir** Confirm complete preferred professional name and title: **Engineer Saigut Julius Kipkorir**.
 - [ ] **P0 · OWNER: Family heritage approver** Confirm the late Dickson Ossen Cherogony’s approved public biography.
 - [ ] **P0 · OWNER: Family heritage approver** Confirm full family birth order.
 - [ ] **P0 · OWNER: Individual family members** Confirm full names and preferred public names.
 - [ ] **P0 · OWNER: Individual family members** Obtain biography and photograph consent.
 - [ ] **P0 · OWNER: Family heritage approver** Confirm whether repeated Cherono references represent one person.
-- [ ] **P0 · OWNER: Engineer Julius** Confirm Yakwai’s full spelling.
-- [ ] **P0 · OWNER: Engineer Julius** Confirm whether Benonin means Benoni.
-- [ ] **P0 · OWNER: Engineer Julius** Confirm whether “Thai construction” means TAI Enterprises.
-- [ ] **P0 · OWNER: Engineer Julius/family** Confirm Sobak Hotel and Mawazi Textile names and descriptions.
-- [ ] **P0 · OWNER: Engineer Julius** Confirm the intended meaning of “family MCA.”
+- [ ] **P0 · OWNER: Engineer Saigut Julius Kipkorir** Confirm Yakwai’s full spelling.
+- [ ] **P0 · OWNER: Engineer Saigut Julius Kipkorir** Confirm whether Benonin means Benoni.
+- [ ] **P0 · OWNER: Engineer Saigut Julius Kipkorir** Confirm whether “Thai construction” means TAI Enterprises.
+- [ ] **P0 · OWNER: Engineer Saigut Julius Kipkorir/family** Confirm Sobak Hotel and Mawazi Textile names and descriptions.
+- [ ] **P0 · OWNER: Engineer Saigut Julius Kipkorir** Confirm the intended meaning of “family MCA.”
 - [ ] **P0 · OWNER: Elijah/approved family contact** Confirm the intended meaning of “quarry artifacts.”
-- [ ] **P0 · OWNER: Engineer Julius** Confirm whether “Steve Farm” means ST-Firm.
+- [ ] **P0 · OWNER: Engineer Saigut Julius Kipkorir** Confirm whether “Steve Farm” means ST-Firm.
 - [ ] **P0 · OWNER: Family** Appoint one final public-content approver.
 
 ## C. Land authority and disclosure
@@ -77,7 +77,7 @@
 - [ ] **P1 · OWNER: Heritage coordinator** Record dates, locations and captions.
 - [ ] **P2 · OWNER: Heritage coordinator** Record elder oral histories.
 - [ ] **P2 · OWNER: Heritage coordinator** Transcribe and approve oral histories.
-- [ ] **P1 · OWNER: Engineer Julius** Approve Berlin/Estonia/Switzerland journey copy.
+- [x] **P1 · OWNER: Engineer Saigut Julius Kipkorir** Approve and standardise Berlin/Estonia/Switzerland journey copy.
 - [ ] **P1 · OWNER: Project sponsor** Approve 30-acre working project statement.
 
 ## F. Website foundation
@@ -117,7 +117,7 @@
 
 - [ ] **P1** Preserve the current family hero and improve navigation into new stories.
 - [x] **P1** Add consent-aware family-history preview without private records.
-- [x] **P1** Add Engineer Julius global-journey preview.
+- [x] **P1** Add Engineer Saigut Julius Kipkorir global-journey preview.
 - [x] **P1** Add 30-acre proposed-development preview.
 - [ ] **P1** Add clear links to Heritage and Development pages.
 - [ ] **P1** Keep twelve pillars readable and expandable.
@@ -137,7 +137,7 @@
 
 ## J. Global journey page
 
-- [ ] **P1 · BLOCKED BY: Engineer Julius approval** Finalise public biography.
+- [x] **P1** Finalise the public professional biography and title.
 - [ ] **P1** Design Kenya → Estonia → Switzerland → Berlin journey line.
 - [ ] **P1** Add lessons in opportunity, systems and technology.
 - [ ] **P1** Connect European experience to the 30-acre vision.
@@ -267,7 +267,7 @@
 2. Produce the KO crest and wordmark asset set.
 3. Build the static header and navigation.
 4. Implement the accessible logo race.
-5. Add approved heritage and Engineer Julius story previews.
+5. Add approved heritage and Engineer Saigut Julius Kipkorir story previews.
 6. Add the proposed 30-acre development preview.
 7. Verify privacy, mobile presentation, motion and production build.
 8. Show the complete local preview before any external publication.

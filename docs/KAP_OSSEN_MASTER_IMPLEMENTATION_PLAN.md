@@ -5,7 +5,7 @@
 **Plan version:** 1.0  
 **Date:** 1 August 2026  
 **Status:** Detailed planning baseline; implementation begins only after approval  
-**Primary sponsor:** Engineer Saigut Julius Kiprario Ichkame  
+**Primary sponsor:** Engineer Saigut Julius Kipkorir  
 **Project:** Kap Ossen Family Development Platform
 
 ## 1. Executive vision
@@ -138,7 +138,7 @@ Required sections:
 5. Vision, mission and values.
 6. Twelve strategic pillars.
 7. Family-history preview.
-8. Engineer Julius global-journey preview.
+8. Engineer Saigut Julius Kipkorir global-journey preview.
 9. 30-acre development preview.
 10. SCOF 2029 value command.
 11. Family roadmap.
@@ -189,7 +189,7 @@ Purpose: connect Kenya, Berlin, Estonia, Switzerland, Canada and the wider diasp
 
 Lead chapter:
 
-- Engineer Saigut Julius Kiprario Ichkame;
+- Engineer Saigut Julius Kipkorir, AI & Python Automation Engineer, Founder & CEO of ST-Firm, based in Berlin, Germany;
 - ARROR/Baringo origin;
 - professional journey and opportunity hunting;
 - lessons from European systems;
@@ -725,7 +725,7 @@ After approval, implement one controlled public release containing:
 - final Kap Ossen header and logo race;
 - redesigned home-page story;
 - family-history preview with approved names only;
-- Engineer Julius global-journey section;
+- Engineer Saigut Julius Kipkorir global-journey section;
 - 30-acre proposed-vision section using concept placeholders until original renders are approved;
 - existing SCOF value command;
 - explicit public/private safeguards;
