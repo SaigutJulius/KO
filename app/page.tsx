@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import ScofCountdown from "./ScofCountdown";
 
 export const metadata: Metadata = {
   title: "Kap Ossen Family | 2026–2035 Development Plan",
@@ -31,11 +32,12 @@ const contributions = [
 ];
 
 const bulletin = [
-  ["SCOF REFERENCE", "1 SCOF = KSh 165", "Concept value"],
-  ["MARKET STATUS", "UTILITY FIRST", "Not publicly traded"],
+  ["SCOF OFFICIAL PRICE", "1 SCOF = KSh 165", "Issuer-set price"],
+  ["31 OCTOBER 2029 TARGET", "1 SCOF = KSh 565", "Performance target"],
+  ["VALUE MOVEMENT", "+KSh 400 · 3.42×", "+242.4% target uplift"],
+  ["SCOF STATUS", "ECOSYSTEM DEVELOPMENT", "Utility · adoption · revenue"],
   ["FAMILY VISION", "2026 → 2035", "Building the future"],
   ["OPPORTUNITY RADAR", "KENYA · GERMANY · ROMANIA", "Plus remote careers"],
-  ["IMPORTANT", "CONCEPT ONLY", "Not a public offering"],
 ];
 
 export default function Home() {
@@ -54,7 +56,7 @@ export default function Home() {
     </div>
     <header>
       <a className="brand" href="#top"><b>KO</b><span><strong>Kap Ossen</strong><small>Family Development Plan</small></span></a>
-      <nav><a href="#vision">Vision</a><a href="#pillars">12 Pillars</a><a href="#roadmap">Roadmap</a><a href="#contribute">Contribute</a></nav>
+      <nav><a href="#vision">Vision</a><a href="#pillars">12 Pillars</a><a href="#scof-value">SCOF Target</a><a href="#roadmap">Roadmap</a><a href="#contribute">Contribute</a></nav>
       <a className="navCta" href="#gather">Begin together</a>
     </header>
 
@@ -98,6 +100,48 @@ export default function Home() {
         <article><b className="code de">DE</b><h3>Prepare for Germany</h3><p>Language, vocational training, nursing and skilled-worker readiness.</p><small>German A1–C2 · Documentation · Cultural preparation</small></article>
         <article><b className="code ro">RO</b><h3>Explore Romania</h3><p>Structured guidance for study, work and professional preparation.</p><small>Study pathways · Work pathways · Professional readiness</small></article>
         <article><b className="code digital">∞</b><h3>Work globally</h3><p>Remote careers, digital business and international networks.</p><small>Software · Freelancing · Digital entrepreneurship</small></article>
+      </div>
+    </section>
+
+    <section className="section scofValue" id="scof-value">
+      <div className="valueIntro">
+        <div>
+          <p className="eyebrow">SCOF value command</p>
+          <h2>KSh 565 by<br /><em>31 October 2029.</em></h2>
+        </div>
+        <div className="targetSummary">
+          <p>The mission is to move SCOF from its official issuer-set price of <b>KSh 165</b> to the ecosystem performance target of <b>KSh 565</b>.</p>
+          <ScofCountdown />
+          <small>Countdown to the target review in Kenya time (EAT).</small>
+        </div>
+      </div>
+
+      <div className="valueMetrics" aria-label="SCOF target metrics">
+        <article><small>Official price</small><strong>KSh 165</strong><span>Issuer-set baseline</span></article>
+        <article className="target"><small>2029 target</small><strong>KSh 565</strong><span>31 October 2029</span></article>
+        <article><small>Value gap</small><strong>+KSh 400</strong><span>Per SCOF</span></article>
+        <article><small>Target multiple</small><strong>3.42×</strong><span>+242.4% uplift</span></article>
+      </div>
+
+      <div className="valuePlan">
+        <div className="missionPhases">
+          <article><b>01</b><div><small>Aug–Dec 2026</small><h3>Govern the foundation</h3><p>Publish the price authority, supply rules, treasury policy and a transparent monthly scorecard.</p></div></article>
+          <article><b>02</b><div><small>2027</small><h3>Prove real utility</h3><p>Launch traceability, farm services and marketplace uses that solve measurable producer and buyer needs.</p></div></article>
+          <article><b>03</b><div><small>2028</small><h3>Expand adoption</h3><p>Grow verified farmers, buyers, partners and repeat activity while reporting ecosystem performance.</p></div></article>
+          <article><b>04</b><div><small>Jan–Oct 2029</small><h3>Reach target readiness</h3><p>Audit the evidence, close delivery gaps and complete the final value review on 31 October 2029.</p></div></article>
+        </div>
+        <aside className="readinessBoard">
+          <p className="eyebrow">Mission scorecard</p>
+          <h3>What must create the value</h3>
+          <ul>
+            <li><span>Utility</span><b>Working products & services</b></li>
+            <li><span>Adoption</span><b>Verified active participants</b></li>
+            <li><span>Commerce</span><b>Repeat marketplace activity</b></li>
+            <li><span>Revenue</span><b>Sustainable ecosystem income</b></li>
+            <li><span>Trust</span><b>Transparent reporting & audits</b></li>
+          </ul>
+          <p className="targetNote"><b>Target discipline:</b> KSh 565 is the 31 October 2029 performance target. Progress should be supported by verified ecosystem results; a future value is not guaranteed.</p>
+        </aside>
       </div>
     </section>
 
