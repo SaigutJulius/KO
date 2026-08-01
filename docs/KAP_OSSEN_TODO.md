@@ -97,28 +97,28 @@
 
 - [ ] **P1 · BLOCKED BY: final KO assets** Replace temporary KO circle with approved crest.
 - [ ] **P1 · BLOCKED BY: final KO assets** Add horizontal wordmark.
-- [ ] **P1** Build a stationary, accessible desktop navigation.
-- [ ] **P1** Build the protected race-effects layer.
-- [ ] **P1** Implement Legacy Launch routine.
-- [ ] **P1** Implement Aror to the World routine.
-- [ ] **P1 · BLOCKED BY: ST-Firm wording** Implement Heritage × Technology relay.
-- [ ] **P1** Implement Twelve-Pillar Orbit routine.
-- [ ] **P1** Implement Homecoming Finish routine.
+- [x] **P1** Build a stationary, accessible desktop navigation.
+- [x] **P1** Build the protected race-effects layer.
+- [x] **P1** Implement Legacy Launch routine.
+- [x] **P1** Implement Aror to the World routine.
+- [x] **P1 · BLOCKED BY: final ST-Firm relationship wording before publication** Implement Heritage × Technology relay locally.
+- [x] **P1** Implement Twelve-Pillar Orbit routine.
+- [x] **P1** Implement Homecoming Finish routine.
 - [ ] **P1** Add plum, gold and forest particle themes.
 - [ ] **P1** Add shuffled routine selection and rest intervals.
-- [ ] **P1** Pause motion on hidden tabs.
-- [ ] **P1** Add reduced-motion static mode.
+- [x] **P1** Pause motion on hidden tabs.
+- [x] **P1** Add reduced-motion static mode.
 - [ ] **P1** Add tablet in-place motion mode.
-- [ ] **P1** Add mobile static/shine mode.
+- [x] **P1** Add mobile static/shine mode.
 - [ ] **P1** Verify no overlap with SCOF ticker.
 - [ ] **P1** Verify the moving logo never changes the clickable link target.
 
 ## H. Home-page expansion
 
 - [ ] **P1** Preserve the current family hero and improve navigation into new stories.
-- [ ] **P1** Add approved family-history preview.
-- [ ] **P1** Add Engineer Julius global-journey preview.
-- [ ] **P1** Add 30-acre proposed-development preview.
+- [x] **P1** Add consent-aware family-history preview without private records.
+- [x] **P1** Add Engineer Julius global-journey preview.
+- [x] **P1** Add 30-acre proposed-development preview.
 - [ ] **P1** Add clear links to Heritage and Development pages.
 - [ ] **P1** Keep twelve pillars readable and expandable.
 - [ ] **P1** Retain SCOF value command and target discipline.
@@ -147,17 +147,17 @@
 ## K. 30-acre development page
 
 - [ ] **P1 · BLOCKED BY: public disclosure approval** Build Land-to-Legacy hero.
-- [ ] **P1** Build the six-zone conceptual master-plan section.
-- [ ] **P1** Build German-inspired gateway-market section.
-- [ ] **P1** Build mall and boutique-street section.
-- [ ] **P1** Build heritage and seasonal-park section.
-- [ ] **P1** Build enterprise and skills-centre section.
-- [ ] **P1** Build logistics/light-industry/export section.
-- [ ] **P1** Build parking and circulation section.
-- [ ] **P1** Build commercial-model-to-test section.
-- [ ] **P1** Build professional approvals pathway.
-- [ ] **P1** Add persistent proposed-concept disclosure.
-- [ ] **P1** Ensure Lidl/Amazon inspiration does not imply affiliation.
+- [x] **P1** Build the six-zone conceptual master-plan section.
+- [x] **P1** Build German-inspired gateway-market section.
+- [x] **P1** Build mall and boutique-street section.
+- [x] **P1** Build heritage and seasonal-park section.
+- [x] **P1** Build enterprise and skills-centre section.
+- [x] **P1** Build logistics/light-industry/export section.
+- [x] **P1** Build parking and circulation section.
+- [x] **P1** Build commercial-model-to-test section.
+- [x] **P1** Build professional approvals pathway.
+- [x] **P1** Add persistent proposed-concept disclosure.
+- [x] **P1** Ensure Lidl/Amazon inspiration does not imply affiliation.
 - [ ] **P2 · BLOCKED BY: survey/professional concept** Build interactive master-plan layers.
 - [ ] **P2 · BLOCKED BY: approved concept brief** Produce original architectural renders.
 - [ ] **P2 · BLOCKED BY: permission** Add drone/topographical imagery.
@@ -239,7 +239,7 @@
 
 ## R. Performance and technical QA
 
-- [ ] **P1** Verify production build succeeds.
+- [x] **P1** Verify production build succeeds.
 - [ ] **P1** Verify no user-facing console errors.
 - [ ] **P1** Verify image sizes and formats.
 - [ ] **P1** Verify layout stability.

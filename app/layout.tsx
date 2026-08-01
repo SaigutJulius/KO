@@ -7,21 +7,21 @@ const mono = Geist_Mono({ variable: "--font-mono", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL("http://localhost:3001"),
-  title: "Kap Ossen Family | 2026–2035 Development Plan",
-  description: "A shared family vision for unity, education, prosperity and opportunity across generations.",
+  title: "Kap Ossen Family Embassy | Heritage to Legacy",
+  description: "The Kap Ossen family vision: heritage, global knowledge, the SCOF 2029 mission and a proposed 30-acre legacy destination.",
   openGraph: {
-    title: "Kap Ossen Family | 2026–2035 Development Plan",
-    description: "United in Heritage. Empowered by Knowledge. Building the Future Together.",
-    images: [{ url: "/og.png", width: 1732, height: 909, alt: "Kap Ossen Family Development Plan" }],
+    title: "Kap Ossen Family Embassy | Heritage to Legacy",
+    description: "From Aror to the world—and back home to build the future together.",
+    images: [{ url: "/og-family-embassy.png", width: 1659, height: 948, alt: "Kap Ossen Family Embassy — From Heritage to Legacy" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kap Ossen Family | 2026–2035 Development Plan",
-    description: "United in Heritage. Empowered by Knowledge. Building the Future Together.",
-    images: ["/og.png"],
+    title: "Kap Ossen Family Embassy | Heritage to Legacy",
+    description: "From Aror to the world—and back home to build the future together.",
+    images: ["/og-family-embassy.png"],
   },
 };
 
-export default function Layout({children}: Readonly<{children: React.ReactNode}>) {
+export default function Layout({ children }: Readonly<{ children: React.ReactNode }>) {
   return <html lang="en"><body className={`${sans.variable} ${mono.variable}`}>{children}</body></html>;
 }

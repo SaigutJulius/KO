@@ -1,10 +1,5 @@
-import type { Metadata } from "next";
+import BrandRace, { Crest } from "./BrandRace";
 import ScofCountdown from "./ScofCountdown";
-
-export const metadata: Metadata = {
-  title: "Kap Ossen Family | 2026–2035 Development Plan",
-  description: "A shared family vision for unity, education, prosperity and opportunity across generations.",
-};
 
 const pillars = [
   ["01", "Family Unity", "Strengthen the relationships that make every other ambition possible.", "Meetings · Directory · Heritage · Mutual support", "plum"],
@@ -40,6 +35,31 @@ const bulletin = [
   ["OPPORTUNITY RADAR", "KENYA · GERMANY · ROMANIA", "Plus remote careers"],
 ];
 
+const heritageChapters = [
+  ["01", "Origins", "Aror and Baringo North—the landscape, values and community from which the family story grows."],
+  ["02", "The founder", "The legacy of the late Dickson Ossen Cherogony and the responsibility carried by succeeding generations."],
+  ["03", "Many branches", "Agriculture, engineering, education, faith, enterprise and public service across Kenya and the diaspora."],
+  ["04", "The living archive", "Approved photographs, oral histories and documents preserved with consent for future generations."],
+];
+
+const journey = [
+  ["AROR", "Roots", "A family identity grounded in Baringo North."],
+  ["KENYA", "Foundation", "Engineering, enterprise, agriculture and service."],
+  ["ESTONIA", "Exploration", "Learning how smaller digital nations organise opportunity."],
+  ["SWITZERLAND", "Hunt", "Proactive, lawful professional networking and opportunity discovery."],
+  ["BERLIN", "Build", "Technology, systems thinking and German operating standards."],
+  ["HOME", "Return", "Knowledge translated into family institutions and development."],
+];
+
+const landZones = [
+  ["A", "Gateway Market", "A German-inspired daily-needs market with clear circulation, local produce and efficient operations.", "market"],
+  ["B", "Mall & Boutique Street", "Flexible shops, food, professional rooms and a walkable, photographic public street.", "retail"],
+  ["C", "Heritage & Seasonal Park", "A cultural landscape for December markets, events, photography and family gatherings.", "park"],
+  ["D", "Enterprise Centre", "Training, co-working, ST-Firm Akademie and practical business incubation.", "enterprise"],
+  ["E", "Logistics & Export", "Warehousing, aggregation, forklift routes, loading, packaging and export preparation.", "logistics"],
+  ["F", "Infrastructure & Future", "Energy, water, drainage, security, emergency access and space for phased expansion.", "future"],
+];
+
 export default function Home() {
   return <main>
     <div className="marketRail" aria-label="Kap Ossen family intelligence bulletin">
@@ -54,10 +74,10 @@ export default function Home() {
         </div>
       </div>
     </div>
-    <header>
-      <a className="brand" href="#top"><b>KO</b><span><strong>Kap Ossen</strong><small>Family Development Plan</small></span></a>
-      <nav><a href="#vision">Vision</a><a href="#pillars">12 Pillars</a><a href="#scof-value">SCOF Target</a><a href="#roadmap">Roadmap</a><a href="#contribute">Contribute</a></nav>
-      <a className="navCta" href="#gather">Begin together</a>
+    <header className="siteHeader">
+      <BrandRace />
+      <nav className="siteNav" aria-label="Primary"><a href="#heritage">Heritage</a><a href="#journey">Journey</a><a href="#land-vision">30 Acres</a><a href="#pillars">12 Pillars</a><a href="#scof-value">SCOF</a></nav>
+      <a className="navCta" href="#gather">Family Embassy</a>
     </header>
 
     <section className="hero" id="top">
@@ -65,13 +85,13 @@ export default function Home() {
         <div>
           <p className="eyebrow">Descendants of the late Dickson Ossen Cherogony</p>
           <h1>One family. <em>Shared roots.</em> A future we build together.</h1>
-          <p className="lede">A long-term family strategy for education, economic empowerment, agriculture, technology, leadership and mutual support.</p>
-          <div className="actions"><a className="btn primary" href="#pillars">Explore the plan</a><a className="btn ghost" href="#vision">Our shared vision</a></div>
-          <div className="tags"><span>United family</span><span>Shared heritage</span><span>Shared prosperity</span><span>Global opportunities</span></div>
+          <p className="lede">A living family embassy for heritage, education, agriculture, technology, enterprise and a proposed 30-acre legacy destination.</p>
+          <div className="actions"><a className="btn primary" href="#land-vision">Enter the land vision</a><a className="btn ghost" href="#heritage">Explore our heritage</a></div>
+          <div className="tags"><span>Aror roots</span><span>Global knowledge</span><span>Shared prosperity</span><span>Future generations</span></div>
         </div>
-        <aside className="motto"><div className="seal"><b>KO</b><small>2026–2035</small></div><p>Our family motto</p><blockquote>“United in Heritage. Empowered by Knowledge. Building the Future Together.”</blockquote><hr /><small>Every member has something valuable to contribute.</small></aside>
+        <aside className="motto"><div className="seal"><Crest /><small>2026–2035</small></div><p>Our family motto</p><blockquote>“United in Heritage. Empowered by Knowledge. Building the Future Together.”</blockquote><hr /><small>Every member has something valuable to contribute.</small></aside>
       </div>
-      <div className="stats"><div><b>12</b><span>Strategic pillars</span></div><div><b>2035</b><span>Shared horizon</span></div><div><b>1</b><span>Family vision</span></div><div><b>All</b><span>Generations included</span></div></div>
+      <div className="stats"><div><b>12</b><span>Strategic pillars</span></div><div><b>≈30</b><span>Acres in the vision</span></div><div><b>2029</b><span>SCOF target review</span></div><div><b>All</b><span>Generations included</span></div></div>
     </section>
 
     <div className="flow"><span>Roots</span><i>→</i><span>Knowledge</span><i>→</i><span>Opportunity</span><i>→</i><span>Prosperity</span><i>→</i><span>Legacy</span></div>
@@ -83,6 +103,26 @@ export default function Home() {
         <article className="statement"><label>Mission</label><h3>Turn family connection into practical opportunity.</h3><p>Unite through education, mentorship, technology, agriculture, entrepreneurship, leadership and responsible service.</p></article>
         <article className="statement"><label>Core values</label><div className="values">{values.map(v => <span key={v}>{v}</span>)}</div></article>
       </div>
+    </section>
+
+    <section className="section heritage" id="heritage">
+      <div className="heading split"><div><p className="eyebrow">Family history gallery</p><h2>Memory becomes inheritance when it is preserved.</h2></div><p>This first gallery establishes the chapters. Family photographs, recordings and detailed biographies will be added only after confirmation and consent.</p></div>
+      <div className="heritageGrid">
+        {heritageChapters.map(([number, title, description]) => <article key={number}><span>{number}</span><div><h3>{title}</h3><p>{description}</p></div></article>)}
+      </div>
+      <div className="archiveRail" aria-label="Planned family archive chapters">
+        <article><b>AROR</b><small>Origins and land</small></article>
+        <article><b>SERVICE</b><small>Faith and leadership</small></article>
+        <article><b>ENTERPRISE</b><small>Farming and construction</small></article>
+        <article><b>DIASPORA</b><small>Knowledge across borders</small></article>
+      </div>
+      <p className="privacyNote"><b>Private by design:</b> the will, exact land records, personal contacts and unapproved photographs remain outside the public Family Embassy.</p>
+    </section>
+
+    <section className="section journey" id="journey">
+      <div className="journeyIntro"><div><p className="eyebrow">Engineer Julius · Global journey</p><h2>Go out. Learn the system. Bring the knowledge home.</h2></div><p>Engineer Saigut Julius Kiprario Ichkame carries an Aror-to-Berlin story of mobility, observation and determined opportunity hunting—translated into technology and development for the family.</p></div>
+      <div className="journeyLine">{journey.map(([place, stage, description], index) => <article key={place}><span>{String(index + 1).padStart(2, "0")}</span><b>{place}</b><small>{stage}</small><p>{description}</p></article>)}</div>
+      <blockquote className="journeyQuote">“The objective is not simply to travel. It is to understand what works, build visibility ethically, and convert experience into opportunity for the people who come after us.”</blockquote>
     </section>
 
     <section className="section ink" id="pillars">
@@ -101,6 +141,24 @@ export default function Home() {
         <article><b className="code ro">RO</b><h3>Explore Romania</h3><p>Structured guidance for study, work and professional preparation.</p><small>Study pathways · Work pathways · Professional readiness</small></article>
         <article><b className="code digital">∞</b><h3>Work globally</h3><p>Remote careers, digital business and international networks.</p><small>Software · Freelancing · Digital entrepreneurship</small></article>
       </div>
+    </section>
+
+    <section className="section landVision" id="land-vision">
+      <div className="landHeading"><div><p className="eyebrow">Proposed 30-acre legacy destination</p><h2>From family land to a living economic institution.</h2></div><div><span className="conceptBadge">Proposed concept</span><p>A future-ready mixed-use destination along the Eldama Ravine corridor, combining German-inspired retail discipline with local enterprise, culture, logistics and agriculture.</p></div></div>
+
+      <div className="landMetrics"><article><b>≈30</b><span>Acres described</span></article><article><b>06</b><span>Connected zones</span></article><article><b>3D</b><span>Across · Up · Down</span></article><article><b>1</b><span>Long-term legacy</span></article></div>
+
+      <div className="masterplan" aria-label="Conceptual six-zone master plan">
+        <div className="planRoad"><span>Nakuru–Eldama Ravine corridor</span></div>
+        {landZones.map(([letter, title, , type]) => <div className={`planZone ${type}`} key={letter}><b>{letter}</b><span>{title}</span></div>)}
+        <div className="planAxis"><i /><span>Customer axis</span><i /><span>Service axis</span></div>
+      </div>
+
+      <div className="zoneGrid">{landZones.map(([letter, title, description, type]) => <article className={type} key={letter}><span>{letter}</span><h3>{title}</h3><p>{description}</p></article>)}</div>
+
+      <div className="revenueGrid" aria-label="Commercial models to test"><article><small>Rental economy</small><b>Retail · Offices · Warehouses</b></article><article><small>Seasonal destination</small><b>Events · Stalls · Photography</b></article><article><small>Trade services</small><b>Aggregation · Storage · Logistics</b></article><article><small>Knowledge economy</small><b>Training · Co-working · Digital services</b></article></div>
+
+      <div className="developmentRules"><div><p className="eyebrow">German discipline · Kenyan identity</p><h3>Designed for customers, traders, cargo and future generations.</h3></div><ul><li>Separate customers, pedestrians and heavy vehicles.</li><li>Basement parking only after geotechnical and drainage feasibility.</li><li>Original identity—no implied Lidl or Amazon affiliation.</li><li>Surveys, planning, road access and environmental approvals before construction.</li></ul></div>
     </section>
 
     <section className="section scofValue" id="scof-value">
@@ -160,10 +218,10 @@ export default function Home() {
       <div className="contributions">{contributions.map(([t,p],i) => <article key={t}><span>{String(i+1).padStart(2,"0")}</span><h3>{t}</h3><p>{p}</p></article>)}</div>
     </section>
 
-    <section className="section safeguards"><div><p className="eyebrow">Trust by design</p><h2>Ambition with responsibility.</h2></div><div className="rules"><p><b>Voluntary participation</b><span>Family initiatives invite contribution; they never coerce it.</span></p><p><b>Transparent decisions</b><span>Agreed projects need owners, records and accountability.</span></p><p><b>Lawful opportunities</b><span>Migration, markets and funding follow applicable rules.</span></p><p><b>Education before risk</b><span>Trading and digital assets are learning topics—not guaranteed income.</span></p></div></section>
+    <section className="section safeguards" id="safeguards"><div><p className="eyebrow">Trust by design</p><h2>Ambition with responsibility.</h2></div><div className="rules"><p><b>Private family records</b><span>The complete tree, will, documents and contacts belong in a protected Situation Room.</span></p><p><b>Transparent decisions</b><span>Agreed projects need owners, records and accountability.</span></p><p><b>Proposals labelled clearly</b><span>The land vision remains a concept until family and professional approvals are complete.</span></p><p><b>Education before risk</b><span>Markets and digital assets are not guaranteed income.</span></p></div></section>
 
-    <section className="gather" id="gather"><div><p className="eyebrow">The next chapter</p><h2>A family plan becomes real when the family shapes it together.</h2><p>Begin with a family discussion. Agree what matters most, choose the first achievable actions, assign owners and review progress every year.</p><div className="actions"><a className="btn primary" href="#pillars">Review all pillars</a><a className="btn ghost" href="#top">Return to the beginning</a></div></div><div className="bigSeal"><b>KO</b><small>Together</small></div></section>
+    <section className="gather" id="gather"><div><p className="eyebrow">The Family Embassy is open</p><h2>A family plan becomes real when the family shapes it together.</h2><p>Confirm the history, approve the first photographs, assign project owners and turn this public vision into a secure family operating system.</p><div className="actions"><a className="btn primary" href="#heritage">Review the heritage</a><a className="btn ghost" href="#top">Return to the beginning</a></div></div><div className="bigSeal"><Crest /><small>Together</small></div></section>
 
-    <footer><div className="brand"><b>KO</b><span><strong>Kap Ossen Family</strong><small>Descendants of the late Dickson Ossen Cherogony</small></span></div><p>United in Heritage. Empowered by Knowledge. Building the Future Together.</p><small>2026–2035 development vision · For family discussion and refinement</small></footer>
+    <footer><div className="brand"><b>KO</b><span><strong>Kap Ossen Family</strong><small>Descendants of the late Dickson Ossen Cherogony</small></span></div><p>United in Heritage. Empowered by Knowledge. Building the Future Together.</p><small>2026–2035 family development vision · Proposed land concept · Private records protected</small></footer>
   </main>;
 }
