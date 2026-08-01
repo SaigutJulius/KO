@@ -30,9 +30,28 @@ const contributions = [
   ["Prayer & encouragement", "Strengthen the family spiritually and celebrate one another’s progress."],
 ];
 
+const bulletin = [
+  ["SCOF REFERENCE", "1 SCOF = KSh 165", "Concept value"],
+  ["MARKET STATUS", "UTILITY FIRST", "Not publicly traded"],
+  ["FAMILY VISION", "2026 → 2035", "Building the future"],
+  ["OPPORTUNITY RADAR", "KENYA · GERMANY · ROMANIA", "Plus remote careers"],
+  ["IMPORTANT", "CONCEPT ONLY", "Not a public offering"],
+];
+
 export default function Home() {
   return <main>
-    <div className="notice"><span>Kap Ossen Family</span><i /><span>2026–2035 Vision</span><i /><span>Discussion Draft</span></div>
+    <div className="marketRail" aria-label="Kap Ossen family intelligence bulletin">
+      <div className="liveFlag"><i /><span>FAMILY<br/>INTELLIGENCE</span></div>
+      <div className="tickerWindow">
+        <div className="tickerTrack">
+          {[0, 1].map(set => <div className="tickerSet" aria-hidden={set === 1} key={set}>
+            {bulletin.map(([label, value, note]) => <span className="tickerItem" key={`${set}-${label}`}>
+              <small>{label}</small><strong>{value}</strong><em>{note}</em>
+            </span>)}
+          </div>)}
+        </div>
+      </div>
+    </div>
     <header>
       <a className="brand" href="#top"><b>KO</b><span><strong>Kap Ossen</strong><small>Family Development Plan</small></span></a>
       <nav><a href="#vision">Vision</a><a href="#pillars">12 Pillars</a><a href="#roadmap">Roadmap</a><a href="#contribute">Contribute</a></nav>
