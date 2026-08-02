@@ -42,8 +42,11 @@ export default function FooterFinale() {
   const [inView, setInView] = useState(false);
   const [documentHidden, setDocumentHidden] = useState(false);
   const [reducedMotion, setReducedMotion] = useState(false);
-  const [soundEnabled, setSoundEnabled] = useState(false);
+  const [soundEnabled, setSoundEnabled] = useState(true);
   const [playing, setPlaying] = useState(false);
+  const [ceremonyStarted, setCeremonyStarted] = useState(false);
+  const [autoplayBlocked, setAutoplayBlocked] = useState(false);
+  const [manuallyPaused, setManuallyPaused] = useState(false);
   const [displayMode, setDisplayMode] = useState<DisplayMode>("embedded");
   const [pipSupported, setPipSupported] = useState(false);
 
@@ -97,6 +100,8 @@ export default function FooterFinale() {
     const observer = new IntersectionObserver(([entry]) => {
       setInView(entry.isIntersecting);
       if (entry.isIntersecting && !wasInViewRef.current && videoRef.current) {
+        setCeremonyStarted(true);
+        setManuallyPaused(false);
         const video = videoRef.current;
         if (video.currentTime < finaleMediaSections[0].sourceStart || video.currentTime >= finaleMediaSections[2].sourceEnd) resetMedia(false);
       }
@@ -110,13 +115,18 @@ export default function FooterFinale() {
     const video = videoRef.current;
     if (!video) return;
     video.muted = !soundEnabled;
-    if (!inView || documentHidden || (reducedMotion && !soundEnabled)) {
+    if (!ceremonyStarted || documentHidden || manuallyPaused) {
       video.pause();
       return;
     }
     if (video.readyState >= 1 && video.currentTime === 0) video.currentTime = finaleMediaSections[0].sourceStart;
-    void video.play().catch(() => setPlaying(false));
-  }, [documentHidden, inView, reducedMotion, soundEnabled]);
+    void video.play()
+      .then(() => setAutoplayBlocked(false))
+      .catch(() => {
+        setPlaying(false);
+        if (soundEnabled) setAutoplayBlocked(true);
+      });
+  }, [ceremonyStarted, documentHidden, manuallyPaused, soundEnabled]);
 
   useEffect(() => {
     if (!playing) return;
@@ -188,20 +198,52 @@ export default function FooterFinale() {
     if (!soundEnabled) {
       video.muted = false;
       setSoundEnabled(true);
-      resetMedia(false);
-      await video.play().catch(() => setPlaying(false));
+      setManuallyPaused(false);
+      await video.play()
+        .then(() => setAutoplayBlocked(false))
+        .catch(() => setAutoplayBlocked(true));
       return;
     }
     video.muted = true;
     setSoundEnabled(false);
-  }, [resetMedia, soundEnabled]);
+    setAutoplayBlocked(false);
+  }, [soundEnabled]);
 
   const togglePlayback = useCallback(() => {
     const video = videoRef.current;
     if (!video) return;
-    if (video.paused) void video.play().catch(() => setPlaying(false));
-    else video.pause();
+    if (video.paused) {
+      setManuallyPaused(false);
+      void video.play()
+        .then(() => setAutoplayBlocked(false))
+        .catch(() => setAutoplayBlocked(true));
+    } else {
+      setManuallyPaused(true);
+      video.pause();
+    }
   }, []);
+
+  const unlockFinaleSound = useCallback(async () => {
+    const video = videoRef.current;
+    if (!video) return;
+    setCeremonyStarted(true);
+    setManuallyPaused(false);
+    setSoundEnabled(true);
+    video.muted = false;
+    if (video.readyState >= 1 && (video.currentTime < finaleMediaSections[0].sourceStart || video.currentTime >= finaleMediaSections[2].sourceEnd)) {
+      video.currentTime = finaleMediaSections[0].sourceStart;
+    }
+    await video.play()
+      .then(() => setAutoplayBlocked(false))
+      .catch(() => setAutoplayBlocked(true));
+  }, []);
+
+  const replayFinale = useCallback(() => {
+    setCeremonyStarted(true);
+    setManuallyPaused(false);
+    setAutoplayBlocked(false);
+    resetMedia(true);
+  }, [resetMedia]);
 
   const toggleNativePip = useCallback(async () => {
     const video = videoRef.current as SafariVideo | null;
@@ -238,6 +280,17 @@ export default function FooterFinale() {
         <em>Heritage · Technology · Legacy</em>
       </div>
 
+      {MEDIA_PATH && ceremonyStarted && !inView && displayMode === "embedded" && (
+        <aside className="finaleNowPlaying" aria-label="Kap Ossen finale now playing" aria-live="polite">
+          <span className="nowPlayingPulse" aria-hidden="true" />
+          <span><small>{autoplayBlocked ? "Sound permission needed" : playing ? "Now playing" : "Finale paused"}</small><b>Kap Ossen · 01:34 Finale</b></span>
+          {autoplayBlocked
+            ? <button type="button" className="nowPlayingUnlock" onClick={unlockFinaleSound}>Tap for sound</button>
+            : <button type="button" onClick={togglePlayback} aria-label={playing ? "Pause finale" : "Resume finale"}>{playing ? "Ⅱ" : "▶"}</button>}
+          <button type="button" onClick={() => setDisplayMode("floating")} aria-label="Open floating finale">▣</button>
+        </aside>
+      )}
+
       <div className="footerCeremonyHome">
         <div className={`footerCeremonyShell display-${displayMode}`}>
           <button type="button" className="finaleDragHandle" aria-label="Swipe up to expand or down to close" onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}><span /></button>
@@ -259,6 +312,13 @@ export default function FooterFinale() {
               onPlay={() => setPlaying(true)}
               onPause={() => setPlaying(false)}
             />}
+            {MEDIA_PATH && autoplayBlocked && (
+              <button type="button" className="finaleSoundGate" onClick={unlockFinaleSound}>
+                <span aria-hidden="true">🔊</span>
+                <b>Tap to start the finale with sound</b>
+                <small>Chrome and iPhone require one touch before audible playback.</small>
+              </button>
+            )}
             <span className="footerVideoVeil" aria-hidden="true" />
             <div className="footerSky" aria-hidden="true">
               <span className="footerAurora auroraOne" /><span className="footerAurora auroraTwo" />
@@ -293,7 +353,7 @@ export default function FooterFinale() {
               {MEDIA_PATH && <div className="finaleMediaControls" aria-label="Finale media controls">
               <button type="button" onClick={togglePlayback} aria-label={playing ? "Pause finale" : "Play finale"}>{playing ? "Ⅱ" : "▶"}</button>
               <button type="button" className={soundEnabled ? "isEnabled" : ""} onClick={toggleSound} aria-label={soundEnabled ? "Mute finale music" : "Play the 1 minute 34 second finale with music"}>{soundEnabled ? "🔊" : "🔇"}</button>
-              <button type="button" onClick={() => resetMedia(true)} aria-label="Replay finale">↻</button>
+              <button type="button" onClick={replayFinale} aria-label="Replay finale">↻</button>
               <button type="button" className={displayMode === "half" ? "isEnabled" : ""} onClick={() => setDisplayMode(displayMode === "half" ? "embedded" : "half")} aria-label="Toggle half-screen finale">◧</button>
               <button type="button" className={displayMode === "fullscreen" ? "isEnabled" : ""} onClick={() => setDisplayMode(displayMode === "fullscreen" ? "embedded" : "fullscreen")} aria-label="Toggle full-screen finale">⛶</button>
               <button type="button" className={displayMode === "floating" ? "isEnabled" : ""} onClick={() => setDisplayMode(displayMode === "floating" ? "embedded" : "floating")} aria-label="Toggle floating finale">▣</button>

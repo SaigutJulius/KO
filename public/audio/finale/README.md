@@ -9,6 +9,8 @@ The footer uses the locally supplied video file as one continuous 94-second cere
 | Part 3 | 01:49–02:40 | 51 seconds |
 | **Total** |  | **94 seconds (01:34)** |
 
-The media element begins as a muted preview. A visitor must use the sound control before audible playback, as required by browser autoplay policies. The same media element remains mounted when the finale changes between embedded, half-screen, fullscreen, floating and supported native picture-in-picture presentation.
+When the footer enters the viewing area, the site attempts to begin the finale with sound. If Chrome, Safari or iPhone blocks audible autoplay, the display presents a prominent one-touch sound-unlock control instead of silently pretending that audio is active.
+
+After playback begins, it continues when the visitor scrolls away from the footer and when the finale changes between embedded, half-screen, fullscreen, floating and supported native picture-in-picture presentation. A persistent now-playing controller provides pause, resume and floating-window access while the footer is off-screen.
 
 The supplied recording may be used only where the project owner has the necessary permission. Keep any licence or written authorization with the project before a public deployment.

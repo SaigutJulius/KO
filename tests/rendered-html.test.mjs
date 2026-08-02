@@ -196,6 +196,13 @@ test("keeps required experience, governance and mobile safeguards in source", as
   assert.doesNotMatch(footer, /vidssave\.com BIEN X ALIKIBA_ FINALE OFFICIAL MUSIC VIDEO 720P\.mp4/);
   assert.match(footer, /playsInline/);
   assert.match(footer, /pictureInPictureEnabled/);
+  assert.match(footer, /useState\(true\)/);
+  assert.match(footer, /ceremonyStarted/);
+  assert.match(footer, /autoplayBlocked/);
+  assert.match(footer, /className="finaleSoundGate"/);
+  assert.match(footer, /className="finaleNowPlaying"/);
+  assert.match(footer, /Tap to start the finale with sound/);
+  assert.doesNotMatch(footer, /if \(!inView \|\| documentHidden/);
   assert.match(footer, /displayMode === "half"/);
   assert.match(footer, /displayMode === "fullscreen"/);
   assert.match(footer, /displayMode === "floating"/);
@@ -280,6 +287,9 @@ test("keeps required experience, governance and mobile safeguards in source", as
   assert.match(css, /@keyframes protectedKoFinale/);
   assert.match(css, /@keyframes protectedStFinale/);
   assert.match(css, /\.scofValueRoster/);
+  assert.match(css, /\.finaleSoundGate/);
+  assert.match(css, /\.finaleNowPlaying/);
+  assert.match(css, /@keyframes nowPlayingPulse/);
   assert.match(css, /@keyframes spectacleBurst/);
   assert.match(css, /\.footerIdentityDeck\{[^}]*display:grid/);
   assert.match(css, /\.footerNavigationDeck\{[^}]*display:flex/);
