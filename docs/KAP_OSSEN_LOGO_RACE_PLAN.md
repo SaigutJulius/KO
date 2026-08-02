@@ -1,6 +1,6 @@
 # Kap Ossen Top-Banner Logo Race — Design and Implementation Plan
 
-**Status:** Planning approved for review only. No website implementation yet.  
+**Status:** Draft V1 flat, transparent, JPEG, WebP, icon and 3D logo assets produced locally; identity approval, vector refinement and website integration remain pending.  
 **Reference studied:** Existing ST-Firm × KENAFF header, logo tiles and motion choreography.  
 **Goal:** Give the Kap Ossen family website the same memorable racing-logo energy while creating an original, premium family identity.
 
@@ -49,7 +49,9 @@ Primary wordmark:
 
 Supporting line:
 
-**FAMILY LEGACY · ARROR · 2026–2035**
+**KAP OSSEN · ARROR · EST. 2026**
+
+The canonical crest itself should contain only the **KO** monogram. Keep “KAP OSSEN,” “FAMILY EMBASSY,” “ARROR,” “EST. 2026” and the motto in controlled wordmark or ceremonial lockups so the core emblem remains timeless, legible and reusable through 2050 and beyond.
 
 Possible ceremonial motto version:
 
@@ -73,6 +75,27 @@ Possible ceremonial motto version:
 5. One-colour light version.
 6. Transparent high-resolution PNG/WebP assets for the site.
 7. Social-card and favicon treatments.
+
+### Draft V1 asset pack produced on 1 August 2026
+
+The local project now contains:
+
+- canonical transparent crest PNG/WebP derivatives;
+- header and icon monogram sizes;
+- plum and ivory JPEG previews;
+- premium 3D plum PNG/WebP/JPEG treatments;
+- a JSON manifest with dimensions, modes, sizes and hashes;
+- a reproducible raster-derivative builder;
+- an internal Logo Asset Register containing prompts, provenance, rights status and motion rules; and
+- a standalone local 3D ceremonial bounce preview.
+
+Primary locations:
+
+- `public/brand/kap-ossen/`
+- `brand-source/kap-ossen/ASSET_REGISTER.md`
+- `scripts/build_kap_ossen_logo_pack.py`
+
+These files are technically usable Draft V1 assets, not a final registered mark. Family Assembly symbolism approval, brand custodianship, chain-of-title, trademark review and human-refined vector masters remain required before final release.
 
 The current CSS “KO” circle can remain as a temporary fallback until the final crest is approved.
 

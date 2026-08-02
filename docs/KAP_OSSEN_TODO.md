@@ -20,6 +20,11 @@
 - [x] **P0** Produce the Kap Ossen logo-race plan.
 - [x] **P0** Produce the detailed master implementation plan.
 - [x] **P0** Produce this dependency-aware TODO checklist.
+- [x] **P0** Produce the 2026–2050 Future Master Build Plan covering the website, gallery, design system, ST-Firm incorporation, brand, licensing, Solomon Ops, ARROR City and release gates.
+- [x] **P0** Produce the Governance, Sustainability and Patron Plan defining Hon. Solomon Saigut Cherogony's proposed office, family decision rights, institutional separation, five-capitals sustainability system and public scorecard.
+- [x] **P0** Audit the complete Kap Ossen workspace and adopt the controlled language rule: Deutschland for the country, Deutsch only for the language and context-correct Deutschland phrasing throughout.
+- [x] **P0** Complete independent planning, site/asset and brand/rights audits and consolidate the findings into the Concrete Execution Blueprint 2026–2050.
+- [x] **P0** Reconcile the principal plan conflicts: timeless crest, Year-One versus campaign closeout, neutral post-2027 operations core, five ledgers, correct primary-preparation dates, current ST-Firm title and Akademie spelling.
 
 ## B. Family confirmation register
 
@@ -104,26 +109,67 @@
 - [x] **P1 · BLOCKED BY: final ST-Firm relationship wording before publication** Implement Heritage × Technology relay locally.
 - [x] **P1** Implement Twelve-Pillar Orbit routine.
 - [x] **P1** Implement Homecoming Finish routine.
+- [x] **P1** Consolidate the choreography into four scheduled celestial partnership routines.
+- [x] **P1** Add deterministic gold and violet shooting-star trails with strict particle limits.
+- [x] **P1** Add thin transparent glass bubbles with restrained reflections and no interaction blocking.
 - [ ] **P1** Add plum, gold and forest particle themes.
-- [ ] **P1** Add shuffled routine selection and rest intervals.
+- [x] **P1** Add sequential routine selection and rest intervals without consecutive repetition.
 - [x] **P1** Pause motion on hidden tabs.
 - [x] **P1** Add reduced-motion static mode.
-- [ ] **P1** Add tablet in-place motion mode.
-- [x] **P1** Add mobile static/shine mode.
+- [x] **P1** Add tablet contained-motion mode.
+- [x] **P1** Add mobile miniature chase/orbit mode.
 - [ ] **P1** Verify no overlap with SCOF ticker.
-- [ ] **P1** Verify the moving logo never changes the clickable link target.
+- [x] **P1** Keep the permanent clickable logos stationary while decorative copies perform the race.
 
 ## H. Home-page expansion
 
 - [ ] **P1** Preserve the current family hero and improve navigation into new stories.
+- [x] **P0** Produce the complete two-scene cinematic landing-carousel specification.
+- [x] **P0** Inspect the live SCOF website and record the approved sibling-brand principles for the Kap Ossen landing experience.
+- [ ] **P1 · OWNER: Design/ST-Firm brand authority** Create a one-page sibling-brand matrix covering SCOF, Kap Ossen, ST-Firm and Solomon Ops.
+- [ ] **P0 · OWNER: Family/content authority** Approve the exact Scene One wording and calls to action.
+- [ ] **P0 · OWNER: Rights/design authority** Confirm ownership, embedded text and permitted hero use of `public/og-family-embassy.png`.
+- [x] **P1 · OWNER: Development** Build the premium desktop cinematic/device frame and edge-to-edge mobile treatment.
+- [x] **P1 · OWNER: Development** Build Scene One using semantic HTML and concise working family wording.
+- [x] **P1 · OWNER: Development/design** Build Scene Two using the existing artwork with non-destructive desktop, wide-screen and mobile compositions.
+- [x] **P1 · OWNER: Development** Add manual previous/next, two direct indicators and pause controls.
+- [x] **P1 · OWNER: Development** Add conservative automatic rotation, horizontal-dominant swipe intent, focus/hover/visibility pause and reduced-motion behaviour.
+- [x] **P1 · OWNER: Development/design** Move the four metrics into a dedicated Legacy Signals shelf below the product gateway.
+- [x] **P1 · OWNER: Development/design** Convert Roots → Knowledge → Opportunity → Prosperity → Legacy into the five-stage visual journey rail.
+- [x] **P1 · OWNER: Development/design** Brighten Scene One and replace the congested copy with the KO Legacy Orbit visual system.
+- [x] **P1 · OWNER: Development/ST-Firm** Add the five-gateway ST-Firm systems dock with visible product-status labels and institutional wording.
+- [x] **P1 · OWNER: Development** Add responsive gateway cards with horizontal mobile scroll and safe-area spacing.
+- [ ] **P1 · OWNER: Media/development** Produce responsive WebP/AVIF derivatives without replacing the original social artwork.
+- [ ] **P1 · OWNER: Accessibility/QA** Verify artwork description, keyboard behaviour, focus retention, touch controls and motion preferences.
 - [x] **P1** Add consent-aware family-history preview without private records.
 - [x] **P1** Add Engineer Saigut Julius Kipkorir global-journey preview.
 - [x] **P1** Add 30-acre proposed-development preview.
 - [ ] **P1** Add clear links to Heritage and Development pages.
-- [ ] **P1** Keep twelve pillars readable and expandable.
-- [ ] **P1** Retain SCOF value command and target discipline.
-- [ ] **P1** Add privacy and proposal labelling where required.
-- [ ] **P1** Update footer with approved family identity.
+- [x] **P1** Keep twelve pillars readable in the current one-page experience.
+- [x] **P1** Retain SCOF value command and target discipline.
+- [x] **P1** Add privacy, separation and proposal labelling where required.
+- [x] **P1** Update footer with the working family identity and institutional boundaries.
+
+### H1. Typography and celestial footer refinement
+
+- [x] **P1 · OWNER: Design/development** Establish Bodoni Moda, Fraunces, Geist and Geist Mono as four controlled typography roles.
+- [x] **P1 · OWNER: Design/development** Give the landing statement a monumental Bodoni display treatment with responsive wrapping.
+- [x] **P1 · OWNER: Design/development** Enlarge family-tree names, descriptions, branch markers and founder information.
+- [x] **P1 · OWNER: Accessibility/development** Raise meaningful card, metadata and footer copy above the previous micro-text sizes.
+- [x] **P1 · OWNER: Design/development** Rebuild the footer as a layered celestial KO × ST-Firm finale.
+- [x] **P1 · OWNER: Development** Trigger the finale only while the footer is substantially visible.
+- [x] **P1 · OWNER: Development** Add decorative logo flights, an infinity relay, clear bubbles, five fireworks and two shockwaves.
+- [x] **P1 · OWNER: Development** Keep all footer effects behind readable content and unable to intercept interaction.
+- [x] **P1 · OWNER: Development** Add mobile-contained choreography, safe spacing and reduced-motion fallbacks.
+- [x] **P1 · OWNER: Governance/content** Keep ST-Firm labelled as the proposed technology and design partner.
+- [x] **P1 · OWNER: Development/content** Make `KAP OSSEN × ST‑FIRM` and `Heritage · Technology · Legacy` permanent semantic footer content.
+- [x] **P1 · OWNER: Development/design** Replace the long binary replay timer with SCOF, Kap Ossen, ST-Firm, finale and five-second rest states.
+- [x] **P1 · OWNER: Development/design** Build the SCOF coffee-gold snowfall, crystal word formation and branded opening bursts.
+- [x] **P1 · OWNER: Development/design** Build the Kap Ossen twelve-pillar ring, ceremonial crest reveal and ARROR root lights.
+- [x] **P1 · OWNER: Development/design** Build the ST-Firm violet circuit field, digital bursts and technology identity reveal.
+- [x] **P1 · OWNER: Development/design** Build the seven-firework combined finale with logo chase, infinity trail and shockwaves.
+- [x] **P1 · OWNER: Development** Preserve the active phase across focus and hidden-tab pauses and make identity hover intensify rather than reset the show.
+- [ ] **P1 · OWNER: Accessibility/QA** Complete live desktop, tablet and iPhone visual inspection when a browser test surface is available.
 
 ## I. Heritage page
 
@@ -148,7 +194,7 @@
 
 - [ ] **P1 · BLOCKED BY: public disclosure approval** Build Land-to-Legacy hero.
 - [x] **P1** Build the six-zone conceptual master-plan section.
-- [x] **P1** Build German-inspired gateway-market section.
+- [x] **P1** Build Deutschland-inspired gateway-market section.
 - [x] **P1** Build mall and boutique-street section.
 - [x] **P1** Build heritage and seasonal-park section.
 - [x] **P1** Build enterprise and skills-centre section.
@@ -260,6 +306,148 @@
 - [ ] **P1** Present local preview to the family.
 - [ ] **P1 · OWNER: Final family approver** Approve external publication.
 - [ ] **P1 · BLOCKED BY: explicit publication approval** Publish approved version.
+
+## T. ST-Firm × Kap Ossen partnership and Solomon Ops 2027 mission
+
+- [x] **P0** Draft the 1 August 2026–31 July 2027 partnership compact.
+- [ ] **P0 · OWNER: Family and ST-Firm authorities** Approve the mission as a time-bound primary development agenda, not a permanent family obligation.
+- [x] **P0 · OWNER: Engineer Saigut Julius Kipkorir/ST-Firm** Record the working definition: Solomon Ops is the ST-Firm-built campaign-operations programme for Hon. Solomon Saigut Cherogony's 2027 Eldama Ravine MP bid.
+- [ ] **P0 · OWNER: ST-Firm and campaign authorities** Confirm Solomon Ops legal ownership, contracting party, campaign controller, approved description and final product boundaries.
+- [ ] **P0 · OWNER: ST-Firm authority** Select a neutral name and brand for the reusable non-political operations core used by institutional clients.
+- [ ] **P0 · OWNER: Programme sponsor** Appoint the Kap Ossen–ST-Firm Development Council and programme secretary.
+- [ ] **P0 · OWNER: Finance/controller** Establish separate ST-Firm, family-development and political-activity ledgers and payment channels.
+- [ ] **P0 · OWNER: Data-protection adviser** Establish separate data inventories, access lists and retention rules.
+- [ ] **P0 · OWNER: Political-track authority** Create a separately governed Solomon Ops campaign team, systems, domain and communications path.
+- [ ] **P0 · OWNER: Election-law adviser** Verify UDA's binding notice against the IEBC plan, which currently schedules party primaries for 17 March–10 April 2027; treat June–July as post-primary readiness and handover.
+- [ ] **P0 · OWNER: Partnership authority** Prohibit KENAFF, SCOF, ST-Firm client and private family-data reuse for political activity.
+- [ ] **P1 · OWNER: Product/campaign authority** Approve the Solomon Ops campaign MVP specification, security model, budget and build backlog.
+- [ ] **P1 · OWNER: ST-Firm commercial lead** Identify two or three suitable non-political pilots for the separately named reusable operations core.
+- [ ] **P1 · OWNER: Family coordinator** Create a voluntary skills, availability and contribution register.
+- [ ] **P1 · OWNER: Legal/finance** Document every contribution as a gift, expense, loan, investment, service or in-kind political contribution before acceptance.
+- [ ] **P1 · OWNER: Development/content** Add a neutral Technology and Enterprise Partnership section only after publication approval.
+- [ ] **P1 · OWNER: Development** Keep political communications off the Kap Ossen heritage and ST-Firm corporate sites by default; use an approved Solomon Ops campaign domain.
+- [ ] **P0 · OWNER: Campaign/legal/privacy/finance** Audit the already indexed `solomons-ops.net` site, volunteer collection, factual claims, donation wording and payment route; suspend or correct anything lacking evidence or authority.
+- [ ] **P1 · OWNER: Programme secretary** Run monthly decision, risk, conflict and scorecard reviews.
+- [ ] **P1 · OWNER: Compliance** Complete the pre-nomination separation and compliance audit in the official nomination timetable.
+- [ ] **P1 · OWNER: Council** Complete mission closeout and handover by 31 July 2027.
+
+## U. Legacy backbone and ARROR City 2050
+
+- [x] **P0** Draft the private “From Guga's Sacrifice to ARROR City 2050” legacy and planning annex.
+- [x] **P0** Record Engineer Saigut Julius Kipkorir as founder, originator, principal author and vision owner of ARROR City Legacy; Kap Ossen is the heritage foundation and intended beneficiary, while ST-Firm is the execution engine.
+- [ ] **P0 · OWNER: Engineer Saigut Julius Kipkorir** Confirm whether the Mombasa-to-Eldama Ravine relocation year was 2002 or 2022.
+- [ ] **P0 · OWNER: Family heritage lead** Confirm the exact names and spellings of Anglo Kenya, Benonin and Grandmother Koplaban.
+- [ ] **P0 · OWNER: Heritage team** Record and consent the full “Sundays at Benonin” oral-history interview.
+- [ ] **P0 · OWNER: Heritage team** Corroborate Guga's childhood, orphanhood and school-fee history through elder interviews and available records.
+- [ ] **P0 · OWNER: Research/legal** Separate ARROR cultural-landscape testimony from administrative boundaries, protected areas and private title.
+- [ ] **P0 · OWNER: Land authority** Confirm that the 30-acre Gateway may be described as the proposed ARROR City demonstrator.
+- [ ] **P0 · OWNER: ST-Firm authority** Approve the definitions, ownership and permitted public wording for GREEN-KI SSOS and Solomon Ops.
+- [ ] **P0 · OWNER: Kenyan regulatory counsel** Classify SCOF under the Virtual Asset Service Providers Act before any exchange, offering, tokenisation, liquidity or market-making activity.
+- [ ] **P0 · OWNER: Legal/data protection** Approve the four-tier confidentiality model, NDA pack, data-processing terms and breach procedure.
+- [ ] **P1 · OWNER: Planning team** Produce a one-page ARROR City 2050 theory of change and professional pre-feasibility brief.
+- [ ] **P1 · OWNER: Survey/planning/environment team** Map the Gateway and wider study area without implying ownership of third-party or protected land.
+- [ ] **P1 · OWNER: Finance** Build the city vision around productive cash flow and audited project finance, not SCOF appreciation.
+- [ ] **P1 · OWNER: Communications** Prepare separate public, family-private, ST-Firm and due-diligence disclosure layers.
+- [ ] **P1 · OWNER: Final approvers** Keep the legacy backbone private until factual, legal, privacy and publication approval is complete.
+
+## V. Hon. Solomon public-record and Kamnarok evidence pack
+
+- [x] **P0 · OWNER: Research** Complete an initial broad public-record search on Hon. Solomon Saigut Cherogony and Kamnarok.
+- [ ] **P0 · OWNER: Hon. Solomon/secretariat** Confirm that the Solomon Cherogony listed in the 6 February 2026 Kenya Gazette as an Eldama Ravine Sub-County Hospital board member is Hon. Solomon Saigut Cherogony.
+- [ ] **P0 · OWNER: Secretariat** Obtain the appointment letter, term, meeting record and approved description of his hospital-board service.
+- [ ] **P0 · OWNER: Hon. Solomon/business records lead** Obtain primary records supporting Ambase Exploration Africa, DRC, mining, trade and international-experience claims.
+- [ ] **P0 · OWNER: KENAFF/secretariat** Obtain a KENAFF appointment letter or official confirmation before publicly calling him Baringo Chapter Director; do not imply KENAFF endorsement of the campaign.
+- [ ] **P0 · OWNER: Kamnarok evidence lead** Obtain minutes, task-force appointments, letters, affidavits, photographs and recognised-witness statements supporting the claimed Kamnarok strategy role.
+- [ ] **P0 · OWNER: Research/legal** Match each Kamnarok document to the correct Solomon and record provenance, date, custodian and permission for use.
+- [ ] **P0 · OWNER: Communications/legal** Use “family account—verification pending” for the Kamnarok role until the evidence gate is passed; do not publish it as established fact.
+- [ ] **P0 · OWNER: Research** Keep same-name court, probate and commercial records quarantined until identity is proved.
+- [ ] **P1 · OWNER: Communications** Convert the approved evidence into a sourced candidate biography and a concise “Why the Family May Support” presentation.
+- [ ] **P1 · OWNER: Family coordinator** Record each family member's support, role or decision to decline voluntarily and confidentially.
+
+## W. Future master build foundations
+
+- [ ] **P0 · OWNER: Vision founder/family/ST-Firm authorities** Approve or amend the Future Master Build Plan as the controlling planning spine.
+- [ ] **P0 · OWNER: ST-Firm/legal/accounting** Complete the current legal-status, tax, contract, liability and asset-custody audit.
+- [ ] **P0 · OWNER: Founder/corporate counsel** Decide the Deutschland sole-trader, UG or GmbH path and record the reasons.
+- [ ] **P0 · OWNER: Kenya/Deutschland advisers** Decide the trigger and structure for a Kenyan operating entity or branch.
+- [ ] **P0 · OWNER: ST-Firm authority** Execute founder, contributor, software and source-code ownership instruments.
+- [ ] **P0 · OWNER: Brand/IP counsel** Search and rank ST-Firm, Kap Ossen, ARROR City Legacy, Solomon Ops, SCOF, GREEN-KI SSOS, KO crest and slogan filings.
+- [ ] **P0 · OWNER: Brand owners** Decide the rights holder and filing geography for each priority mark before application.
+- [ ] **P0 · OWNER: Technical administrator** Create a domain, repository, hosting, email, social-handle and recovery-access register.
+- [ ] **P0 · OWNER: ST-Firm/campaign authorities** Execute the Solomon Ops technology, campaign-use, data-processing and closeout agreements.
+- [ ] **P0 · OWNER: Family/media authority** Approve family photograph, biography, audio, video and archive contribution forms.
+- [ ] **P1 · OWNER: Brand/design** Complete the ceremonial KO crest, wordmark, favicon, monochrome and responsive asset suite.
+- [ ] **P1 · OWNER: Design/content** Approve the gallery's twelve chapters, icon language, honest photo placeholders and archival background system.
+- [ ] **P1 · OWNER: Heritage/media team** Review the first 12–24 proposed public photographs and record owner, source, caption and consent.
+- [ ] **P1 · OWNER: Design/development** Build the gallery chapter view, timeline, accessible lightbox, captions, credits and approval-aware placeholders.
+- [ ] **P1 · OWNER: Design/development/legal** Implement the six-column institutional footer and separate Solomon Ops campaign footer.
+- [ ] **P1 · OWNER: Development** Refactor the current single page into the approved multi-route public Family Embassy.
+- [ ] **P2 · OWNER: Platform/security** Add D1 metadata and R2 media storage only when the private archive workflow is ready.
+- [ ] **P2 · OWNER: Platform/security/family authority** Add protected Family Room access with server-side role enforcement and membership approval.
+- [ ] **P0 · OWNER: SCOF/legal authority** Complete the Kenyan virtual-asset classification before transactional, offering, exchange or market-making features.
+- [ ] **P0 · OWNER: Final approvers** Pass all twelve release gates before external publication.
+
+## X. Patron-led governance and sustainability
+
+- [ ] **P0 · OWNER: Family Assembly convener** Circulate and approve or amend the Patron-led, charter-governed institutional model.
+- [ ] **P0 · OWNER: Family Assembly** Adopt a Kap Ossen Family Charter defining membership, branch representation, quorum, ordinary votes, supermajority decisions and private-ownership protections.
+- [ ] **P0 · OWNER: Hon. Solomon Saigut Cherogony/family authority** Confirm his willingness to serve and execute the Patron Appointment, Mandate and Acceptance Instrument before presenting the title as active.
+- [ ] **P0 · OWNER: Family Assembly/legal adviser** Approve the Patron's initial term, renewal, acting-office, incapacity, fair-removal and Patron Emeritus provisions.
+- [ ] **P0 · OWNER: Family Assembly/legal adviser** Approve the Patron's positive powers, reserved concurrence, explicit limits and emergency 14-day public-representation pause.
+- [ ] **P0 · OWNER: Patron/ethics lead** Execute annual conflict disclosure, recusal and political-separation commitments.
+- [ ] **P0 · OWNER: Family Assembly** Decide whether the Patron chairs the Family Development Council directly or appoints a separate operational chair.
+- [ ] **P0 · OWNER: Family branches** Appoint a practical seven-to-eleven-member Family Development Council with recorded terms and branch legitimacy.
+- [ ] **P0 · OWNER: Council** Appoint the programme secretary and approve the delegated-authority schedule.
+- [ ] **P0 · OWNER: Council/family** Form the Finance, Audit and Risk Committee.
+- [ ] **P0 · OWNER: Council/family** Form the Heritage, Archive and Consent Committee.
+- [ ] **P0 · OWNER: Council/family** Form the Sustainability and Technical Council.
+- [ ] **P0 · OWNER: Council/family** Form the Youth and Future Generations Council.
+- [ ] **P0 · OWNER: Council/family** Form an Ethics, Conflict and Grievance Panel with at least one trusted independent member.
+- [ ] **P0 · OWNER: Governance secretary** Establish decision, risk, conflict, contract, contribution, IP, evidence, consent, land, grievance and sustainability registers.
+- [ ] **P0 · OWNER: Finance/controller** Activate separate ledgers, workspaces and approval routes for Kap Ossen, ST-Firm, Solomon Ops, SCOF and any future Gateway vehicle.
+- [ ] **P0 · OWNER: Finance/family authority** Approve payment thresholds, two-authoriser rules, related-party controls, contribution classification, reserves and annual independent review.
+- [ ] **P0 · OWNER: Engineer Saigut Julius Kipkorir/IP counsel** Execute the ARROR City authorship/IP declaration, family-display licence, contributor instruments and continuity provisions.
+- [ ] **P0 · OWNER: ST-Firm/legal/family authority** Execute a Kap Ossen-ST-Firm relationship statement and services framework reflecting ST-Firm's verified current legal status.
+- [ ] **P0 · OWNER: Campaign/family/legal authorities** Execute the Patron Conflict, Recusal and Political-Separation Covenant and confirm that Patron authority cannot compel support for Solomon Ops.
+- [ ] **P0 · OWNER: Privacy/data authorities** Prohibit campaign access to family, KENAFF, SCOF or ST-Firm client records unless a separate lawful basis, controller and specific consent exist.
+- [ ] **P0 · OWNER: Sustainability and Technical Council** Adopt the five-capitals Sustainability Charter: heritage, natural, human/social, productive/financial and institutional/digital.
+- [ ] **P0 · OWNER: Land/environment/social advisers** Complete a land, water, soil, biodiversity, climate, access, community and current-use baseline before clearing or construction.
+- [ ] **P1 · OWNER: Sustainability Council/finance** Define evidence-backed annual targets for energy, water, waste, tree survival, soil health, jobs, local procurement, training, accessibility, reserves and institutional continuity.
+- [ ] **P1 · OWNER: Finance/project team** Model Gateway development with zero SCOF appreciation in the base case; treat the 565 value as a 31 October 2029 review target only.
+- [ ] **P1 · OWNER: Planning/finance** Define phased feasibility gates so no physical phase begins without land authority, professional approvals, demand evidence, operator capacity, lifecycle cost and funded maintenance.
+- [ ] **P1 · OWNER: Technical administrator** Complete domain, repository, archive, account, backup, recovery, export and vendor-exit controls for sovereign digital custody.
+- [ ] **P1 · OWNER: Governance/evidence team** Prepare monthly internal, quarterly Council, six-month Patron and annual public sustainability reporting templates.
+- [ ] **P1 · OWNER: Heritage/media/evidence teams** Obtain rights-cleared portrait, exact title, mandate copy and individually sourced biography claims for the Patron card.
+- [ ] **P1 · OWNER: Design/development** Build the `/governance-sustainability` route with Patron's Office, institutional map, decision rights, Five Capitals, scorecard, reports and concern/correction route.
+- [ ] **P1 · OWNER: Design/development** Add the landing-page proof band: Patron, Governance, Sustainability and ST-Firm Execution, with no political campaign call-to-action.
+- [ ] **P1 · OWNER: Design/development/accessibility** Implement the governance map as an interactive desktop constellation and semantic mobile accordion with full reduced-motion support.
+- [ ] **P1 · OWNER: Communications/legal** Publish a clear separation statement for Kap Ossen, ST-Firm, ARROR City Legacy, Solomon Ops, SCOF and KENAFF.
+- [ ] **P1 · OWNER: Patron/Council/evidence leads** Prepare the first Annual Legacy Address and public impact summary only after finance, evidence, privacy and legal sign-off.
+- [ ] **P0 · OWNER: Family/publication authority** Pass all governance, consent, truth, corporate, land, campaign, sustainability, security and publication gates before announcing the Patron or publishing the page.
+
+## Y. Kap Ossen logo asset and motion system
+
+- [x] **P0 · OWNER: Design/ST-Firm project** Select the orbital KO emblem from the approved Family Embassy artwork as the Draft V1 canonical direction.
+- [x] **P0 · OWNER: Design/ST-Firm project** Generate the flat plum-and-gold KO crest with exactly twelve outer nodes and no text beyond `KO`.
+- [x] **P0 · OWNER: Design/ST-Firm project** Produce and visually validate the transparent RGBA master using the built-in image-generation and local chroma-removal workflow.
+- [x] **P0 · OWNER: Design/ST-Firm project** Generate the premium 3D ceremonial plum-and-gold version.
+- [x] **P0 · OWNER: Design/ST-Firm project** Produce transparent PNG/WebP, small monogram, icon, plum/ivory JPEG and 3D PNG/WebP/JPEG derivatives.
+- [x] **P0 · OWNER: Technical production** Add a reproducible derivative builder and JSON manifest with dimensions, colour modes, file sizes and SHA-256 hashes.
+- [x] **P0 · OWNER: Brand documentation** Record the sources, prompts, rights status, transparency process, asset paths and motion policy in the Logo Asset Register.
+- [x] **P1 · OWNER: Design/development** Create a standalone local 3D ceremonial bounce preview with long rest, hover/focus pause, hidden-tab pause and reduced-motion fallback.
+- [x] **P0 · OWNER: Planning** Remove the 2035 end date from the canonical crest; use a timeless `KO` core and place `EST. 2026` only in separate lockups.
+- [ ] **P0 · OWNER: Family Assembly** Approve or correct the orbital crest, plum/gold palette, ARROR-inspired pattern and twelve-pillar meaning.
+- [ ] **P0 · OWNER: Family Assembly/legal/IP** Appoint the Kap Ossen brand and trademark custodian.
+- [ ] **P0 · OWNER: Brand custodian/Engineer Saigut Julius Kipkorir** Execute the assignment or durable exclusive licence distinguishing family identity/trademark rights from design/code copyright.
+- [ ] **P0 · OWNER: Brand/IP counsel** Complete originality and trademark searches for Kap Ossen, KO device, ARROR City Legacy, ST-Firm and the exact ST-Firm tagline.
+- [ ] **P1 · OWNER: Human brand designer** Produce a refined vector master and one-colour positive/reverse versions without changing the approved geometry.
+- [ ] **P1 · OWNER: Human brand designer/content authority** Typeset the horizontal `KAP OSSEN` wordmark and `FAMILY EMBASSY · ARROR · EST. 2026` ceremonial lockup outside image generation.
+- [ ] **P1 · OWNER: Design/QA** Complete 16px, 24px, 32px, 48px, print, emboss, monochrome and contrast proofs.
+- [ ] **P1 · OWNER: Development** Replace the inconsistent CSS/footer/favicon marks with one approved monogram asset after the identity gate.
+- [ ] **P1 · OWNER: Development** Keep the static brand link fixed and move all race/bounce effects into a separate decorative animation layer.
+- [ ] **P1 · OWNER: Development/accessibility** Implement the 900–1200ms ceremonial 3D bounce with an eight-second minimum rest, immediate hidden-tab pause, hover/focus pause and reduced-motion static fallback.
+- [ ] **P1 · OWNER: Development/brand authority** Show ST-Firm only as an occasional labelled technology relay after the relationship wording is signed; do not retain it as a permanent co-primary family logo.
+- [ ] **P1 · OWNER: Publication authority** Approve a versioned public logo release only after rights, small-size, accessibility and identity gates pass.
 
 ## Immediate execution queue after approval
 

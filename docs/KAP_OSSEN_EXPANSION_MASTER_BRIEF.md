@@ -1,21 +1,22 @@
 # Kap Ossen Website and 30-Acre Development Expansion — Master Brief
 
 **Record date:** 1 August 2026  
-**Time stated by the contributor:** 6:39 p.m., Germany  
-**Contributor:** Engineer Saigut Julius Kiprario Ichkame  
+**Time stated by the contributor:** 6:39 p.m., Deutschland  
+**Contributor:** Engineer Saigut Julius Kipkorir — Berlin, Deutschland  
 **Status:** Private working record. Not approved for public website publication.  
 **Purpose:** Preserve the contributor's complete oral briefing and convert it into a controlled website, heritage, property-development and investment-planning programme.
 
 ## 1. Contributor profile
 
-- Name supplied: **Engineer Saigut Julius Kiprario Ichkame**.
+- Confirmed public name: **Engineer Saigut Julius Kipkorir**.
+- Controlled professional description: **Engineer Saigut Julius Kipkorir — AI & Python Automation Engineer and founder of ST-Firm, operating from Berlin, Deutschland**. Until incorporation is verified, formal legal copy should identify him as the sole proprietor trading as ST-Firm.
 - Phrase supplied: **“house Kenya”**; intended meaning requires confirmation.
-- Kenyan by origin and currently based in Berlin, Germany.
-- Comes from **Aror, Baringo North**. The contributor explicitly spelled the place **A-R-R-O-R**; the final public spelling must be confirmed.
+- Kenyan by origin and currently based in Berlin, Deutschland.
+- Comes from **ARROR, Baringo North**. The contributor confirmed **ARROR** as the correct public spelling.
 - Has travelled through Estonia and Switzerland while searching for professional work.
 - Describes his job-search approach as going directly into professional environments, observing systems and opportunities, becoming visible, identifying openings and acting decisively.
 - Public-facing wording should describe this as resourceful, ethical and proactive opportunity hunting. It must not imply unauthorised computer access or unlawful exploitation.
-- His European experience, particularly his exposure to German systems and standards, is intended to inform the family website and the proposed Eldama Ravine development.
+- His European experience, particularly his exposure to systems and standards in Deutschland, is intended to inform the family website and the proposed Eldama Ravine development.
 
 ## 2. Family origin and lineage supplied
 
@@ -53,13 +54,13 @@ The ordering and spellings below are captured from the oral briefing and require
 
 ## 4. The central development vision
 
-Create a landmark, future-ready family development on the 30-acre property: a German-standard mixed-use market, mall, seasonal park, business centre, light-industrial/logistics hub and export platform that combines local identity with international operating discipline.
+Create a landmark, future-ready family development on the 30-acre property: a Deutschland-inspired mixed-use market, mall, seasonal park, business centre, light-industrial/logistics hub and export platform that combines local identity with international operating discipline.
 
 The project should be locally rooted, commercially practical, digitally managed and designed to use land in three dimensions: across the site, upward through multi-level structures and downward where safe and financially viable.
 
 ### Main components requested
 
-1. **German-format food and household market**
+1. **Deutschland-inspired food and household market**
    - Inspired by the clarity, efficiency, accessibility and operational discipline of retailers such as Lidl.
    - This is an inspiration reference only. The project must use its own name, brand, architecture and intellectual property unless a formal commercial partnership is obtained.
    - Features may include a clear customer journey, strong natural lighting, energy-efficient systems, simple signage, efficient loading and restocking, local produce sections and transparent pricing.
@@ -107,7 +108,7 @@ No final acreage should be allocated before a title review, boundary survey, top
 ### Zone A — Gateway Market
 
 - Landmark entrance
-- German-format anchor market
+- Deutschland-inspired anchor market
 - Customer plaza
 - Daily-needs retail
 - Pick-up and drop-off
@@ -204,12 +205,12 @@ The gallery should be a structured digital archive rather than a simple image gr
 
 ### Gallery chapters
 
-1. Origins in Aror and Baringo North
+1. Origins in ARROR and Baringo North
 2. The late Dickson Ossen Cherogony
 3. The will, land and responsibility of stewardship
 4. The children and family branches
 5. Education, farming, faith, construction and public service
-6. Kenya, Canada, Germany, Estonia, Switzerland and the wider diaspora
+6. Kenya, Canada, Deutschland, Estonia, Switzerland and the wider diaspora
 7. Family enterprises and professional achievements
 8. Present generation
 9. The 30-acre future vision
@@ -368,9 +369,9 @@ Public pages must clearly distinguish between existing assets, proposed concepts
 
 ## 14. Items requiring confirmation
 
-- Exact full name and preferred professional title of Engineer Saigut Julius Kiprario Ichkame.
+- Public name and professional title confirmed as **Engineer Saigut Julius Kipkorir — AI & Python Automation Engineer and founder of ST-Firm, operating from Berlin, Deutschland**. Use the verified sole-proprietor wording in legal and corporate-status contexts until incorporation is completed.
 - Meaning of “house Kenya.”
-- Official spelling of Aror/ArrOr.
+- Official spelling confirmed as **ARROR**.
 - Complete and correct family birth order.
 - Full legal names and preferred public names.
 - Whether “Thai construction” means TAI Enterprises.
@@ -401,6 +402,6 @@ Public pages must clearly distinguish between existing assets, proposed concepts
 
 **From family land to a living legacy.**
 
-The Kap Ossen 30-Acre Development is envisioned as a future-ready family destination combining a disciplined German-inspired market, flexible business spaces, a seasonal cultural park, education and enterprise facilities, and a digitally managed logistics and export hub. Rooted in Aror and connected to Eldama Ravine, Kenya and the diaspora, it will be planned to create jobs, market access, rental income, knowledge transfer and a durable inheritance for future generations.
+The Kap Ossen 30-Acre Development is envisioned as a future-ready family destination combining a disciplined market model inspired by operating practice in Deutschland, flexible business spaces, a seasonal cultural park, education and enterprise facilities, and a digitally managed logistics and export hub. Rooted in ARROR and connected to Eldama Ravine, Kenya and the diaspora, it will be planned to create jobs, market access, rental income, knowledge transfer and a durable inheritance for future generations.
 
 This statement is a planning concept. It is not yet an approved architectural plan, investment offer or construction commitment.

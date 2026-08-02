@@ -189,7 +189,7 @@ Purpose: connect Kenya, Berlin, Estonia, Switzerland, Canada and the wider diasp
 
 Lead chapter:
 
-- Engineer Saigut Julius Kipkorir, AI & Python Automation Engineer, Founder & CEO of ST-Firm, based in Berlin, Germany;
+- Engineer Saigut Julius Kipkorir, AI & Python Automation Engineer and founder of ST-Firm, operating from Berlin, Deutschland; use “sole proprietor trading as ST-Firm” in formal legal-status copy until incorporation is verified;
 - ARROR/Baringo origin;
 - professional journey and opportunity hunting;
 - lessons from European systems;
@@ -245,7 +245,7 @@ Required sections:
 1. Land-to-legacy hero.
 2. Site context at a safe privacy level.
 3. Six-zone conceptual master plan.
-4. German-inspired gateway market.
+4. Deutschland-inspired gateway market.
 5. Mall and boutique street.
 6. Heritage and seasonal park.
 7. Enterprise and skills centre.
@@ -282,7 +282,7 @@ Categories:
 
 - education and scholarships;
 - Kenya careers;
-- Germany preparation;
+- Deutschland preparation;
 - Romania pathways;
 - remote and digital work;
 - agriculture;

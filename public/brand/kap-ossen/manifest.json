@@ -1,0 +1,168 @@
+{
+  "brand": "Kap Ossen",
+  "mark": "KO ceremonial orbital crest",
+  "version": "draft-v1",
+  "status": "Draft for Family Assembly and brand-custodian approval",
+  "created": "2026-08-01",
+  "country_language_standard": "Deutschland for the country; Deutsch for the language",
+  "sources": [
+    "brand-source/kap-ossen/ko-crest-flat-transparent-source-v1.png",
+    "brand-source/kap-ossen/ko-crest-3d-source-v1.png"
+  ],
+  "assets": [
+    {
+      "path": "public/brand/kap-ossen/ko-crest-primary-transparent.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "bytes": 1179251,
+      "sha256": "E0116273343EFC4BFF00EE2DF352EBE1AA375CEDF31764FE06DA21F0CE6B629B"
+    },
+    {
+      "path": "public/brand/kap-ossen/ko-crest-primary-transparent-1024.png",
+      "width": 1024,
+      "height": 1024,
+      "mode": "RGBA",
+      "bytes": 721323,
+      "sha256": "5B862C9259CF5052EB1E72236D9499B87D924F12D3BB5C033F929E44E4F7BD16"
+    },
+    {
+      "path": "public/brand/kap-ossen/ko-crest-primary-transparent-1024.webp",
+      "width": 1024,
+      "height": 1024,
+      "mode": "RGBA",
+      "bytes": 509480,
+      "sha256": "4D80EBC19D805C37DEF2CD9F6F4938B3FB96B120A5DB29D97BF7F30458C0DE79"
+    },
+    {
+      "path": "public/brand/kap-ossen/ko-monogram-512.png",
+      "width": 512,
+      "height": 512,
+      "mode": "RGBA",
+      "bytes": 346039,
+      "sha256": "29E421265F22B4FA2FC600184B22C82478B56B3DBA72568D4FA303B600B29A51"
+    },
+    {
+      "path": "public/brand/kap-ossen/ko-monogram-256.png",
+      "width": 256,
+      "height": 256,
+      "mode": "RGBA",
+      "bytes": 93309,
+      "sha256": "1AFED8431E1091EFB39047234E0F27AF4F8DF177C3E7C99920D9B0AB84FC8406"
+    },
+    {
+      "path": "public/brand/kap-ossen/ko-monogram-128.png",
+      "width": 128,
+      "height": 128,
+      "mode": "RGBA",
+      "bytes": 27290,
+      "sha256": "4F7283C96B795043E9AF06A36E12189D606451B077C37AA5F8E4F5FA78C3D5D6"
+    },
+    {
+      "path": "public/brand/kap-ossen/ko-monogram-64.png",
+      "width": 64,
+      "height": 64,
+      "mode": "RGBA",
+      "bytes": 7723,
+      "sha256": "F29DCB07CA96FE2A38F0E9CCFDF60C90D0820A3A7F74824EB12CF8691976DDEF"
+    },
+    {
+      "path": "public/brand/kap-ossen/ko-monogram-32.png",
+      "width": 32,
+      "height": 32,
+      "mode": "RGBA",
+      "bytes": 2403,
+      "sha256": "E6BF028D429E270B734E94A9099D339FD7F110B151A6C125508E14E913F2C28E"
+    },
+    {
+      "path": "public/brand/kap-ossen/ko-monogram-512.webp",
+      "width": 512,
+      "height": 512,
+      "mode": "RGBA",
+      "bytes": 244520,
+      "sha256": "A5E9E665A4350B34BEE93397F6BFC257C09F46CD88980CD3D4356C63FA8D0570"
+    },
+    {
+      "path": "public/brand/kap-ossen/ko-monogram-header-512.png",
+      "width": 512,
+      "height": 512,
+      "mode": "RGBA",
+      "bytes": 346039,
+      "sha256": "29E421265F22B4FA2FC600184B22C82478B56B3DBA72568D4FA303B600B29A51"
+    },
+    {
+      "path": "public/brand/kap-ossen/ko-monogram-header-256.webp",
+      "width": 256,
+      "height": 256,
+      "mode": "RGBA",
+      "bytes": 76564,
+      "sha256": "A20675F43AD5660EB5A4ED42A2C360E9A0FFBB406BCFD73837E4C446D40F889D"
+    },
+    {
+      "path": "public/brand/kap-ossen/ko-apple-touch-icon-180.png",
+      "width": 180,
+      "height": 180,
+      "mode": "RGBA",
+      "bytes": 45407,
+      "sha256": "1CD0099B5CE1B8C4B7C37259CB9BA798537B7840B065C5485316369C3AB3AE81"
+    },
+    {
+      "path": "public/brand/kap-ossen/ko-app-icon-512.png",
+      "width": 512,
+      "height": 512,
+      "mode": "RGBA",
+      "bytes": 316637,
+      "sha256": "E88E4332AB8F4A24A963546094A96BA6486A5B770E8910A7C85C5481EBCB2D8E"
+    },
+    {
+      "path": "public/brand/kap-ossen/ko-crest-flat-plum-1200.jpg",
+      "width": 1200,
+      "height": 1200,
+      "mode": "RGB",
+      "bytes": 203004,
+      "sha256": "82056B167F36CC5DFDD7FBD32E1B6040F1D150382B22387B94B46237D588CE17"
+    },
+    {
+      "path": "public/brand/kap-ossen/ko-crest-flat-ivory-1200.jpg",
+      "width": 1200,
+      "height": 1200,
+      "mode": "RGB",
+      "bytes": 193996,
+      "sha256": "3001FC0F885EC80E9FBCE215C0B866CA3EDE10F571CC15D500F87207F7058F9D"
+    },
+    {
+      "path": "public/brand/kap-ossen/ko-crest-3d-plum.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "bytes": 2522970,
+      "sha256": "BCC6D87FEB39B361FC19AD503CDCCC0743B5019B70434F7ACE62591F37689F17"
+    },
+    {
+      "path": "public/brand/kap-ossen/ko-crest-3d-plum-1024.png",
+      "width": 1024,
+      "height": 1024,
+      "mode": "RGBA",
+      "bytes": 1601989,
+      "sha256": "F5A81057101FFDC3A9F355F1C9A9FB90A92ACDB97022E84FB52496E1CBBF6E82"
+    },
+    {
+      "path": "public/brand/kap-ossen/ko-crest-3d-plum-1024.webp",
+      "width": 1024,
+      "height": 1024,
+      "mode": "RGBA",
+      "bytes": 1074636,
+      "sha256": "8A9C6471252D9B6359CAF26EEAE8B759F4465DF8B9B14F5147830311F6D3D5BB"
+    },
+    {
+      "path": "public/brand/kap-ossen/ko-crest-3d-plum-1200.jpg",
+      "width": 1200,
+      "height": 1200,
+      "mode": "RGB",
+      "bytes": 296472,
+      "sha256": "4FF8BBC01AB5AE859F1DD44F08EEE187DE5B7C2B2BBB80BA91567BCEB6EF4249"
+    }
+  ],
+  "motion": "Animate the transparent static crest with CSS/WAAPI; no GIF is canonical.",
+  "rights_note": "Kap Ossen crest custodianship and final release authority remain pending Family Assembly approval."
+}
