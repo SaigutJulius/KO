@@ -54,6 +54,7 @@ export default function FooterFinale() {
   const scene = rosterAtCeremonyTime(ceremonyTime);
   const phaseIndex = finalePhases.findIndex((item) => item.key === phase.key);
   const phaseClass = `phase${phase.key.charAt(0).toUpperCase()}${phase.key.slice(1)}`;
+  const sceneClass = `scene-${scene.id}`;
   const phaseProgress = Math.max(0, Math.min(1, (ceremonyTime - phase.start) / (phase.end - phase.start)));
   const totalProgress = Math.max(0, Math.min(1, ceremonyTime / FINALE_TOTAL_SECONDS));
   const timelineActive = MEDIA_PATH ? playing : inView && !documentHidden && !reducedMotion;
@@ -272,7 +273,7 @@ export default function FooterFinale() {
   };
 
   return (
-    <footer ref={footerRef} className={`siteFooter footerSpectacle ${phaseClass} ${paused ? "finalePaused" : ""}`}>
+    <footer ref={footerRef} className={`siteFooter footerSpectacle ${phaseClass} ${sceneClass} ${paused ? "finalePaused" : ""}`}>
       <div className="footerAlliance">
         <span className="alliancePulse" aria-hidden="true" />
         <small>Kap Ossen Family Embassy · 1:34 Finale</small>

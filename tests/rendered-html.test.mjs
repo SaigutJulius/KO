@@ -192,6 +192,7 @@ test("keeps required experience, governance and mobile safeguards in source", as
   assert.match(footer, /threshold: 0\.18/);
   assert.match(footer, /FINALE_TOTAL_SECONDS/);
   assert.match(footer, /ceremonyTimeFromSourceTime/);
+  assert.match(footer, /const sceneClass = `scene-\$\{scene\.id\}`/);
   assert.match(footer, /NEXT_PUBLIC_FINALE_TRACK/);
   assert.doesNotMatch(footer, /vidssave\.com BIEN X ALIKIBA_ FINALE OFFICIAL MUSIC VIDEO 720P\.mp4/);
   assert.match(footer, /playsInline/);
@@ -216,6 +217,8 @@ test("keeps required experience, governance and mobile safeguards in source", as
   assert.match(scofConfig, /eur: 45/);
   assert.match(scofConfig, /eurKes: 148\.12/);
   assert.match(roster, /Current price · Strategic checkpoint · Long-horizon aspiration/);
+  assert.match(roster, /className="horizonKesEquivalent"/);
+  assert.match(roster, /Illustrative conversion at KSh/);
   assert.match(footer, /prefers-reduced-motion/);
   assert.match(footer, /className="footerSky" aria-hidden="true"/);
   assert.match(footer, /className="footerAlliance"/);
@@ -287,6 +290,11 @@ test("keeps required experience, governance and mobile safeguards in source", as
   assert.match(css, /@keyframes protectedKoFinale/);
   assert.match(css, /@keyframes protectedStFinale/);
   assert.match(css, /\.scofValueRoster/);
+  assert.match(css, /\.footerSpectacle\.phaseFinale \.footerKoRunner/);
+  assert.match(css, /\.footerSpectacle\.phaseFinale \.footerStRunner/);
+  assert.match(css, /@keyframes horizonKoDock/);
+  assert.match(css, /@keyframes horizonStDock/);
+  assert.match(css, /\.horizonKesEquivalent/);
   assert.match(css, /\.finaleSoundGate/);
   assert.match(css, /\.finaleNowPlaying/);
   assert.match(css, /@keyframes nowPlayingPulse/);
