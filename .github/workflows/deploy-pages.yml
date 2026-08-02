@@ -34,6 +34,8 @@ jobs:
           GITHUB_PAGES: "true"
           NEXT_PUBLIC_SITE_URL: https://saigutjulius.github.io/KO
         run: npm run build
+      - name: Fix GitHub Pages font paths
+        run: node scripts/fix-github-pages-paths.mjs /KO
       - name: Disable Jekyll processing
         run: touch dist/client/.nojekyll
       - name: Upload GitHub Pages artifact
