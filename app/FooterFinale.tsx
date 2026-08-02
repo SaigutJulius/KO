@@ -4,6 +4,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { Crest } from "./BrandRace";
+import { withBasePath } from "./sitePaths";
 
 const phases = [
   { key: "scof", duration: 3_000 },
@@ -113,10 +114,10 @@ export default function FooterFinale() {
           <span className="koPillarRing">{pillars.map((item) => <i className={`koPillar pillar${item}`} key={`pillar-${item}`} />)}<Crest /></span>
           <span className="arrorRoots">{[1, 2, 3, 4, 5].map((item) => <i key={`root-${item}`} />)}</span>
 
-          <span className="firmCircuitField">{circuits.map((item) => <i className={`firmCircuit circuit${item}`} key={`circuit-${item}`} />)}<img src="/st-firm-logo.png" alt="" width="260" height="280" decoding="async" /></span>
+          <span className="firmCircuitField">{circuits.map((item) => <i className={`firmCircuit circuit${item}`} key={`circuit-${item}`} />)}<img src={withBasePath("/st-firm-logo.png")} alt="" width="260" height="280" decoding="async" /></span>
 
           <span className="footerRunner footerKoRunner"><Crest /></span>
-          <span className="footerRunner footerStRunner"><img src="/st-firm-logo.png" alt="" width="260" height="280" decoding="async" /></span>
+          <span className="footerRunner footerStRunner"><img src={withBasePath("/st-firm-logo.png")} alt="" width="260" height="280" decoding="async" /></span>
           <span className="footerInfinity" />
           <span className="footerPartnership">×</span>
 
@@ -132,19 +133,19 @@ export default function FooterFinale() {
         <div className="footerStaticStageLockup" aria-hidden="true">
           <span className="staticKoMark"><Crest /></span>
           <i>×</i>
-          <span className="staticFirmMark"><img src="/st-firm-logo.png" alt="" width="260" height="280" decoding="async" /></span>
+          <span className="staticFirmMark"><img src={withBasePath("/st-firm-logo.png")} alt="" width="260" height="280" decoding="async" /></span>
           <p><b>Kap Ossen</b><small>Heritage · Proposed technology relationship</small></p>
         </div>
       </div>
 
       <div className="footerIdentityDeck">
         <a className="footerBrand footerIdentity" href="#top" aria-label="Kap Ossen Family Embassy - return to top">
-          <span className="footerLogoHalo"><img src="/brand/kap-ossen/ko-monogram-header-256.webp" alt="" width="256" height="256" loading="lazy" decoding="async" /></span>
+          <span className="footerLogoHalo"><img src={withBasePath("/brand/kap-ossen/ko-monogram-header-256.webp")} alt="" width="256" height="256" loading="lazy" decoding="async" /></span>
           <span><b>Kap Ossen</b><small>Family Embassy · From Heritage to Legacy</small></span>
         </a>
 
         <div className="stFirmMark footerIdentity">
-          <span className="footerLogoHalo stHalo"><img src="/st-firm-logo.png" alt="ST-Firm" width="260" height="280" loading="lazy" decoding="async" /></span>
+          <span className="footerLogoHalo stHalo"><img src={withBasePath("/st-firm-logo.png")} alt="ST-Firm" width="260" height="280" loading="lazy" decoding="async" /></span>
           <p><b>Proposed technology &amp; design partner</b><span>ST-Firm · Berlin, Deutschland</span><em>Idee Meet’s Tech.</em></p>
         </div>
       </div>

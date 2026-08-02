@@ -687,7 +687,7 @@ footer{padding:55px max(28px,calc((100vw - 1450px)/2)) max(32px,env(safe-area-in
   position:absolute;
   left:var(--fragment-left);
   top:var(--fragment-top);
-  background-image:url("/brand/kap-ossen/ko-crest-primary-transparent-1024.png");
+  background-image:var(--ko-crest-image);
   background-repeat:no-repeat;
   background-size:600% 600%;
   background-position:var(--fragment-bg-x) var(--fragment-bg-y);

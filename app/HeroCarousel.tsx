@@ -6,6 +6,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { Crest } from "./BrandRace";
 import KoLegacySequence from "./KoLegacySequence";
 import LegacySignalDetector from "./LegacySignalDetector";
+import { withBasePath } from "./sitePaths";
 
 const orbitNodes = ["Heritage", "Family", "Land", "Knowledge", "Enterprise"] as const;
 const SCENE_DURATION = 3_800;
@@ -224,7 +225,7 @@ export default function HeroCarousel() {
           </article>
 
           <article className={`heroScene artworkScene ${active === 1 ? "isActive" : ""}`} aria-hidden={active !== 1} inert={active !== 1}>
-            <img src="/og-family-embassy.png" alt="Kap Ossen artwork linking ARROR roots, a glowing path and a future legacy destination" width="1659" height="948" loading="eager" fetchPriority="high" decoding="async" />
+            <img src={withBasePath("/og-family-embassy.png")} alt="Kap Ossen artwork linking ARROR roots, a glowing path and a future legacy destination" width="1659" height="948" loading="eager" fetchPriority="high" decoding="async" />
             <div className="artworkShade" />
             <div className="artworkCaption"><p className="visionPill">ARROR City Legacy · 2050</p><a className="button primary" href="#land-vision">Enter the vision <span aria-hidden="true">→</span></a></div>
           </article>

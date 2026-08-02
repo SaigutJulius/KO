@@ -3,6 +3,7 @@
 /* eslint-disable @next/next/no-img-element -- local brand assets intentionally bypass Vinext's unavailable preview optimizer */
 
 import { useEffect, useState } from "react";
+import { withBasePath } from "./sitePaths";
 
 export function Crest({
   className = "",
@@ -12,8 +13,8 @@ export function Crest({
   ceremonial?: boolean;
 }) {
   const src = ceremonial
-    ? "/brand/kap-ossen/ko-crest-primary-transparent-1024.png"
-    : "/brand/kap-ossen/ko-monogram-header-256.webp";
+    ? withBasePath("/brand/kap-ossen/ko-crest-primary-transparent-1024.png")
+    : withBasePath("/brand/kap-ossen/ko-monogram-header-256.webp");
 
   return (
     <span className={`koAsset ${ceremonial ? "ceremonial" : ""} ${className}`.trim()}>
@@ -75,13 +76,13 @@ export default function BrandRace() {
       <span className="brandWords"><strong>Kap Ossen</strong><small>Family Embassy · ARROR</small></span>
       <span className="partnerCue" aria-label="ST-Firm, proposed technology partner">
         <i aria-hidden="true">×</i>
-        <img src="/st-firm-logo.png" alt="" width="260" height="280" decoding="async" />
+        <img src={withBasePath("/st-firm-logo.png")} alt="" width="260" height="280" decoding="async" />
         <span><b>ST-Firm</b><small>Proposed tech partner</small></span>
       </span>
 
       <span className={`raceEffects ${running ? "isRunning" : ""}`} aria-hidden="true">
         <span className="raceRunner runnerKo"><Crest /></span>
-        <span className="raceRunner runnerSt"><img src="/st-firm-logo.png" alt="" width="260" height="280" decoding="async" /></span>
+        <span className="raceRunner runnerSt"><img src={withBasePath("/st-firm-logo.png")} alt="" width="260" height="280" decoding="async" /></span>
         <span className="magicCross">×</span>
         <span className="energyRelay" />
         {[1, 2, 3].map((star) => <span className={`shootingStar star${star}`} key={`star-${star}`} />)}

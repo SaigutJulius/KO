@@ -4,6 +4,9 @@ import HeroCarousel from "./HeroCarousel";
 import FooterFinale from "./FooterFinale";
 import ScofCountdown from "./ScofCountdown";
 import SiteChrome from "./SiteChrome";
+import { withBasePath } from "./sitePaths";
+
+export const dynamic = "force-static";
 
 const bulletin = [
   ["SCOF OFFICIAL PRICE", "1 SCOF = KSh 165", "Issuer-set price", "☕"],
@@ -56,8 +59,8 @@ type GalleryItem = {
 };
 
 const gallery: GalleryItem[] = [
-  { kind: "art", visual: "/og-family-embassy.png", width: 1659, height: 948, title: "Family Embassy vision artwork", category: "Vision", description: "The visual bridge from ARROR roots to a future legacy destination." },
-  { kind: "art", visual: "/brand/kap-ossen/ko-crest-3d-plum-1200.jpg", width: 1200, height: 1200, title: "Kap Ossen ceremonial crest", category: "Identity", description: "Draft V1 ceremonial crest for family review and formal approval." },
+  { kind: "art", visual: withBasePath("/og-family-embassy.png"), width: 1659, height: 948, title: "Family Embassy vision artwork", category: "Vision", description: "The visual bridge from ARROR roots to a future legacy destination." },
+  { kind: "art", visual: withBasePath("/brand/kap-ossen/ko-crest-3d-plum-1200.jpg"), width: 1200, height: 1200, title: "Kap Ossen ceremonial crest", category: "Identity", description: "Draft V1 ceremonial crest for family review and formal approval." },
   { kind: "placeholder", visual: "🌳", title: "ARROR roots", category: "Origins", description: "Landscape, homestead and approved oral-history photographs." },
   { kind: "placeholder", visual: "👴🏿", title: "Grandfather's legacy", category: "Heritage", description: "Approved portraits and memories of the late Dickson Ossen Cherogony." },
   { kind: "placeholder", visual: "👨‍👩‍👧‍👦", title: "The family branches", category: "Generations", description: "Consent-cleared photographs representing every branch and generation." },

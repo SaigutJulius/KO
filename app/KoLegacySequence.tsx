@@ -3,6 +3,7 @@
 /* eslint-disable @next/next/no-img-element -- the sequence uses one local transparent crest as a deterministic shard sheet */
 
 import { type CSSProperties, type RefObject, useEffect, useMemo, useState } from "react";
+import { withBasePath } from "./sitePaths";
 
 type Phase = "hold" | "center" | "expand" | "charge" | "fracture" | "suspend" | "reassemble" | "impact" | "foundation" | "st-firm" | "green-ki" | "ssos" | "scof" | "ecosystem" | "declaration" | "return";
 
@@ -17,7 +18,7 @@ type KoLegacySequenceProps = {
   onEnableSound: () => void;
 };
 
-const CREST = "/brand/kap-ossen/ko-crest-primary-transparent-1024.png";
+const CREST = withBasePath("/brand/kap-ossen/ko-crest-primary-transparent-1024.png");
 const PHASES: ReadonlyArray<{ phase: Exclude<Phase, "hold">; duration: number }> = [
   { phase: "center", duration: 900 },
   { phase: "expand", duration: 900 },
@@ -235,22 +236,22 @@ export default function KoLegacySequence({ active, holdMs, originRef, soundEnabl
           </div>
 
           <article className="koShowcaseCard koPartnerShowcase" aria-hidden={!(["st-firm", "ecosystem", "declaration"].includes(phase))}>
-            <div className="koPartnerPlate"><img src="/showcase/st-firm-partner.webp" alt="ST-Firm" width="260" height="280" decoding="async" /></div>
+            <div className="koPartnerPlate"><img src={withBasePath("/showcase/st-firm-partner.webp")} alt="ST-Firm" width="260" height="280" decoding="async" /></div>
             <div><span>PROPOSED TECHNOLOGY &amp; DESIGN PARTNER</span><strong>KAP OSSEN <i>×</i> ST-FIRM</strong><small>Berlin, Deutschland ↔ ARROR, Kenya</small></div>
           </article>
 
           <article className="koShowcaseCard koGreenShowcase" aria-hidden={!(["green-ki", "ecosystem", "declaration"].includes(phase))}>
-            <picture><source media="(max-width: 620px)" srcSet="/showcase/green-ki-mobile.webp" /><img src="/showcase/green-ki-desktop.webp" alt="GREEN KI and SSOS sovereign intelligence ecosystem" width="1200" height="1200" loading="eager" fetchPriority="low" decoding="async" /></picture>
+            <picture><source media="(max-width: 620px)" srcSet={withBasePath("/showcase/green-ki-mobile.webp")} /><img src={withBasePath("/showcase/green-ki-desktop.webp")} alt="GREEN KI and SSOS sovereign intelligence ecosystem" width="1200" height="1200" loading="eager" fetchPriority="low" decoding="async" /></picture>
             <div className="koProductCaption"><span>🌿 GREEN KI</span><strong>Sovereign intelligence</strong><small>Local · Secure · Sustainable</small></div>
           </article>
 
           <article className="koShowcaseCard koSsosShowcase" aria-hidden={!(["ssos", "ecosystem", "declaration"].includes(phase))}>
-            <picture><source media="(max-width: 620px)" srcSet="/showcase/ssos-mobile.webp" /><img src="/showcase/ssos-desktop.webp" alt="SSOS Workflow Intelligence product presentation" width="1280" height="853" loading="eager" fetchPriority="low" decoding="async" /></picture>
+            <picture><source media="(max-width: 620px)" srcSet={withBasePath("/showcase/ssos-mobile.webp")} /><img src={withBasePath("/showcase/ssos-desktop.webp")} alt="SSOS Workflow Intelligence product presentation" width="1280" height="853" loading="eager" fetchPriority="low" decoding="async" /></picture>
             <div className="koProductCaption"><span>🧠 SSOS WORKFLOW INTELLIGENCE</span><strong>Organise. Automate. Preserve.</strong><small>Institutional knowledge designed to endure.</small></div>
           </article>
 
           <article className="koShowcaseCard koScofShowcase" aria-hidden={!(["scof", "ecosystem", "declaration"].includes(phase))}>
-            <picture><source media="(max-width: 620px)" srcSet="/showcase/scof-coin-transparent-mobile.webp" /><img src="/showcase/scof-coin-transparent.webp" alt="SCOF digital value infrastructure coin powered by SSOS and ST-Firm" width="1000" height="1000" loading="eager" fetchPriority="low" decoding="async" /></picture>
+            <picture><source media="(max-width: 620px)" srcSet={withBasePath("/showcase/scof-coin-transparent-mobile.webp")} /><img src={withBasePath("/showcase/scof-coin-transparent.webp")} alt="SCOF digital value infrastructure coin powered by SSOS and ST-Firm" width="1000" height="1000" loading="eager" fetchPriority="low" decoding="async" /></picture>
             <div className="koProductCaption"><span>◉ SCOF</span><strong>Value infrastructure</strong><small>Target review · 31 October 2029</small></div>
           </article>
 
@@ -258,9 +259,9 @@ export default function KoLegacySequence({ active, holdMs, originRef, soundEnabl
           <div className="koEcosystemBadges" aria-hidden="true">
             <span className="ecosystemKo"><img src={CREST} alt="" /></span>
             <i>×</i>
-            <span className="ecosystemFirm"><img src="/showcase/st-firm-partner.webp" alt="" /></span>
-            <span className="ecosystemSsos"><img src="/showcase/ssos-symbol.webp" alt="" /></span>
-            <span className="ecosystemScof"><img src="/showcase/scof-coin-transparent-mobile.webp" alt="" /></span>
+            <span className="ecosystemFirm"><img src={withBasePath("/showcase/st-firm-partner.webp")} alt="" /></span>
+            <span className="ecosystemSsos"><img src={withBasePath("/showcase/ssos-symbol.webp")} alt="" /></span>
+            <span className="ecosystemScof"><img src={withBasePath("/showcase/scof-coin-transparent-mobile.webp")} alt="" /></span>
           </div>
           <div className="koFinalDeclaration" aria-live="polite">
             <span>KAP OSSEN × ST-FIRM</span>
