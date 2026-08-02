@@ -6,6 +6,7 @@ import sharp from "sharp";
 
 const mimeTypes = {
   ".jpg": "image/jpeg",
+  ".mp4": "video/mp4",
   ".png": "image/png",
   ".webp": "image/webp",
 };
@@ -69,6 +70,8 @@ test("serves every visible brand asset directly with the correct media type", as
     ["/brand/kap-ossen/ko-monogram-header-256.webp", "image/webp"],
     ["/st-firm-logo.png", "image/png"],
     ["/brand/kap-ossen/ko-crest-primary-transparent-1024.png", "image/png"],
+    ["/brand/kap-ossen/ko-crest-arena-trimmed-768.png", "image/png"],
+    ["/brand/kap-ossen/ko-crest-arena-trimmed-768.webp", "image/webp"],
     ["/og-family-embassy.png", "image/png"],
     ["/brand/kap-ossen/ko-crest-3d-plum-1200.jpg", "image/jpeg"],
     ["/showcase/st-firm-partner.webp", "image/webp"],
@@ -82,6 +85,7 @@ test("serves every visible brand asset directly with the correct media type", as
     ["/showcase/scof-coin-transparent.png", "image/png"],
     ["/showcase/scof-coin-transparent.webp", "image/webp"],
     ["/showcase/scof-coin-transparent-mobile.webp", "image/webp"],
+    ["/audio/finale/kap-ossen-finale-master-94s.mp4", "video/mp4"],
   ];
 
   for (const [path, expectedType] of assets) {
@@ -117,7 +121,7 @@ test("returns a controlled response when the optional image binding is absent", 
 });
 
 test("keeps required experience, governance and mobile safeguards in source", async () => {
-  const [page, chrome, hero, signal, ceremony, brandRace, footer, css, layout, timeline, scofConfig, roster] = await Promise.all([
+  const [page, chrome, hero, signal, ceremony, brandRace, footer, css, layout, timeline, scofConfig, roster, finaleArena] = await Promise.all([
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/SiteChrome.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/HeroCarousel.tsx", import.meta.url), "utf8"),
@@ -130,6 +134,7 @@ test("keeps required experience, governance and mobile safeguards in source", as
     readFile(new URL("../app/finaleMediaTimeline.ts", import.meta.url), "utf8"),
     readFile(new URL("../app/scofValueConfig.ts", import.meta.url), "utf8"),
     readFile(new URL("../app/ScofValueRoster.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/FinaleBrandArena.tsx", import.meta.url), "utf8"),
   ]);
 
   for (const id of ["family-tree", "gallery", "land-vision", "governance", "sustainability", "scof-value"]) {
@@ -194,8 +199,11 @@ test("keeps required experience, governance and mobile safeguards in source", as
   assert.match(footer, /ceremonyTimeFromSourceTime/);
   assert.match(footer, /const sceneClass = `scene-\$\{scene\.id\}`/);
   assert.match(footer, /NEXT_PUBLIC_FINALE_TRACK/);
+  assert.match(footer, /DEFAULT_MEDIA_PATH = `\/audio\/finale\/\$\{finaleMaster\.fileName\}`/);
   assert.doesNotMatch(footer, /vidssave\.com BIEN X ALIKIBA_ FINALE OFFICIAL MUSIC VIDEO 720P\.mp4/);
   assert.match(footer, /playsInline/);
+  assert.match(footer, /preload="auto"/);
+  assert.match(footer, /\n\s+loop\n/);
   assert.match(footer, /pictureInPictureEnabled/);
   assert.match(footer, /useState\(true\)/);
   assert.match(footer, /ceremonyStarted/);
@@ -208,8 +216,12 @@ test("keeps required experience, governance and mobile safeguards in source", as
   assert.match(footer, /displayMode === "fullscreen"/);
   assert.match(footer, /displayMode === "floating"/);
   assert.doesNotMatch(footer, /playOscillatorCue|createOscillator/);
+  assert.doesNotMatch(footer, /finaleMediaSections|sectionIndexRef|section\.sourceStart/);
   assert.match(timeline, /FINALE_TOTAL_SECONDS = 94/);
-  for (const range of ["sourceStart: 5", "sourceEnd: 16", "sourceStart: 55", "sourceEnd: 87", "sourceStart: 109", "sourceEnd: 160"]) assert.match(timeline, new RegExp(range));
+  assert.match(timeline, /fileName: "kap-ossen-finale-master-94s\.mp4"/);
+  assert.match(timeline, /crossfadeSeconds: 3/);
+  assert.match(timeline, /crossfadeCenters: \[11, 43\]/);
+  for (const range of ["sourceStart: 5", "sourceEnd: 17.5", "sourceStart: 53.5", "sourceEnd: 88.5", "sourceStart: 107.5", "sourceEnd: 160"]) assert.match(timeline, new RegExp(range.replace(".", "\\.")));
   for (const phase of ["scof", "kap", "firm", "finale", "rest"]) assert.match(timeline, new RegExp(`key: "${phase}"`));
   assert.match(scofConfig, /kes: 165/);
   assert.match(scofConfig, /kes: 545/);
@@ -223,6 +235,25 @@ test("keeps required experience, governance and mobile safeguards in source", as
   assert.match(footer, /className="footerSky" aria-hidden="true"/);
   assert.match(footer, /className="footerAlliance"/);
   assert.match(footer, /className="footerPerformanceStage"/);
+  assert.match(footer, /<FinaleBrandArena ceremonyTime=\{ceremonyTime\} paused=\{paused\} \/>/);
+  assert.match(finaleArena, /ko-crest-arena-trimmed-768\.webp/);
+  assert.match(finaleArena, /requestAnimationFrame/);
+  assert.match(finaleArena, /ResizeObserver/);
+  assert.match(finaleArena, /width < 260 \? 80 : width < 620 \? 220 : 420/);
+  assert.match(finaleArena, /if \(time < 31\) return perimeterPoint/);
+  assert.match(finaleArena, /if \(time < 63\)/);
+  assert.match(finaleArena, /if \(time < 76\) return perimeterPoint/);
+  assert.match(finaleArena, /fillText\("KAP OSSEN"/);
+  assert.match(finaleArena, /fillText\("F A M I L Y"/);
+  assert.match(finaleArena, /fillText\("SCOF"/);
+  assert.match(finaleArena, /time >= 92\.4/);
+  assert.match(finaleArena, /koSize \* 0\.76/);
+  assert.doesNotMatch(finaleArena, /Math\.random/);
+  assert.match(css, /\.finaleBrandArena\{/);
+  assert.match(footer, /className="footerPersistentBrandDock"/);
+  assert.match(footer, /className="persistentBrand persistentKoMark"/);
+  assert.match(footer, /className="persistentBrand persistentFirmMark"/);
+  assert.match(footer, /<ScofValueRoster[\s\S]*?footerPersistentBrandDock[\s\S]*?footerStaticStageLockup/);
   assert.match(footer, /className="footerPhaseRail"/);
   assert.match(footer, /className="finaleMediaControls"/);
   assert.match(footer, /className="footerStaticStageLockup"/);
@@ -295,6 +326,16 @@ test("keeps required experience, governance and mobile safeguards in source", as
   assert.match(css, /@keyframes horizonKoDock/);
   assert.match(css, /@keyframes horizonStDock/);
   assert.match(css, /\.horizonKesEquivalent/);
+  assert.match(css, /\.footerPersistentBrandDock\{[\s\S]*?z-index:18/);
+  assert.match(css, /\.finaleBrandArena\{[^}]*z-index:9/);
+  assert.match(css, /\.scene-constellation \.finaleBrandArena/);
+  assert.match(css, /\.persistentKoMark\{width:68px;height:68px/);
+  assert.match(css, /\.persistentFirmMark\{width:54px;height:54px/);
+  assert.match(css, /\.display-floating \.persistentKoMark\{width:33px;height:33px/);
+  assert.match(css, /\.footerSpectacle\.phaseRest \.footerPersistentBrandDock/);
+  for (const animation of ["persistentKoJovial", "persistentFirmJovial", "persistentKoRace", "persistentFirmRace", "persistentStarBounce", "persistentKoFinaleRace", "persistentFirmFinaleRace", "persistentVictoryFloat"]) assert.match(css, new RegExp(`@keyframes ${animation}`));
+  assert.match(css, /\.display-floating \.footerPersistentBrandDock/);
+  assert.match(css, /\.footerPersistentBrandDock,\.footerPersistentBrandDock \*\{animation:none!important\}/);
   assert.match(css, /\.finaleSoundGate/);
   assert.match(css, /\.finaleNowPlaying/);
   assert.match(css, /@keyframes nowPlayingPulse/);

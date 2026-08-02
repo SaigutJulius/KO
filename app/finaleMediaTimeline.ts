@@ -2,11 +2,17 @@ export type FinalePhaseKey = "scof" | "kap" | "firm" | "finale" | "rest";
 
 export const FINALE_TOTAL_SECONDS = 94;
 
-export const finaleMediaSections = [
-  { id: "part-one", sourceStart: 5, sourceEnd: 16, ceremonyStart: 0 },
-  { id: "part-two", sourceStart: 55, sourceEnd: 87, ceremonyStart: 11 },
-  { id: "part-three", sourceStart: 109, sourceEnd: 160, ceremonyStart: 43 },
-] as const;
+export const finaleMaster = {
+  fileName: "kap-ossen-finale-master-94s.mp4",
+  duration: FINALE_TOTAL_SECONDS,
+  crossfadeSeconds: 3,
+  crossfadeCenters: [11, 43],
+  sourceClips: [
+    { id: "part-one", sourceStart: 5, sourceEnd: 17.5, outputStart: 0 },
+    { id: "part-two", sourceStart: 53.5, sourceEnd: 88.5, outputStart: 9.5 },
+    { id: "part-three", sourceStart: 107.5, sourceEnd: 160, outputStart: 41.5 },
+  ],
+} as const;
 
 export const finalePhases = [
   { key: "scof", start: 0, end: 11, icon: "❄", label: "SCOF", description: "Current value position" },
@@ -47,9 +53,8 @@ export function rosterAtCeremonyTime(seconds: number) {
   return finaleRoster.find((scene) => normalized >= scene.start && normalized < scene.end) ?? finaleRoster[0];
 }
 
-export function ceremonyTimeFromSourceTime(sourceTime: number, sectionIndex: number) {
-  const section = finaleMediaSections[Math.max(0, Math.min(finaleMediaSections.length - 1, sectionIndex))];
-  return Math.max(section.ceremonyStart, Math.min(section.ceremonyStart + (section.sourceEnd - section.sourceStart), section.ceremonyStart + sourceTime - section.sourceStart));
+export function ceremonyTimeFromSourceTime(sourceTime: number) {
+  return Math.max(0, Math.min(FINALE_TOTAL_SECONDS, sourceTime));
 }
 
 export function formatCeremonyTime(seconds: number) {

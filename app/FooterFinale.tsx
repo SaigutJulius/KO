@@ -4,11 +4,12 @@
 
 import { useCallback, useEffect, useRef, useState, type TouchEvent } from "react";
 import { Crest } from "./BrandRace";
+import FinaleBrandArena from "./FinaleBrandArena";
 import ScofValueRoster from "./ScofValueRoster";
 import {
   FINALE_TOTAL_SECONDS,
   ceremonyTimeFromSourceTime,
-  finaleMediaSections,
+  finaleMaster,
   finalePhases,
   formatCeremonyTime,
   phaseAtCeremonyTime,
@@ -23,7 +24,8 @@ type SafariVideo = HTMLVideoElement & {
   webkitPresentationMode?: string;
 };
 
-const MEDIA_PATH = process.env.NEXT_PUBLIC_FINALE_TRACK?.trim() ?? "";
+const DEFAULT_MEDIA_PATH = `/audio/finale/${finaleMaster.fileName}`;
+const MEDIA_PATH = process.env.NEXT_PUBLIC_FINALE_TRACK?.trim() || DEFAULT_MEDIA_PATH;
 const fireworks = [1, 2, 3, 4, 5, 6, 7, 8, 9] as const;
 const bubbles = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] as const;
 const snowflakes = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24] as const;
@@ -33,7 +35,6 @@ const circuits = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] as const;
 export default function FooterFinale() {
   const footerRef = useRef<HTMLElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const sectionIndexRef = useRef(0);
   const animationFrameRef = useRef<number | null>(null);
   const lastReportedTimeRef = useRef(-1);
   const wasInViewRef = useRef(false);
@@ -62,16 +63,11 @@ export default function FooterFinale() {
 
   const resetMedia = useCallback((playAfterReset = true) => {
     const video = videoRef.current;
-    sectionIndexRef.current = 0;
     lastReportedTimeRef.current = -1;
     setCeremonyTime(0);
     if (!video) return;
-    const startFromOpeningSection = () => {
-      video.currentTime = finaleMediaSections[0].sourceStart;
-      if (playAfterReset) void video.play().catch(() => setPlaying(false));
-    };
-    if (video.readyState >= 1) startFromOpeningSection();
-    else video.addEventListener("loadedmetadata", startFromOpeningSection, { once: true });
+    video.currentTime = 0;
+    if (playAfterReset) void video.play().catch(() => setPlaying(false));
   }, []);
 
   useEffect(() => {
@@ -104,7 +100,7 @@ export default function FooterFinale() {
         setCeremonyStarted(true);
         setManuallyPaused(false);
         const video = videoRef.current;
-        if (video.currentTime < finaleMediaSections[0].sourceStart || video.currentTime >= finaleMediaSections[2].sourceEnd) resetMedia(false);
+        if (video.currentTime >= FINALE_TOTAL_SECONDS - 0.05) resetMedia(false);
       }
       wasInViewRef.current = entry.isIntersecting;
     }, { threshold: 0.18, rootMargin: "220px 0px" });
@@ -120,7 +116,6 @@ export default function FooterFinale() {
       video.pause();
       return;
     }
-    if (video.readyState >= 1 && video.currentTime === 0) video.currentTime = finaleMediaSections[0].sourceStart;
     void video.play()
       .then(() => setAutoplayBlocked(false))
       .catch(() => {
@@ -134,17 +129,7 @@ export default function FooterFinale() {
     const sync = () => {
       const video = videoRef.current;
       if (!video) return;
-      let sectionIndex = sectionIndexRef.current;
-      let section = finaleMediaSections[sectionIndex];
-
-      if (video.currentTime >= section.sourceEnd - 0.045) {
-        sectionIndex = (sectionIndex + 1) % finaleMediaSections.length;
-        sectionIndexRef.current = sectionIndex;
-        section = finaleMediaSections[sectionIndex];
-        video.currentTime = section.sourceStart;
-      }
-
-      const nextCeremonyTime = ceremonyTimeFromSourceTime(video.currentTime, sectionIndex);
+      const nextCeremonyTime = ceremonyTimeFromSourceTime(video.currentTime);
       if (Math.abs(nextCeremonyTime - lastReportedTimeRef.current) >= 0.08 || nextCeremonyTime < lastReportedTimeRef.current) {
         lastReportedTimeRef.current = nextCeremonyTime;
         setCeremonyTime(nextCeremonyTime);
@@ -231,9 +216,7 @@ export default function FooterFinale() {
     setManuallyPaused(false);
     setSoundEnabled(true);
     video.muted = false;
-    if (video.readyState >= 1 && (video.currentTime < finaleMediaSections[0].sourceStart || video.currentTime >= finaleMediaSections[2].sourceEnd)) {
-      video.currentTime = finaleMediaSections[0].sourceStart;
-    }
+    if (video.readyState >= 1 && video.currentTime >= FINALE_TOTAL_SECONDS - 0.05) video.currentTime = 0;
     await video.play()
       .then(() => setAutoplayBlocked(false))
       .catch(() => setAutoplayBlocked(true));
@@ -304,12 +287,10 @@ export default function FooterFinale() {
               src={withBasePath(MEDIA_PATH)}
               poster={withBasePath("/og-family-embassy.png")}
               playsInline
+              loop
               muted={!soundEnabled}
-              preload="metadata"
+              preload="auto"
               aria-hidden="true"
-              onLoadedMetadata={() => {
-                if (videoRef.current && videoRef.current.currentTime === 0) videoRef.current.currentTime = finaleMediaSections[0].sourceStart;
-              }}
               onPlay={() => setPlaying(true)}
               onPause={() => setPlaying(false)}
             />}
@@ -321,6 +302,7 @@ export default function FooterFinale() {
               </button>
             )}
             <span className="footerVideoVeil" aria-hidden="true" />
+            <FinaleBrandArena ceremonyTime={ceremonyTime} paused={paused} />
             <div className="footerSky" aria-hidden="true">
               <span className="footerAurora auroraOne" /><span className="footerAurora auroraTwo" />
               <span className="footerHorizon" /><span className="footerReflection" />
@@ -338,6 +320,13 @@ export default function FooterFinale() {
               <span className="footerShockwave shockwaveOne" /><span className="footerShockwave shockwaveTwo" />
             </div>
             <ScofValueRoster scene={scene.id} />
+            <div className="footerPersistentBrandDock" aria-hidden="true">
+              <span className="persistentBrandTrail persistentTrailKo" />
+              <span className="persistentBrand persistentKoMark"><img src={withBasePath("/brand/kap-ossen/ko-crest-arena-trimmed-768.webp")} alt="" width="768" height="768" decoding="async" /></span>
+              <span className="persistentPartnership"><i>×</i><small>Heritage · Technology</small></span>
+              <span className="persistentBrand persistentFirmMark"><img src={withBasePath("/st-firm-logo.png")} alt="" width="260" height="280" decoding="async" /></span>
+              <span className="persistentBrandTrail persistentTrailFirm" />
+            </div>
             <div className="footerStaticStageLockup" aria-hidden="true">
               <span className="staticScofMark"><img src={withBasePath("/showcase/scof-coin-transparent.webp")} alt="" width="900" height="900" decoding="async" /></span>
               <span className="staticKoMark"><Crest ceremonial /></span><i>×</i>
