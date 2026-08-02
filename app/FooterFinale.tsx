@@ -1,34 +1,74 @@
 "use client";
 
-/* eslint-disable @next/next/no-img-element -- controlled local brand assets bypass Vinext's unavailable image optimizer */
+/* eslint-disable @next/next/no-img-element -- controlled local brand and media assets bypass Vinext's unavailable image optimizer */
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState, type TouchEvent } from "react";
 import { Crest } from "./BrandRace";
+import ScofValueRoster from "./ScofValueRoster";
+import {
+  FINALE_TOTAL_SECONDS,
+  ceremonyTimeFromSourceTime,
+  finaleMediaSections,
+  finalePhases,
+  formatCeremonyTime,
+  phaseAtCeremonyTime,
+  rosterAtCeremonyTime,
+} from "./finaleMediaTimeline";
 import { withBasePath } from "./sitePaths";
 
-const phases = [
-  { key: "scof", duration: 3_000 },
-  { key: "kap", duration: 3_500 },
-  { key: "firm", duration: 3_500 },
-  { key: "finale", duration: 2_500 },
-  { key: "rest", duration: 5_000 },
-] as const;
+type DisplayMode = "embedded" | "half" | "fullscreen" | "floating";
+type SafariVideo = HTMLVideoElement & {
+  webkitSupportsPresentationMode?: (mode: string) => boolean;
+  webkitSetPresentationMode?: (mode: string) => void;
+  webkitPresentationMode?: string;
+};
 
-const fireworks = [1, 2, 3, 4, 5, 6, 7] as const;
-const bubbles = [1, 2, 3, 4, 5, 6, 7, 8] as const;
-const snowflakes = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18] as const;
+const MEDIA_PATH = process.env.NEXT_PUBLIC_FINALE_TRACK?.trim() ?? "";
+const fireworks = [1, 2, 3, 4, 5, 6, 7, 8, 9] as const;
+const bubbles = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] as const;
+const snowflakes = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24] as const;
 const pillars = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] as const;
-const circuits = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] as const;
+const circuits = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] as const;
 
 export default function FooterFinale() {
   const footerRef = useRef<HTMLElement>(null);
-  const phaseRef = useRef(4);
-  const remainingRef = useRef(phases[4].duration);
-  const [phaseIndex, setPhaseIndex] = useState(4);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const sectionIndexRef = useRef(0);
+  const animationFrameRef = useRef<number | null>(null);
+  const lastReportedTimeRef = useRef(-1);
+  const wasInViewRef = useRef(false);
+  const touchStartYRef = useRef<number | null>(null);
+  const [ceremonyTime, setCeremonyTime] = useState(0);
   const [inView, setInView] = useState(false);
-  const [focusWithin, setFocusWithin] = useState(false);
   const [documentHidden, setDocumentHidden] = useState(false);
   const [reducedMotion, setReducedMotion] = useState(false);
+  const [soundEnabled, setSoundEnabled] = useState(false);
+  const [playing, setPlaying] = useState(false);
+  const [displayMode, setDisplayMode] = useState<DisplayMode>("embedded");
+  const [pipSupported, setPipSupported] = useState(false);
+
+  const phase = phaseAtCeremonyTime(ceremonyTime);
+  const scene = rosterAtCeremonyTime(ceremonyTime);
+  const phaseIndex = finalePhases.findIndex((item) => item.key === phase.key);
+  const phaseClass = `phase${phase.key.charAt(0).toUpperCase()}${phase.key.slice(1)}`;
+  const phaseProgress = Math.max(0, Math.min(1, (ceremonyTime - phase.start) / (phase.end - phase.start)));
+  const totalProgress = Math.max(0, Math.min(1, ceremonyTime / FINALE_TOTAL_SECONDS));
+  const timelineActive = MEDIA_PATH ? playing : inView && !documentHidden && !reducedMotion;
+  const paused = !timelineActive;
+
+  const resetMedia = useCallback((playAfterReset = true) => {
+    const video = videoRef.current;
+    sectionIndexRef.current = 0;
+    lastReportedTimeRef.current = -1;
+    setCeremonyTime(0);
+    if (!video) return;
+    const startFromOpeningSection = () => {
+      video.currentTime = finaleMediaSections[0].sourceStart;
+      if (playAfterReset) void video.play().catch(() => setPlaying(false));
+    };
+    if (video.readyState >= 1) startFromOpeningSection();
+    else video.addEventListener("loadedmetadata", startFromOpeningSection, { once: true });
+  }, []);
 
   useEffect(() => {
     const media = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -45,125 +85,240 @@ export default function FooterFinale() {
   }, []);
 
   useEffect(() => {
+    const video = videoRef.current as SafariVideo | null;
+    if (!video) return;
+    const standard = Boolean(document.pictureInPictureEnabled && video.requestPictureInPicture);
+    const safari = Boolean(video.webkitSupportsPresentationMode?.("picture-in-picture") && video.webkitSetPresentationMode);
+    setPipSupported(standard || safari);
+  }, []);
+
+  useEffect(() => {
     if (!footerRef.current || !("IntersectionObserver" in window)) return;
     const observer = new IntersectionObserver(([entry]) => {
       setInView(entry.isIntersecting);
-      if (entry.isIntersecting) {
-        phaseRef.current = 0;
-        remainingRef.current = phases[0].duration;
-        setPhaseIndex(0);
+      if (entry.isIntersecting && !wasInViewRef.current && videoRef.current) {
+        const video = videoRef.current;
+        if (video.currentTime < finaleMediaSections[0].sourceStart || video.currentTime >= finaleMediaSections[2].sourceEnd) resetMedia(false);
       }
-    }, { threshold: 0.18 });
+      wasInViewRef.current = entry.isIntersecting;
+    }, { threshold: 0.18, rootMargin: "220px 0px" });
     observer.observe(footerRef.current);
     return () => observer.disconnect();
-  }, []);
-
-  const paused = focusWithin || documentHidden || reducedMotion;
+  }, [resetMedia]);
 
   useEffect(() => {
-    if (!inView || paused) return;
-    if (phaseRef.current !== phaseIndex) {
-      phaseRef.current = phaseIndex;
-      remainingRef.current = phases[phaseIndex].duration;
+    const video = videoRef.current;
+    if (!video) return;
+    video.muted = !soundEnabled;
+    if (!inView || documentHidden || (reducedMotion && !soundEnabled)) {
+      video.pause();
+      return;
     }
+    if (video.readyState >= 1 && video.currentTime === 0) video.currentTime = finaleMediaSections[0].sourceStart;
+    void video.play().catch(() => setPlaying(false));
+  }, [documentHidden, inView, reducedMotion, soundEnabled]);
 
-    let completed = false;
-    const startedAt = performance.now();
-    const timer = window.setTimeout(() => {
-      completed = true;
-      const next = (phaseIndex + 1) % phases.length;
-      phaseRef.current = next;
-      remainingRef.current = phases[next].duration;
-      setPhaseIndex(next);
-    }, remainingRef.current);
+  useEffect(() => {
+    if (!playing) return;
+    const sync = () => {
+      const video = videoRef.current;
+      if (!video) return;
+      let sectionIndex = sectionIndexRef.current;
+      let section = finaleMediaSections[sectionIndex];
 
-    return () => {
-      window.clearTimeout(timer);
-      if (!completed) remainingRef.current = Math.max(80, remainingRef.current - (performance.now() - startedAt));
+      if (video.currentTime >= section.sourceEnd - 0.045) {
+        sectionIndex = (sectionIndex + 1) % finaleMediaSections.length;
+        sectionIndexRef.current = sectionIndex;
+        section = finaleMediaSections[sectionIndex];
+        video.currentTime = section.sourceStart;
+      }
+
+      const nextCeremonyTime = ceremonyTimeFromSourceTime(video.currentTime, sectionIndex);
+      if (Math.abs(nextCeremonyTime - lastReportedTimeRef.current) >= 0.08 || nextCeremonyTime < lastReportedTimeRef.current) {
+        lastReportedTimeRef.current = nextCeremonyTime;
+        setCeremonyTime(nextCeremonyTime);
+      }
+      animationFrameRef.current = window.requestAnimationFrame(sync);
     };
-  }, [inView, paused, phaseIndex]);
+    animationFrameRef.current = window.requestAnimationFrame(sync);
+    return () => {
+      if (animationFrameRef.current !== null) window.cancelAnimationFrame(animationFrameRef.current);
+      animationFrameRef.current = null;
+    };
+  }, [playing]);
 
-  const phase = phases[phaseIndex].key;
-  const phaseClass = `phase${phase.charAt(0).toUpperCase()}${phase.slice(1)}`;
+  useEffect(() => {
+    if (MEDIA_PATH || !inView || documentHidden || reducedMotion) return;
+    const startedAt = performance.now() - ceremonyTime * 1_000;
+    const sync = (now: number) => {
+      setCeremonyTime(((now - startedAt) / 1_000) % FINALE_TOTAL_SECONDS);
+      animationFrameRef.current = window.requestAnimationFrame(sync);
+    };
+    animationFrameRef.current = window.requestAnimationFrame(sync);
+    return () => {
+      if (animationFrameRef.current !== null) window.cancelAnimationFrame(animationFrameRef.current);
+      animationFrameRef.current = null;
+    };
+    // Resume the visual-only sequence from its current point when visibility changes.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [documentHidden, inView, reducedMotion]);
+
+  useEffect(() => {
+    if (displayMode !== "fullscreen") return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setDisplayMode("embedded");
+    };
+    window.addEventListener("keydown", onKey);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", onKey);
+    };
+  }, [displayMode]);
+
+  useEffect(() => () => {
+    if (animationFrameRef.current !== null) window.cancelAnimationFrame(animationFrameRef.current);
+    videoRef.current?.pause();
+  }, []);
+
+  const toggleSound = useCallback(async () => {
+    const video = videoRef.current;
+    if (!video) return;
+    if (!soundEnabled) {
+      video.muted = false;
+      setSoundEnabled(true);
+      resetMedia(false);
+      await video.play().catch(() => setPlaying(false));
+      return;
+    }
+    video.muted = true;
+    setSoundEnabled(false);
+  }, [resetMedia, soundEnabled]);
+
+  const togglePlayback = useCallback(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    if (video.paused) void video.play().catch(() => setPlaying(false));
+    else video.pause();
+  }, []);
+
+  const toggleNativePip = useCallback(async () => {
+    const video = videoRef.current as SafariVideo | null;
+    if (!video) return;
+    try {
+      if (document.pictureInPictureElement) await document.exitPictureInPicture();
+      else if (document.pictureInPictureEnabled && video.requestPictureInPicture) await video.requestPictureInPicture();
+      else if (video.webkitSupportsPresentationMode?.("picture-in-picture") && video.webkitSetPresentationMode) {
+        video.webkitSetPresentationMode(video.webkitPresentationMode === "picture-in-picture" ? "inline" : "picture-in-picture");
+      }
+    } catch {
+      setDisplayMode("floating");
+    }
+  }, []);
+
+  const onTouchStart = (event: TouchEvent<HTMLButtonElement>) => {
+    touchStartYRef.current = event.changedTouches[0]?.clientY ?? null;
+  };
+
+  const onTouchEnd = (event: TouchEvent<HTMLButtonElement>) => {
+    if (touchStartYRef.current === null) return;
+    const distance = (event.changedTouches[0]?.clientY ?? touchStartYRef.current) - touchStartYRef.current;
+    touchStartYRef.current = null;
+    if (distance < -60) setDisplayMode(displayMode === "half" ? "fullscreen" : "half");
+    if (distance > 60) setDisplayMode(displayMode === "fullscreen" ? "half" : "embedded");
+  };
 
   return (
-    <footer
-      ref={footerRef}
-      className={`siteFooter ${phaseClass} ${paused ? "finalePaused" : ""}`}
-      onFocusCapture={() => setFocusWithin(true)}
-      onBlurCapture={(event) => {
-        if (!event.currentTarget.contains(event.relatedTarget as Node | null)) setFocusWithin(false);
-      }}
-    >
+    <footer ref={footerRef} className={`siteFooter footerSpectacle ${phaseClass} ${paused ? "finalePaused" : ""}`}>
       <div className="footerAlliance">
         <span className="alliancePulse" aria-hidden="true" />
+        <small>Kap Ossen Family Embassy · 1:34 Finale</small>
         <b>KAP OSSEN <i>×</i> ST‑FIRM</b>
         <em>Heritage · Technology · Legacy</em>
-        <small><span>SCOF · Separate value ecosystem</span><span>Kap Ossen · Family Embassy</span><span>ST‑Firm · Proposed technology partner</span></small>
       </div>
 
-      <div className="footerPerformanceStage" role="img" aria-label="SCOF, Kap Ossen and proposed ST-Firm relationship sequence">
-        <div className="footerSky" aria-hidden="true">
-          <span className="footerHorizon" />
+      <div className="footerCeremonyHome">
+        <div className={`footerCeremonyShell display-${displayMode}`}>
+          <button type="button" className="finaleDragHandle" aria-label="Swipe up to expand or down to close" onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}><span /></button>
+          {displayMode !== "embedded" && <button type="button" className="finaleCloseMode" onClick={() => setDisplayMode("embedded")} aria-label="Return finale to the footer">×</button>}
 
-          <span className="scofSnowfield">
-            {snowflakes.map((item) => <i className={`scofSnowflake snowflake${item}`} key={`snowflake-${item}`} />)}
-          </span>
-          <span className="scofWord">{"SCOF".split("").map((letter, index) => <i key={letter}>{letter}<b className={`crystal crystal${index + 1}`} /></i>)}</span>
+          <div className="footerPerformanceStage" role="group" aria-label="SCOF, Kap Ossen and proposed ST-Firm 94-second relationship sequence">
+            {MEDIA_PATH && <video
+              ref={videoRef}
+              className="footerVideoBackdrop"
+              src={withBasePath(MEDIA_PATH)}
+              poster={withBasePath("/og-family-embassy.png")}
+              playsInline
+              muted={!soundEnabled}
+              preload="metadata"
+              aria-hidden="true"
+              onLoadedMetadata={() => {
+                if (videoRef.current && videoRef.current.currentTime === 0) videoRef.current.currentTime = finaleMediaSections[0].sourceStart;
+              }}
+              onPlay={() => setPlaying(true)}
+              onPause={() => setPlaying(false)}
+            />}
+            <span className="footerVideoVeil" aria-hidden="true" />
+            <div className="footerSky" aria-hidden="true">
+              <span className="footerAurora auroraOne" /><span className="footerAurora auroraTwo" />
+              <span className="footerHorizon" /><span className="footerReflection" />
+              <span className="scofSnowfield">{snowflakes.map((item) => <i className={`scofSnowflake snowflake${item}`} key={`snowflake-${item}`} />)}</span>
+              <span className="scofMonument"><span className="scofAura" /><img src={withBasePath("/showcase/scof-coin-transparent.webp")} alt="" width="900" height="900" decoding="async" /><span className="scofWord">SCOF</span></span>
+              <span className="koPillarRing">{pillars.map((item) => <i className={`koPillar pillar${item}`} key={`pillar-${item}`} />)}<Crest ceremonial /></span>
+              <span className="arrorRoots">{[1, 2, 3, 4, 5, 6, 7].map((item) => <i key={`root-${item}`} />)}</span>
+              <span className="firmCircuitField">{circuits.map((item) => <i className={`firmCircuit circuit${item}`} key={`circuit-${item}`} />)}<img src={withBasePath("/st-firm-logo.png")} alt="" width="260" height="280" decoding="async" /></span>
+              <span className="finaleScof"><img src={withBasePath("/showcase/scof-coin-transparent.webp")} alt="" width="900" height="900" decoding="async" /></span>
+              <span className="footerRunner footerKoRunner"><Crest ceremonial /></span>
+              <span className="footerRunner footerStRunner"><img src={withBasePath("/st-firm-logo.png")} alt="" width="260" height="280" decoding="async" /></span>
+              <span className="footerInfinity" /><span className="footerPartnership">×</span>
+              {fireworks.map((item) => <span className={`footerFirework firework${item}`} key={`firework-${item}`} />)}
+              {bubbles.map((item) => <span className={`footerBubble footerBubble${item}`} key={`footer-bubble-${item}`} />)}
+              <span className="footerShockwave shockwaveOne" /><span className="footerShockwave shockwaveTwo" />
+            </div>
+            <ScofValueRoster scene={scene.id} />
+            <div className="footerStaticStageLockup" aria-hidden="true">
+              <span className="staticScofMark"><img src={withBasePath("/showcase/scof-coin-transparent.webp")} alt="" width="900" height="900" decoding="async" /></span>
+              <span className="staticKoMark"><Crest ceremonial /></span><i>×</i>
+              <span className="staticFirmMark"><img src={withBasePath("/st-firm-logo.png")} alt="" width="260" height="280" decoding="async" /></span>
+              <p><b>Kap Ossen</b><small>Heritage · Proposed technology relationship</small></p>
+            </div>
+          </div>
 
-          <span className="koPillarRing">{pillars.map((item) => <i className={`koPillar pillar${item}`} key={`pillar-${item}`} />)}<Crest /></span>
-          <span className="arrorRoots">{[1, 2, 3, 4, 5].map((item) => <i key={`root-${item}`} />)}</span>
-
-          <span className="firmCircuitField">{circuits.map((item) => <i className={`firmCircuit circuit${item}`} key={`circuit-${item}`} />)}<img src={withBasePath("/st-firm-logo.png")} alt="" width="260" height="280" decoding="async" /></span>
-
-          <span className="footerRunner footerKoRunner"><Crest /></span>
-          <span className="footerRunner footerStRunner"><img src={withBasePath("/st-firm-logo.png")} alt="" width="260" height="280" decoding="async" /></span>
-          <span className="footerInfinity" />
-          <span className="footerPartnership">×</span>
-
-          <span className="footerShowTitle scofShowTitle"><b>SCOF</b><small>Separate value ecosystem</small></span>
-          <span className="footerShowTitle kapShowTitle"><b>KAP OSSEN</b><small>Family Embassy · ARROR</small></span>
-          <span className="footerShowTitle firmShowTitle"><b>ST-FIRM</b><small>Proposed technology &amp; design partner</small></span>
-
-          {fireworks.map((item) => <span className={`footerFirework firework${item}`} key={`firework-${item}`} />)}
-          {bubbles.map((item) => <span className={`footerBubble footerBubble${item}`} key={`footer-bubble-${item}`} />)}
-          <span className="footerShockwave shockwaveOne" />
-          <span className="footerShockwave shockwaveTwo" />
-        </div>
-        <div className="footerStaticStageLockup" aria-hidden="true">
-          <span className="staticKoMark"><Crest /></span>
-          <i>×</i>
-          <span className="staticFirmMark"><img src={withBasePath("/st-firm-logo.png")} alt="" width="260" height="280" decoding="async" /></span>
-          <p><b>Kap Ossen</b><small>Heritage · Proposed technology relationship</small></p>
+          <div className="footerPhaseRail" aria-live="polite" aria-atomic="true">
+            <span className="phaseRailIcon" aria-hidden="true">{phase.icon}</span>
+            <span className="phaseRailCopy" key={`${phase.key}-${scene.id}`}><b>{phase.label}</b><small>{phase.description}</small></span>
+            <span className="finaleClock"><b>{formatCeremonyTime(ceremonyTime)}</b><small>/ 01:34</small></span>
+            <span className="phaseRailSteps" aria-hidden="true">{finalePhases.map((item, index) => <i className={index === phaseIndex ? "isActive" : ""} key={item.key} />)}</span>
+              {MEDIA_PATH && <div className="finaleMediaControls" aria-label="Finale media controls">
+              <button type="button" onClick={togglePlayback} aria-label={playing ? "Pause finale" : "Play finale"}>{playing ? "Ⅱ" : "▶"}</button>
+              <button type="button" className={soundEnabled ? "isEnabled" : ""} onClick={toggleSound} aria-label={soundEnabled ? "Mute finale music" : "Play the 1 minute 34 second finale with music"}>{soundEnabled ? "🔊" : "🔇"}</button>
+              <button type="button" onClick={() => resetMedia(true)} aria-label="Replay finale">↻</button>
+              <button type="button" className={displayMode === "half" ? "isEnabled" : ""} onClick={() => setDisplayMode(displayMode === "half" ? "embedded" : "half")} aria-label="Toggle half-screen finale">◧</button>
+              <button type="button" className={displayMode === "fullscreen" ? "isEnabled" : ""} onClick={() => setDisplayMode(displayMode === "fullscreen" ? "embedded" : "fullscreen")} aria-label="Toggle full-screen finale">⛶</button>
+              <button type="button" className={displayMode === "floating" ? "isEnabled" : ""} onClick={() => setDisplayMode(displayMode === "floating" ? "embedded" : "floating")} aria-label="Toggle floating finale">▣</button>
+              {pipSupported && <button type="button" onClick={toggleNativePip} aria-label="Open native picture in picture">PiP</button>}
+              </div>}
+            <span className="phaseRailProgress" aria-hidden="true"><i style={{ transform: `scaleX(${phaseProgress})` }} /></span>
+            <span className="finaleTotalProgress" aria-hidden="true"><i style={{ transform: `scaleX(${totalProgress})` }} /></span>
+          </div>
         </div>
       </div>
 
       <div className="footerIdentityDeck">
-        <a className="footerBrand footerIdentity" href="#top" aria-label="Kap Ossen Family Embassy - return to top">
-          <span className="footerLogoHalo"><img src={withBasePath("/brand/kap-ossen/ko-monogram-header-256.webp")} alt="" width="256" height="256" loading="lazy" decoding="async" /></span>
-          <span><b>Kap Ossen</b><small>Family Embassy · From Heritage to Legacy</small></span>
-        </a>
-
-        <div className="stFirmMark footerIdentity">
-          <span className="footerLogoHalo stHalo"><img src={withBasePath("/st-firm-logo.png")} alt="ST-Firm" width="260" height="280" loading="lazy" decoding="async" /></span>
-          <p><b>Proposed technology &amp; design partner</b><span>ST-Firm · Berlin, Deutschland</span><em>Idee Meet’s Tech.</em></p>
-        </div>
+        <a className="footerBrand footerIdentity" href="#top" aria-label="Kap Ossen Family Embassy - return to top"><span className="footerLogoHalo"><img src={withBasePath("/brand/kap-ossen/ko-monogram-header-256.webp")} alt="" width="256" height="256" loading="lazy" decoding="async" /></span><span><b>Kap Ossen</b><small>Family Embassy · From Heritage to Legacy</small></span></a>
+        <div className="stFirmMark footerIdentity"><span className="footerLogoHalo stHalo"><img src={withBasePath("/st-firm-logo.png")} alt="ST-Firm" width="260" height="280" loading="lazy" decoding="async" /></span><p><b>Proposed technology &amp; design partner</b><span>ST-Firm · Berlin, Deutschland</span><em>Idee Meet’s Tech.</em></p></div>
       </div>
 
-      <nav className="footerLinks footerNavigationDeck" aria-label="Footer navigation">
-        <a href="#top">Top ↑</a>
-        <a href="#family-tree">Family tree</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#governance">Governance</a>
-      </nav>
+      <nav className="footerLinks footerNavigationDeck" aria-label="Footer navigation"><a href="#top">Top ↑</a><a href="#family-tree">Family tree</a><a href="#gallery">Gallery</a><a href="#governance">Governance</a></nav>
 
       <div className="footerLegal footerLegalChamber">
-        <span className="legalSpark legalSparkOne" aria-hidden="true" />
-        <span className="legalSpark legalSparkTwo" aria-hidden="true" />
+        <span className="legalSpark legalSparkOne" aria-hidden="true" /><span className="legalSpark legalSparkTwo" aria-hidden="true" />
         <p className="legalSignature">© 2026–2027 <strong>Engineer Saigut Julius Kipkorir</strong>, trading as <span className="entity entityFirm">ST-Firm</span>.</p>
         <p className="legalRights"><strong>Kap Ossen Family Heritage Project.</strong> All rights reserved, subject to underlying family and third-party rights.</p>
         <div className="legalRule" aria-hidden="true"><span /></div>
         <p className="legalStatus">Working family vision and concept identity. Proposed roles and development concepts require formal approval. <span className="entity entityKap">Kap Ossen</span>, <span className="entity entityFirm">ST-Firm</span>, <span className="entity entityArrror">ARROR City Legacy</span>, <span className="entity entitySolomon">Solomon Ops</span>, <span className="entity entityScof">SCOF</span>, <span className="entity entityKenaff">KENAFF</span> and any future <span className="entity entityGateway">Gateway</span> vehicle retain distinct ownership, authority, finance, data and publication controls.</p>
+        <p className="scofStatusDisclosure">SCOF values distinguish a current issuer-set price, a strategic checkpoint and a separate long-horizon aspiration. Currency conversions are illustrative and may change with exchange rates. Targets are not guaranteed market outcomes or investment returns.</p>
       </div>
     </footer>
   );

@@ -29,7 +29,7 @@ The programme has six connected outcomes:
 5. **Test the proposed 30-acre Gateway** as a phased, productive family-development demonstrator after land and feasibility gates.
 6. **Develop ARROR City Legacy toward 2050** as Engineer Saigut Julius Kipkorir's evidence-led long-range vision, never as an unsupported municipal, territorial or investment claim.
 
-The 2027 Solomon Ops mission and the 31 October 2029 SCOF target review support parts of the story but do not control the family's permanent purpose.
+The 2027 Solomon Ops mission and the 29 October 2029 SCOF checkpoint review support parts of the story but do not control the family's permanent purpose.
 
 ---
 
@@ -70,7 +70,7 @@ Where the historical plan conflicts with later governance, ownership, evidence, 
 | Country wording | Deutschland |
 | Language wording | Deutsch |
 | ST-Firm working tagline | Idee Meet’s Tech. |
-| SCOF review | KSh 565 target review on 31 October 2029; not guaranteed |
+| SCOF review | KSh 545 checkpoint review on 29 October 2029; not guaranteed |
 
 Do not use alternate spellings of ARROR, the founders' names, Kamnarok or Deutschland in authored copy.
 
@@ -370,9 +370,10 @@ Solomon Ops is the ST-Firm-built campaign-operations programme for Hon. Solomon 
 ### Controlled public values
 
 - current issuer-set price presented in the project: KSh 165;
-- target: KSh 565;
-- review date: 31 October 2029;
-- projected movement: KSh 400 / approximately 3.42x;
+- strategic checkpoint: KSh 545;
+- review date: 29 October 2029;
+- projected movement: KSh 380 / approximately 3.30x;
+- separate long-horizon aspiration: EUR 45 per SCOF, not guaranteed;
 - not a guarantee, cash balance, collateral or family-development budget.
 
 ### Required gates
@@ -1084,7 +1085,7 @@ No downstream step should be presented as complete while its upstream authority 
 | Jun-Jul 2027 | Election readiness and Year-One compact closeout |
 | Aug-Dec 2027 | Separate campaign/election closeout; Kap Ossen/ST-Firm continuity |
 | 2028-2030 | Gateway demonstrator after full gates |
-| 31 Oct 2029 | SCOF KSh 565 target review |
+| 29 Oct 2029 | SCOF KSh 545 checkpoint review |
 | 2031-2035 | Productive district proof and institutional depth |
 | 2036-2045 | Evidence-led corridor and multi-node partnerships |
 | 2046-2050 | Decide ARROR City Legacy's lawful final form |
@@ -1223,4 +1224,3 @@ ARROR City Legacy originating concept and vision: **Copyright 2026 Engineer Saig
 Kap Ossen family identity and crest custodianship remain subject to Family Assembly approval. Family photographs, testimonies, identities and records remain subject to the rights and consent of their owners, creators, subjects and custodians.
 
 This blueprint does not appoint a Patron, transfer land, incorporate ST-Firm, approve a campaign, guarantee SCOF value, authorise investment, approve construction or publish private material.
-

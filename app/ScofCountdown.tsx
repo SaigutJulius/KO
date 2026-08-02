@@ -1,8 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { scofValueConfig } from "./scofValueConfig";
 
-const TARGET_TIME = Date.parse("2029-10-31T23:59:59+03:00");
+const TARGET_TIME = Date.parse(`${scofValueConfig.checkpoint.dateIso}T23:59:59+03:00`);
 
 type Countdown = { days: number; hours: number; minutes: number };
 

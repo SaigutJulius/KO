@@ -4,14 +4,16 @@ import HeroCarousel from "./HeroCarousel";
 import FooterFinale from "./FooterFinale";
 import ScofCountdown from "./ScofCountdown";
 import SiteChrome from "./SiteChrome";
+import { formatEur, formatKes, scofValueConfig, scofValueDerived } from "./scofValueConfig";
 import { withBasePath } from "./sitePaths";
 
 export const dynamic = "force-static";
 
 const bulletin = [
-  ["SCOF OFFICIAL PRICE", "1 SCOF = KSh 165", "Issuer-set price", "☕"],
-  ["2029 VALUE TARGET", "1 SCOF = KSh 565", "Performance target", "🎯"],
-  ["TARGET REVIEW", "31 OCTOBER 2029", "Kenya time (EAT)", "📅"],
+  ["SCOF NOW", `1 SCOF = ${formatKes(scofValueConfig.current.kes)}`, "Issuer-set price", "☕"],
+  ["2029 CHECKPOINT", formatKes(scofValueConfig.checkpoint.kes), scofValueConfig.checkpoint.dateLabel, "🎯"],
+  ["GLOBAL HORIZON", `${formatEur(scofValueConfig.horizon.eur)} · ≈ ${formatKes(scofValueDerived.horizonKes)}`, "Illustrative FX conversion", "🌍"],
+  ["VALUE PATH", `1.00× → ${scofValueDerived.checkpointMultiple.toFixed(2)}× → ${scofValueDerived.horizonFromCurrentMultiple.toFixed(2)}×`, "Targets are not guarantees", "📊"],
   ["FAMILY GOVERNANCE", "PROPOSED PATRON", "Hon. Solomon Saigut Cherogony", "🏛️"],
   ["GLOBAL KNOWLEDGE", "BERLIN, DEUTSCHLAND", "Experience brought home", "🌍"],
   ["LEGACY HORIZON", "ARROR CITY 2050", "Vision · feasibility required", "🌱"],
@@ -232,11 +234,12 @@ export default function Home() {
 
       <section className="section scofSection" id="scof-value">
         <div className="scofHero">
-          <div><p className="kicker light"><span>☕</span> SCOF value command</p><h2>KSh 565<br /><em>by 31 October 2029.</em></h2><p className="scofLead">A real ecosystem performance target measured against SCOF&apos;s current issuer-set price of KSh 165. It is a target—not a promise of future market value.</p></div>
+          <div><p className="kicker light"><span>☕</span> SCOF value command</p><h2>{formatKes(scofValueConfig.checkpoint.kes)}<br /><em>by {scofValueConfig.checkpoint.dateLabel}.</em></h2><p className="scofLead">A strategic checkpoint measured against SCOF&apos;s current issuer-set price of {formatKes(scofValueConfig.current.kes)}. The separate {formatEur(scofValueConfig.horizon.eur)} horizon is an aspiration—not a promise of future market value.</p></div>
           <div className="countdownCard"><small>Target review · Kenya time (EAT)</small><ScofCountdown /><p>Utility + adoption + commerce + revenue + trust</p></div>
         </div>
-        <div className="scofMetrics"><article><small>Official price</small><b>KSh 165</b><span>Issuer-set baseline</span></article><article className="target"><small>2029 target</small><b>KSh 565</b><span>31 October 2029</span></article><article><small>Value gap</small><b>+KSh 400</b><span>Per SCOF</span></article><article><small>Target multiple</small><b>3.42×</b><span>+242.4% uplift</span></article></div>
-        <div className="valueSteps"><article><b>01</b><div><small>2026</small><h3>Govern</h3><p>Price authority, supply rules, treasury policy and reporting.</p></div></article><article><b>02</b><div><small>2027</small><h3>Prove utility</h3><p>Traceability, services and real producer/buyer use cases.</p></div></article><article><b>03</b><div><small>2028</small><h3>Expand adoption</h3><p>Verified participants, repeat activity and audited evidence.</p></div></article><article><b>04</b><div><small>2029</small><h3>Review readiness</h3><p>Close delivery gaps and complete the 31 October review.</p></div></article></div>
+        <div className="scofMetrics"><article><small>Current price</small><b>{formatKes(scofValueConfig.current.kes)}</b><span>Issuer-set baseline</span></article><article className="target"><small>2029 checkpoint</small><b>{formatKes(scofValueConfig.checkpoint.kes)}</b><span>{scofValueConfig.checkpoint.dateLabel}</span></article><article><small>Value gap</small><b>+{formatKes(scofValueDerived.checkpointGapKes)}</b><span>{scofValueDerived.checkpointMultiple.toFixed(2)}× current</span></article><article><small>Global horizon</small><b>{formatEur(scofValueConfig.horizon.eur)}</b><span>≈ {formatKes(scofValueDerived.horizonKes)}*</span></article></div>
+        <p className="scofFxNote">*Illustrative conversion at KSh {scofValueConfig.fxReference.eurKes.toFixed(2)} per EUR. Currency rates change. Checkpoints and aspirations are not guaranteed market outcomes or investment returns.</p>
+        <div className="valueSteps"><article><b>01</b><div><small>2026</small><h3>Govern</h3><p>Price authority, supply rules, treasury policy and reporting.</p></div></article><article><b>02</b><div><small>2027</small><h3>Prove utility</h3><p>Traceability, services and real producer/buyer use cases.</p></div></article><article><b>03</b><div><small>2028</small><h3>Expand adoption</h3><p>Verified participants, repeat activity and audited evidence.</p></div></article><article><b>04</b><div><small>2029</small><h3>Review readiness</h3><p>Close delivery gaps and complete the 29 October review.</p></div></article></div>
       </section>
 
       <section className="section governanceSection" id="governance">

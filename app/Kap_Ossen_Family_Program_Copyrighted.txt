@@ -25,13 +25,14 @@ The document contains **12 strategic pillars**, a family roadmap from **2026 to 
 The official SCOF figures in this document are:
 
 - **Current issuer-set price:** KSh 165 per SCOF
-- **Performance target:** KSh 565 per SCOF
-- **Target review date:** 31 October 2029
-- **Required movement:** KSh 400
-- **Target multiple:** approximately 3.42×
-- **Required uplift:** approximately 242.4%
+- **Strategic checkpoint:** KSh 545 per SCOF
+- **Checkpoint review date:** 29 October 2029
+- **Required movement:** KSh 380
+- **Checkpoint multiple:** approximately 3.30×
+- **Required uplift:** approximately 230.3%
+- **Long-horizon aspiration:** EUR 45 per SCOF (separate from the 2029 checkpoint and not guaranteed)
 
-Most importantly, the plan clearly states that **KSh 565 is a performance target, not a guaranteed future value**. It must be supported by measurable utility, verified adoption, marketplace activity, sustainable revenue, governance, treasury transparency, audits and participant trust.
+Most importantly, the plan clearly states that **KSh 545 is a strategic checkpoint, not a guaranteed future value**. The separate **EUR 45 long-horizon aspiration** is also not guaranteed. Both depend on measurable utility, verified adoption, marketplace activity, sustainable revenue, governance, treasury transparency, audits and participant trust.
 
 The official family motto is:
 

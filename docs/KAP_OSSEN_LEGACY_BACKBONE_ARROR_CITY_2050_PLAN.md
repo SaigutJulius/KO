@@ -305,7 +305,7 @@ ARROR City must first earn through productive activity:
 7. Tourism, heritage and seasonal events after approvals.
 8. Technology licensing and operational services from ST-Firm where contracted.
 
-SCOF's current issuer-set price and future target remain separate from realised cash flow. The stated KSh 565 target for 31 October 2029 must remain a performance target, never a guarantee or substitute for project finance.
+SCOF's current issuer-set price and future scenarios remain separate from realised cash flow. The KSh 545 checkpoint for 29 October 2029 and separate EUR 45 long-horizon aspiration must never be presented as guarantees or substitutes for project finance.
 
 ## 11. Confidentiality and non-disclosure framework
 

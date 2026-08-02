@@ -106,9 +106,10 @@ The current CSS “KO” circle can remain as a temporary fallback until the fin
 Retain the existing 50–56 pixel dark scrolling rail showing:
 
 - SCOF official issuer-set price: KSh 165;
-- target: KSh 565;
-- target date: 31 October 2029;
-- value movement: +KSh 400 / 3.42×;
+- strategic checkpoint: KSh 545;
+- checkpoint date: 29 October 2029;
+- value movement: +KSh 380 / 3.30×;
+- separate long-horizon aspiration: EUR 45 per SCOF, not guaranteed;
 - family opportunity and development updates.
 
 ### Layer 2 — Kap Ossen navigation and race lane

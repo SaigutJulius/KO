@@ -328,27 +328,27 @@ This is the official issuer-set SCOF price and the baseline for the development 
 
 SCOF PERFORMANCE TARGET
 
-1 SCOF = KSh 565
+1 SCOF = KSh 545
 
-Target date: 31 October 2029
+Checkpoint date: 29 October 2029
 
 
 TARGET VALUE MOVEMENT
 
 Current official price: KSh 165
 
-Target price: KSh 565
+Strategic checkpoint: KSh 545
 
-Required movement: +KSh 400 per SCOF
+Required movement: +KSh 380 per SCOF
 
-Target multiple: approximately 3.42 times the current official price
+Checkpoint multiple: approximately 3.30 times the current official price
 
-Required percentage uplift: approximately 242.4%
+Required percentage uplift: approximately 230.3%
 
 
-9. PURPOSE OF THE KSh 565 TARGET
+9. PURPOSE OF THE KSh 545 CHECKPOINT
 
-The KSh 565 target should represent measurable development within the SCOF ecosystem.
+The KSh 545 checkpoint should represent measurable development within the SCOF ecosystem. A separate EUR 45 per SCOF figure is a long-horizon aspiration, not the 2029 checkpoint and not a guaranteed outcome.
 
 The target should be supported by:
 
@@ -432,9 +432,9 @@ Objectives:
 
 FINAL SCOF TARGET REVIEW
 
-Date: 31 October 2029
+Date: 29 October 2029
 
-The review should examine whether ecosystem performance supports the KSh 565 target.
+The review should examine whether ecosystem performance supports the KSh 545 checkpoint.
 
 The assessment should include:
 
@@ -479,14 +479,14 @@ Measure transparency, reporting quality, governance compliance, audits and parti
 
 ## 12. Important Target Discipline
 
-KSh 565 is the SCOF performance target for 31 October 2029.
+KSh 545 is the SCOF strategic checkpoint for 29 October 2029.
 
 It is not the current price and should not be described as guaranteed future value. Progress toward the target must be supported by verified ecosystem utility, adoption, commercial activity, revenue, transparent governance and responsible reporting.
 
 Any public communication should distinguish clearly between:
 
 - The current official issuer-set price of KSh 165
-- The future performance target of KSh 565
+- The 29 October 2029 strategic checkpoint of KSh 545 and the separate EUR 45 long-horizon aspiration
 - Verified ecosystem results
 - Projections and future expectations
 

@@ -218,11 +218,12 @@ Purpose: present the official issuer-set baseline and the 2029 performance targe
 Core facts:
 
 - official issuer-set price: KSh 165;
-- target: KSh 565;
-- target date: 31 October 2029;
-- target movement: +KSh 400;
-- target multiple: 3.42×;
-- required uplift: 242.4%.
+- strategic checkpoint: KSh 545;
+- checkpoint date: 29 October 2029;
+- checkpoint movement: +KSh 380;
+- checkpoint multiple: 3.30×;
+- required uplift: 230.3%;
+- separate long-horizon aspiration: EUR 45 per SCOF, not guaranteed.
 
 Required dashboards:
 
@@ -683,7 +684,7 @@ The first expanded public release is complete when:
 - the heritage and development stories are clearly separated from private records;
 - the 30-acre concept is labelled proposed;
 - no Lidl, Amazon, KENAFF or ST-Firm affiliation is overstated;
-- SCOF KSh 165 and KSh 565 are correctly distinguished;
+- SCOF KSh 165 current price, KSh 545 checkpoint and EUR 45 long-horizon aspiration are correctly distinguished;
 - all public media has source and consent status;
 - forms protect personal information;
 - accessibility and performance checks pass;

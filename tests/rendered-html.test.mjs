@@ -55,7 +55,9 @@ test("server-renders the Kap Ossen Family Embassy", async () => {
   assert.match(html, /ARROR City Legacy · 2050/i);
   assert.match(html, /Heritage · Technology · Legacy/i);
   assert.match(html, /Proposed technology &amp; design partner/i);
-  assert.match(html, /31 October 2029/i);
+  assert.match(html, /29 October 2029/i);
+  assert.match(html, /KSh 545/i);
+  assert.match(html, /€45/i);
   assert.match(html, /Proposed Patron/i);
   assert.match(html, /Berlin, Deutschland/i);
   assert.match(html, /INTERNAL REVIEW/i);
@@ -115,7 +117,7 @@ test("returns a controlled response when the optional image binding is absent", 
 });
 
 test("keeps required experience, governance and mobile safeguards in source", async () => {
-  const [page, chrome, hero, signal, ceremony, brandRace, footer, css, layout] = await Promise.all([
+  const [page, chrome, hero, signal, ceremony, brandRace, footer, css, layout, timeline, scofConfig, roster] = await Promise.all([
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/SiteChrome.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/HeroCarousel.tsx", import.meta.url), "utf8"),
@@ -125,6 +127,9 @@ test("keeps required experience, governance and mobile safeguards in source", as
     readFile(new URL("../app/FooterFinale.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
     readFile(new URL("../app/layout.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/finaleMediaTimeline.ts", import.meta.url), "utf8"),
+    readFile(new URL("../app/scofValueConfig.ts", import.meta.url), "utf8"),
+    readFile(new URL("../app/ScofValueRoster.tsx", import.meta.url), "utf8"),
   ]);
 
   for (const id of ["family-tree", "gallery", "land-vision", "governance", "sustainability", "scof-value"]) {
@@ -173,7 +178,7 @@ test("keeps required experience, governance and mobile safeguards in source", as
     assert.match(ceremony, new RegExp(asset.replace(".", "\\.")));
   }
   assert.match(ceremony, /Berlin, Deutschland ↔ ARROR, Kenya/);
-  assert.match(ceremony, /31 October 2029/);
+  assert.match(ceremony, /29 October 2029/);
   assert.match(ceremony, /scof-coin-transparent\.webp/);
   assert.match(ceremony, /scof-coin-transparent-mobile\.webp/);
   assert.doesNotMatch(ceremony, /\bGermany\b|ST-Firm GmbH/);
@@ -185,21 +190,43 @@ test("keeps required experience, governance and mobile safeguards in source", as
   assert.doesNotMatch(brandRace, /Math\.random/);
   assert.match(footer, /IntersectionObserver/);
   assert.match(footer, /threshold: 0\.18/);
-  for (const duration of ["3_000", "3_500", "2_500", "5_000"]) assert.match(footer, new RegExp(duration));
-  for (const phase of ["scof", "kap", "firm", "finale", "rest"]) assert.match(footer, new RegExp(`key: "${phase}"`));
+  assert.match(footer, /FINALE_TOTAL_SECONDS/);
+  assert.match(footer, /ceremonyTimeFromSourceTime/);
+  assert.match(footer, /NEXT_PUBLIC_FINALE_TRACK/);
+  assert.doesNotMatch(footer, /vidssave\.com BIEN X ALIKIBA_ FINALE OFFICIAL MUSIC VIDEO 720P\.mp4/);
+  assert.match(footer, /playsInline/);
+  assert.match(footer, /pictureInPictureEnabled/);
+  assert.match(footer, /displayMode === "half"/);
+  assert.match(footer, /displayMode === "fullscreen"/);
+  assert.match(footer, /displayMode === "floating"/);
+  assert.doesNotMatch(footer, /playOscillatorCue|createOscillator/);
+  assert.match(timeline, /FINALE_TOTAL_SECONDS = 94/);
+  for (const range of ["sourceStart: 5", "sourceEnd: 16", "sourceStart: 55", "sourceEnd: 87", "sourceStart: 109", "sourceEnd: 160"]) assert.match(timeline, new RegExp(range));
+  for (const phase of ["scof", "kap", "firm", "finale", "rest"]) assert.match(timeline, new RegExp(`key: "${phase}"`));
+  assert.match(scofConfig, /kes: 165/);
+  assert.match(scofConfig, /kes: 545/);
+  assert.match(scofConfig, /dateIso: "2029-10-29"/);
+  assert.match(scofConfig, /eur: 45/);
+  assert.match(scofConfig, /eurKes: 148\.12/);
+  assert.match(roster, /Current price · Strategic checkpoint · Long-horizon aspiration/);
   assert.match(footer, /prefers-reduced-motion/);
   assert.match(footer, /className="footerSky" aria-hidden="true"/);
   assert.match(footer, /className="footerAlliance"/);
   assert.match(footer, /className="footerPerformanceStage"/);
+  assert.match(footer, /className="footerPhaseRail"/);
+  assert.match(footer, /className="finaleMediaControls"/);
   assert.match(footer, /className="footerStaticStageLockup"/);
-  assert.match(footer, /proposed ST-Firm relationship sequence/);
+  assert.match(footer, /proposed ST-Firm 94-second relationship sequence/);
   assert.match(footer, /className="footerIdentityDeck"/);
   assert.match(footer, /className="footerLinks footerNavigationDeck"/);
   assert.match(footer, /className="footerLegal footerLegalChamber"/);
   assert.match(footer, /KAP OSSEN <i>×<\/i> ST‑FIRM/);
   assert.match(footer, /scofSnowflake/);
+  assert.match(footer, /scofMonument/);
   assert.match(footer, /koPillar/);
   assert.match(footer, /firmCircuit/);
+  assert.match(footer, /ScofValueRoster/);
+  assert.doesNotMatch(footer, /footerShowTitle/);
   assert.doesNotMatch(footer, /Math\.random/);
   assert.match(page, /className="productDock"/);
   assert.match(page, /className="legacySnapshot"/);
@@ -236,9 +263,24 @@ test("keeps required experience, governance and mobile safeguards in source", as
   assert.match(css, /@media\(prefers-reduced-motion:reduce\)\{[\s\S]*?\.raceEffects\{display:none!important\}/);
   assert.match(css, /font-family:var\(--font-display\)/);
   assert.match(css, /font-family:var\(--font-heritage\)/);
+  assert.match(css, /font-synthesis:none/);
+  assert.match(css, /font-optical-sizing:auto/);
+  assert.match(css, /-webkit-font-smoothing:antialiased/);
   assert.match(css, /\.branchGrid h3\{[^}]*font-size:clamp\(1rem/);
   for (const animation of ["scofSnowFall", "koPillarFire", "circuitLaunch", "finaleKoFlight", "footerBurst", "footerShockwave"]) assert.match(css, new RegExp(`@keyframes ${animation}`));
-  assert.match(css, /\.footerPerformanceStage\{[^}]*height:clamp\(290px,28vw,350px\)/);
+  assert.match(css, /\.footerSpectacle \.footerPerformanceStage\{[\s\S]*?height:clamp\(440px,38vw,560px\)/);
+  assert.match(css, /\.footerSpectacle \.footerPhaseRail\{/);
+  assert.match(css, /\.footerSpectacle \.scofWord\{[^}]*font-size:clamp\(3\.2rem,5vw,5\.6rem\)/);
+  assert.match(css, /\.footerSpectacle \.koPillarRing\{[\s\S]*?width:clamp\(360px,34vw,430px\)/);
+  assert.match(css, /\.footerSpectacle \.firmCircuitField\{[\s\S]*?width:clamp\(390px,39vw,480px\)/);
+  assert.match(css, /--spectacle-pink:#f7c9e8/);
+  assert.match(css, /\.footerCeremonyShell\.display-half/);
+  assert.match(css, /\.footerCeremonyShell\.display-fullscreen/);
+  assert.match(css, /\.footerCeremonyShell\.display-floating/);
+  assert.match(css, /@keyframes protectedKoFinale/);
+  assert.match(css, /@keyframes protectedStFinale/);
+  assert.match(css, /\.scofValueRoster/);
+  assert.match(css, /@keyframes spectacleBurst/);
   assert.match(css, /\.footerIdentityDeck\{[^}]*display:grid/);
   assert.match(css, /\.footerNavigationDeck\{[^}]*display:flex/);
   assert.match(css, /\.stHalo\{[^}]*background:#fffdf7/);

@@ -252,7 +252,7 @@ export default function KoLegacySequence({ active, holdMs, originRef, soundEnabl
 
           <article className="koShowcaseCard koScofShowcase" aria-hidden={!(["scof", "ecosystem", "declaration"].includes(phase))}>
             <picture><source media="(max-width: 620px)" srcSet={withBasePath("/showcase/scof-coin-transparent-mobile.webp")} /><img src={withBasePath("/showcase/scof-coin-transparent.webp")} alt="SCOF digital value infrastructure coin powered by SSOS and ST-Firm" width="1000" height="1000" loading="eager" fetchPriority="low" decoding="async" /></picture>
-            <div className="koProductCaption"><span>◉ SCOF</span><strong>Value infrastructure</strong><small>Target review · 31 October 2029</small></div>
+            <div className="koProductCaption"><span>◉ SCOF</span><strong>Value infrastructure</strong><small>Strategic checkpoint · 29 October 2029</small></div>
           </article>
 
           <div className="koEcosystemLinks" aria-hidden="true"><i /><i /><i /><i /></div>

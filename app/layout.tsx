@@ -3,8 +3,8 @@ import { Bodoni_Moda, Fraunces, Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { withBasePath } from "./sitePaths";
 
-const sans = Geist({ variable: "--font-sans", subsets: ["latin"] });
-const mono = Geist_Mono({ variable: "--font-mono", subsets: ["latin"] });
+const sans = Geist({ variable: "--font-sans", subsets: ["latin"], display: "swap" });
+const mono = Geist_Mono({ variable: "--font-mono", subsets: ["latin"], display: "swap" });
 const display = Bodoni_Moda({ variable: "--font-display", subsets: ["latin"], weight: "variable", display: "swap" });
 const heritage = Fraunces({ variable: "--font-heritage", subsets: ["latin"], weight: "variable", display: "swap" });
 

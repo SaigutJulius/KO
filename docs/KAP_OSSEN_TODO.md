@@ -90,7 +90,7 @@
 - [x] **P1** Existing public site and design system operational.
 - [x] **P1** Current SCOF intelligence ticker operational.
 - [x] **P1** KSh 165 official issuer-set price displayed.
-- [x] **P1** KSh 565 target and 31 October 2029 date displayed.
+- [x] **P1** KSh 545 strategic checkpoint and 29 October 2029 date displayed, separately from the EUR 45 long-horizon aspiration.
 - [x] **P1** SCOF countdown and four-phase target plan operational.
 - [ ] **P1 · OWNER: Development** Define expanded route structure.
 - [ ] **P1 · OWNER: Development** Create shared public page layout.
@@ -413,7 +413,7 @@
 - [ ] **P0 · OWNER: Sustainability and Technical Council** Adopt the five-capitals Sustainability Charter: heritage, natural, human/social, productive/financial and institutional/digital.
 - [ ] **P0 · OWNER: Land/environment/social advisers** Complete a land, water, soil, biodiversity, climate, access, community and current-use baseline before clearing or construction.
 - [ ] **P1 · OWNER: Sustainability Council/finance** Define evidence-backed annual targets for energy, water, waste, tree survival, soil health, jobs, local procurement, training, accessibility, reserves and institutional continuity.
-- [ ] **P1 · OWNER: Finance/project team** Model Gateway development with zero SCOF appreciation in the base case; treat the 565 value as a 31 October 2029 review target only.
+- [ ] **P1 · OWNER: Finance/project team** Model Gateway development with zero SCOF appreciation in the base case; treat KSh 545 as a 29 October 2029 checkpoint and EUR 45 as a separate long-horizon aspiration only.
 - [ ] **P1 · OWNER: Planning/finance** Define phased feasibility gates so no physical phase begins without land authority, professional approvals, demand evidence, operator capacity, lifecycle cost and funded maintenance.
 - [ ] **P1 · OWNER: Technical administrator** Complete domain, repository, archive, account, backup, recovery, export and vendor-exit controls for sovereign digital custody.
 - [ ] **P1 · OWNER: Governance/evidence team** Prepare monthly internal, quarterly Council, six-month Patron and annual public sustainability reporting templates.

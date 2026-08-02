@@ -69,7 +69,7 @@ The website and all documents must use the following spellings unless primary re
 | Technology institution | ST-Firm, Berlin, Deutschland |
 | Campaign programme | Solomon Ops — the separately governed 2027 campaign-operations programme |
 | 30-acre concept | Proposed 30-acre Gateway demonstrator, subject to authority, survey and feasibility |
-| SCOF time marker | 31 October 2029 target review; never a guaranteed price or outcome |
+| SCOF time marker | 29 October 2029 KSh 545 checkpoint review; never a guaranteed price or outcome |
 
 ### 3.1 Deutschland language standard
 
@@ -938,7 +938,7 @@ Potential revenue, subject to feasibility and legal approval:
 - tenant deposits and restricted funds cannot finance unrelated operations;
 - all family contributions are classified before acceptance;
 - no implied profit share or equity through informal support;
-- SCOF's projected 565 value is a dated target scenario for 31 October 2029, not cash, collateral, revenue or a guarantee;
+- SCOF's KSh 545 value is a dated checkpoint scenario for 29 October 2029, not cash, collateral, revenue or a guarantee; the separate EUR 45 long-horizon aspiration is also not guaranteed;
 - the base construction model assumes zero contribution from SCOF price appreciation;
 - political fundraising and family-development finance never mix; and
 - public fundraising or investment language requires specialist legal approval.
@@ -1412,7 +1412,7 @@ After approval:
 - issue annual sustainability and governance reports;
 - strengthen reserves and operator capability;
 - evaluate SCOF utility, adoption and regulatory position separately; and
-- conduct the SCOF 565 target review on **31 October 2029** without presenting it as guaranteed value.
+- conduct the SCOF KSh 545 checkpoint review on **29 October 2029** without presenting it as guaranteed value.
 
 ### Phase 6 — 2030-2050: ARROR City decision horizons
 
@@ -1436,7 +1436,7 @@ After approval:
 | Family division | Decisions feel predetermined or benefits conditional | Assembly process, branch voice, grievance path |
 | Land dispute | Development language exceeds verified title | Land-authority gate and proposal labels |
 | Unsustainable mega-project | Construction begins before demand/finance proof | Phasing and minimum viable revenue asset |
-| SCOF speculation funds base case | Budget depends on 565 target | Zero-appreciation base case and regulatory gate |
+| SCOF speculation funds base case | Budget depends on KSh 545 checkpoint or EUR 45 aspiration | Zero-appreciation base case and regulatory gate |
 | Related-party leakage | Informal contracts/payments | Procurement, disclosure, recusal and audit |
 | Archive harm | Private story or photo is exposed | Classification, consent and takedown process |
 | Environmental damage | Clearing before baseline | No-work gate and professional assessment |
@@ -1496,7 +1496,7 @@ The governance and sustainability layer is ready only when:
 **Copyright 2026-2027 ST-Firm | Kap Ossen Family Heritage Project. All rights reserved.**  
 **ST-Firm — Idee Meet’s Tech.**
 
-This is an internal governance and planning document. It does not by itself appoint a Patron, incorporate an entity, transfer land, assign intellectual property, approve a campaign, authorise fundraising, guarantee the SCOF 565 target, approve construction or permit public use of family records.
+This is an internal governance and planning document. It does not by itself appoint a Patron, incorporate an entity, transfer land, assign intellectual property, approve a campaign, authorise fundraising, guarantee the SCOF KSh 545 checkpoint or EUR 45 long-horizon aspiration, approve construction or permit public use of family records.
 
 ARROR City Legacy remains Engineer Saigut Julius Kipkorir's originating vision unless rights are changed through a signed written instrument. Hon. Solomon Saigut Cherogony's Patron title becomes active only through the approved family appointment process. Public claims about his service, business, Kamnarok work or political record must pass the existing evidence and identity-matching process.
 

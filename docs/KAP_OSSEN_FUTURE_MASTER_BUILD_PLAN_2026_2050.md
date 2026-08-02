@@ -23,7 +23,7 @@ Build a connected family, technology, political-operations and development ecosy
 - ST-Firm's incorporation, intellectual property, commercial delivery and international reputation;
 - Solomon Ops as the lawful operations programme for Hon. Solomon Saigut Cherogony's 2027 Eldama Ravine parliamentary bid;
 - Engineer Saigut Julius Kipkorir's privately owned ARROR City Legacy and the proposed 30-acre Gateway demonstrator;
-- a governed SCOF utility and value-development mission through 31 October 2029;
+- a governed SCOF utility and value-development mission through 29 October 2029;
 - education, agriculture, enterprise, diaspora knowledge transfer and community development through 2035;
 - evidence-based consideration of a wider ARROR City vision through 2050.
 
@@ -39,7 +39,7 @@ The website must look futuristic, but the institution behind it must be stronger
 6. **Solomon Ops** is the ST-Firm-built campaign-operations programme for Hon. Solomon Saigut Cherogony's 2027 Eldama Ravine MP bid.
 7. The reusable non-political technology below Solomon Ops requires a separate neutral product name.
 8. **KENAFF** is publicly described as non-political. KENAFF data, members, channels and branding cannot be absorbed into Solomon Ops.
-9. **SCOF KSh 165** is presented as an issuer-set current price; **KSh 565 on 31 October 2029** is a performance target, not a guarantee.
+9. **SCOF KSh 165** is presented as an issuer-set current price; **KSh 545 on 29 October 2029** is a strategic checkpoint and **EUR 45** is a separate long-horizon aspiration, neither guaranteed.
 10. The approximately 30-acre development is a proposed concept until title, succession, survey, planning, environmental, access and financial gates are complete.
 11. The claimed Kamnarok role of Hon. Solomon remains family testimony pending documentary or recognised-witness proof.
 12. Family support for the political bid is invited, not presumed or coerced.
@@ -203,7 +203,7 @@ The first viewport should immediately communicate heritage, competence and futur
 - Secondary action: enter the family gallery.
 - Private action: authorised Family Room access.
 - Right: ceremonial KO crest in a restrained dimensional material treatment.
-- Evidence chips: 12 pillars, approximately 30-acre concept, 31 October 2029 target review, 2050 horizon.
+- Evidence chips: 12 pillars, approximately 30-acre concept, 29 October 2029 checkpoint review, 2050 horizon.
 - Persistent status: “Private family records protected; land vision proposed.”
 
 ### 6.3 Homepage sequence
@@ -746,8 +746,9 @@ It should not rely on kinship alone. It should show:
 ### 15.1 Public display
 
 - Current issuer-set price: KSh 165.
-- Performance target: KSh 565.
-- Review date: 31 October 2029.
+- Strategic checkpoint: KSh 545.
+- Review date: 29 October 2029.
+- Separate long-horizon aspiration: EUR 45 per SCOF, not guaranteed.
 - Clear mathematical movement and percentage.
 - Prominent statement that the target is not guaranteed.
 - Timestamp and named source/authority for current values.
@@ -1152,7 +1153,7 @@ The complete office mandates, decision-rights matrix, sustainability standards, 
 - Expand education, agriculture and enterprise programmes.
 - Complete land pre-feasibility.
 - Operate approved ST-Firm pilots.
-- Publish SCOF utility evidence and complete the 31 October 2029 review.
+- Publish SCOF utility evidence and complete the 29 October 2029 checkpoint review.
 - Decide whether Gateway concept design proceeds.
 
 ### Phase 11 — Build and institutionalise
@@ -1269,7 +1270,7 @@ Never hide campaign costs inside family heritage, KENAFF, SCOF or ST-Firm client
 - Utility, adoption, commerce, revenue and trust evidence.
 - Issuer, supply, treasury and price authority documented.
 - Regulatory classification completed.
-- 31 October 2029 review performed without presenting a target as a guarantee.
+- 29 October 2029 review performed without presenting a checkpoint or aspiration as a guarantee.
 
 ## 26. Release gates
 
