@@ -212,8 +212,14 @@ test("keeps required experience, governance and mobile safeguards in source", as
     readFile(new URL("../app/ArrorFireworks.tsx", import.meta.url), "utf8"),
   ]);
 
+  const [scofStage, scofBackdrop] = await Promise.all([
+    readFile(new URL("../app/ScofValueStage.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/ScofCoinBackdrop.tsx", import.meta.url), "utf8"),
+  ]);
+  const pageSections = `${page}\n${scofStage}`;
+
   for (const id of ["family-tree", "gallery", "land-vision", "governance", "sustainability", "scof-value"]) {
-    assert.match(page, new RegExp(`id=["']${id}["']`));
+    assert.match(pageSections, new RegExp(`id=["']${id}["']`));
   }
   assert.match(chrome, /className="stickyShell"/);
   assert.match(chrome, /aria-expanded=\{open\}/);
@@ -396,6 +402,26 @@ test("keeps required experience, governance and mobile safeguards in source", as
   assert.match(scofConfig, /dateIso: "2029-10-29"/);
   assert.match(scofConfig, /eur: 45/);
   assert.match(scofConfig, /eurKes: 148\.12/);
+  assert.match(page, /<ScofValueStage \/>/);
+  assert.match(scofStage, /LIVE VALUE PROTOCOL/);
+  assert.match(scofStage, /BLOCK 01/);
+  assert.match(scofStage, /BLOCK 02/);
+  assert.match(scofStage, /BLOCK 03/);
+  assert.match(scofStage, /horizonFromCurrent/);
+  assert.match(scofStage, /horizonFromCheckpoint/);
+  assert.match(scofStage, /illustrative value relationships/i);
+  assert.match(scofBackdrop, /IntersectionObserver/);
+  assert.match(scofBackdrop, /scof-coin-transparent-mobile\.webp/);
+  assert.match(scofBackdrop, /scof-coin-transparent\.webp/);
+  assert.match(scofBackdrop, /aria-hidden="true"/);
+  assert.match(css, /SCOF Value Command Centre/);
+  assert.match(css, /@keyframes scofCommandCoinFlight/);
+  assert.match(css, /@keyframes scofCommandGlint/);
+  assert.match(css, /@keyframes scofCommandBeam/);
+  assert.match(css, /\.scofCoinBackdrop:not\(\.isActive\) \*\{animation-play-state:paused!important\}/);
+  assert.match(css, /\.scofValuePrimary\{[^}]*font:610 clamp\(5\.4rem/);
+  assert.match(css, /@media\(max-width:680px\)\{[\s\S]*?\.scofValuePath\{grid-template-columns:1fr/);
+  assert.match(css, /@media\(prefers-reduced-motion:reduce\)\{[\s\S]*?\.scofCoinBackdrop \*/);
   assert.match(roster, /Current price · Strategic checkpoint · Long-horizon aspiration/);
   assert.match(roster, /className="horizonKesEquivalent"/);
   assert.match(roster, /Illustrative conversion at KSh/);
