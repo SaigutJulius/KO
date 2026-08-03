@@ -240,7 +240,7 @@ export default function Home() {
           <p>The vision becomes credible when roles, permissions, records and money are governed before public claims or major commitments are made.</p>
         </header>
         <div className="governanceGrid">
-          <article className="patronCard">
+          <article className="patronCard patronMediaCard" aria-label="Proposed Patron portrait and vision slogan">
             <div className="patronCardTop">
               <span className="roleBadge">Proposed Patron</span>
               <span className="patronConsultationStatus"><i /> Family consultation pending</span>
@@ -277,26 +277,34 @@ export default function Home() {
                   <span><i />Ravine</span><b /><span><i />World</span><b /><span><i />Ravine</span>
                 </div>
               </div>
-
-              <h3>Hon. Solomon Saigut Cherogony</h3>
-              <p className="patronRoleCopy">Proposed family patron and unifying senior steward, subject to formal family consultation, acceptance and documented appointment.</p>
-
-              <div className="patronNotice patronAppointment">
-                <span>Appointment status</span>
-                <p>No appointment is implied until that process is completed.</p>
-              </div>
-
-              <div className="patronNotice patronBoundary">
-                <span>Governance boundary</span>
-                <p>The supplied portrait and vision slogan reflect campaign identity. Political campaign activity remains operationally separate from the proposed family-governance role.</p>
-              </div>
             </div>
           </article>
-          <div className="governanceFlow">
-            <article><span>01</span><div><h3>Family Assembly</h3><p>Shared mandate, major approvals and intergenerational voice.</p></div></article>
-            <article><span>02</span><div><h3>Family Council</h3><p>Representation, policy oversight and conflict handling.</p></div></article>
-            <article><span>03</span><div><h3>Custodians & committees</h3><p>Heritage, land, finance, programmes, data and communications.</p></div></article>
-            <article><span>04</span><div><h3>Independent controls</h3><p>Separate accounts, minutes, conflict declarations and audits.</p></div></article>
+
+          <div className="governanceColumn">
+            <div className="governanceFlow">
+              <article><span>01</span><div><h3>Family Assembly</h3><p>Shared mandate, major approvals and intergenerational voice.</p></div></article>
+              <article><span>02</span><div><h3>Family Council</h3><p>Representation, policy oversight and conflict handling.</p></div></article>
+              <article><span>03</span><div><h3>Custodians & committees</h3><p>Heritage, land, finance, programmes, data and communications.</p></div></article>
+              <article><span>04</span><div><h3>Independent controls</h3><p>Separate accounts, minutes, conflict declarations and audits.</p></div></article>
+            </div>
+
+            <article className="patronProfilePanel" aria-labelledby="patron-profile-title">
+              <span className="patronProfileEyebrow">Proposed family stewardship</span>
+              <h3 id="patron-profile-title">Hon. Solomon Saigut Cherogony</h3>
+              <p className="patronRoleCopy">Proposed family patron and unifying senior steward, subject to formal family consultation, acceptance and documented appointment.</p>
+
+              <div className="patronProfileNotices">
+                <div className="patronNotice patronAppointment">
+                  <span>Appointment status</span>
+                  <p>No appointment is implied until that process is completed.</p>
+                </div>
+
+                <div className="patronNotice patronBoundary">
+                  <span>Governance boundary</span>
+                  <p>The supplied portrait and vision slogan reflect campaign identity. Political campaign activity remains operationally separate from the proposed family-governance role.</p>
+                </div>
+              </div>
+            </article>
           </div>
         </div>
         <div className="operationsNotice"><span>🗳️</span><div><b>Solomon Ops remains separate.</b><p>It is the dedicated operation for Hon. Solomon Saigut Cherogony&apos;s 2027 MP bid and UDA nomination cycle, planned from 1 August 2026 through the applicable 2027 electoral phase. It needs its own authority, data, finance, team and compliance records.</p></div></div>
