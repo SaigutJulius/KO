@@ -71,7 +71,7 @@ button{color:inherit}
 .heroTags{margin-top:30px;display:flex;flex-wrap:wrap;gap:8px}.heroTags span{padding:8px 11px;border:1px solid rgba(255,255,255,.14);border-radius:999px;background:rgba(255,255,255,.05);color:#d4cad7;font-size:.63rem}
 .heroCrestCard{min-height:410px;padding:38px 28px;display:flex;flex-direction:column;align-items:center;justify-content:center;border:1px solid rgba(216,173,79,.3);border-radius:30px;background:linear-gradient(145deg,rgba(255,255,255,.1),rgba(255,255,255,.025));box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 32px 70px rgba(0,0,0,.25);backdrop-filter:blur(12px)}
 .heroCrestCard .ceremonial{width:min(270px,24vw);aspect-ratio:1;filter:drop-shadow(0 28px 34px rgba(0,0,0,.35));animation:crestFloat 7s ease-in-out infinite}.heroCrestCard p{margin:16px 0 5px;font-family:Georgia,serif;font-size:1.55rem;letter-spacing:.14em;text-transform:uppercase}.heroCrestCard strong{color:var(--gold-soft);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase}.heroCrestCard small{margin-top:13px;color:#9f91a5;font-size:.55rem}
-.artworkScene{padding:0}.artworkScene>img{width:100%;height:100%;object-fit:cover}.artworkShade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(9,2,13,.86),rgba(9,2,13,.2) 62%,rgba(9,2,13,.07)),linear-gradient(0deg,rgba(7,2,10,.75),transparent 48%)}
+.artworkScene{padding:0}.artworkScene>.artworkHero{width:100%;height:100%;object-fit:cover}.artworkBackdrop{display:none}.artworkShade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(9,2,13,.86),rgba(9,2,13,.2) 62%,rgba(9,2,13,.07)),linear-gradient(0deg,rgba(7,2,10,.75),transparent 48%)}
 .artworkCaption{position:absolute;z-index:2;left:clamp(34px,7vw,110px);bottom:clamp(78px,9vw,120px);max-width:660px}.artworkCaption h2{margin:0 0 26px;font-family:Georgia,serif;font-size:clamp(3rem,6vw,6.5rem);font-weight:500;line-height:.92;letter-spacing:-.055em}
 .carouselControls{position:absolute;z-index:10;left:50%;bottom:22px;transform:translateX(-50%);padding:7px;display:flex;align-items:center;gap:6px;border:1px solid rgba(255,255,255,.16);border-radius:999px;background:rgba(8,2,11,.65);backdrop-filter:blur(14px)}
 .carouselControls>button{width:40px;height:40px;border:0;border-radius:50%;background:transparent;color:white;cursor:pointer}.carouselControls>button:hover{background:rgba(255,255,255,.12)}
@@ -124,7 +124,7 @@ footer{padding:55px max(28px,calc((100vw - 1450px)/2)) max(32px,env(safe-area-in
   :root{--header-height:70px}
   .siteNav{display:none}.navCta{display:none}.menuButton{display:grid;margin-left:auto}
   .mobileNav{display:block;position:absolute;left:0;right:0;top:100%;max-height:0;overflow:hidden;background:rgba(255,253,247,.98);box-shadow:0 20px 45px rgba(20,5,27,.2);transition:max-height .35s ease}.mobileNav.isOpen{max-height:calc(100svh - var(--sticky-height));overflow:auto;padding-bottom:env(safe-area-inset-bottom)}.mobileNav a{min-height:57px;padding:0 max(22px,env(safe-area-inset-left));display:grid;grid-template-columns:32px 1fr 20px;align-items:center;border-bottom:1px solid var(--line)}.mobileNav a>span{font-size:1rem}.mobileNav b{font-size:.77rem}.mobileNav i{color:var(--plum-700);font-style:normal}
-  .familyScene{grid-template-columns:1fr}.heroCrestCard{display:none}.deviceFrame{min-height:720px}.artworkScene>img{object-position:center}
+  .familyScene{grid-template-columns:1fr}.heroCrestCard{display:none}.deviceFrame{min-height:720px}.artworkScene>.artworkHero{object-position:center}
   .splitHeading,.scofHero,.governanceGrid{grid-template-columns:1fr}.splitHeading{gap:25px}.institutionMap{grid-template-columns:1fr}.mapSpine{min-height:220px}.institutionCards{grid-template-columns:repeat(2,1fr)}
   .branchGrid,.pillarGrid{grid-template-columns:repeat(2,1fr)}.galleryGrid{grid-template-columns:repeat(2,1fr)}.journeyTrack{grid-template-columns:repeat(3,1fr);gap:30px 0}.journeyTrack:before{display:none}
   .masterplanGraphic{grid-template-columns:repeat(3,1fr);grid-template-rows:52px repeat(2,160px) 44px}.zoneCards{grid-template-columns:repeat(2,1fr)}
@@ -137,7 +137,7 @@ footer{padding:55px max(28px,calc((100vw - 1450px)/2)) max(32px,env(safe-area-in
   :root{--rail-height:48px;--header-height:66px}
   .liveFlag{width:111px;flex-basis:111px;padding:0 9px;gap:7px}.liveFlag:after{border-top-width:24px;border-bottom-width:24px}.liveFlag span{font-size:.48rem}.tickerItem{padding-inline:20px}.tickerItem em{display:none}.tickerItem>span:last-child{display:block}.tickerItem strong,.tickerItem small{display:block}.tickerItem strong{margin-top:2px}
   .siteHeader{padding-inline:max(14px,env(safe-area-inset-left)) max(14px,env(safe-area-inset-right));gap:12px}.raceLane{width:44px;height:44px}.raceLane .koAsset{width:36px;height:36px}.brandWords strong{font-size:.83rem}.brandWords small{font-size:.49rem}.menuButton{width:44px;height:44px}.partnerCue>span{display:none}.partnerCue{margin-left:0;padding-left:8px;gap:5px}.partnerCue>img{width:30px;height:32px}
-  .heroCarousel{padding:0;background:#100317}.deviceFrame{min-height:max(720px,calc(100svh - var(--sticky-height)));border:0;border-radius:0;box-shadow:none}.deviceFrame:before,.deviceIsland{display:none}.heroScene{padding:66px max(22px,env(safe-area-inset-left)) 88px max(22px,env(safe-area-inset-right))}.heroCopy h1{font-size:clamp(3.1rem,14vw,4.8rem)}.heroLead{font-size:.85rem}.heroActions{display:grid}.button{width:100%}.heroTags{gap:6px}.heroTags span{font-size:.56rem}.artworkScene{padding:0}.artworkScene>img{object-position:58% center}.artworkShade{background:linear-gradient(0deg,rgba(8,2,11,.95),rgba(8,2,11,.18) 72%)}.artworkCaption{left:max(22px,env(safe-area-inset-left));right:max(22px,env(safe-area-inset-right));bottom:90px}.artworkCaption h2{font-size:3.2rem}.carouselControls{bottom:max(18px,env(safe-area-inset-bottom))}
+  .heroCarousel{padding:0;background:#100317}.deviceFrame{min-height:max(720px,calc(100svh - var(--sticky-height)));border:0;border-radius:0;box-shadow:none}.deviceFrame:before,.deviceIsland{display:none}.heroScene{padding:66px max(22px,env(safe-area-inset-left)) 88px max(22px,env(safe-area-inset-right))}.heroCopy h1{font-size:clamp(3.1rem,14vw,4.8rem)}.heroLead{font-size:.85rem}.heroActions{display:grid}.button{width:100%}.heroTags{gap:6px}.heroTags span{font-size:.56rem}.artworkScene{padding:0}.artworkScene>.artworkHero{object-position:58% center}.artworkShade{background:linear-gradient(0deg,rgba(8,2,11,.95),rgba(8,2,11,.18) 72%)}.artworkCaption{left:max(22px,env(safe-area-inset-left));right:max(22px,env(safe-area-inset-right));bottom:90px}.artworkCaption h2{font-size:3.2rem}.carouselControls{bottom:max(18px,env(safe-area-inset-bottom))}
   .signalDeck{grid-template-columns:repeat(2,1fr)}.signalDeck div:nth-child(2){border-right:0}.signalDeck div:nth-child(-n+2){border-bottom:1px solid var(--line)}.signalDeck div{min-height:105px;padding:20px}.signalDeck b{font-size:2rem}.legacyFlow{padding:13px 16px;justify-content:flex-start;overflow-x:auto}.legacyFlow div{flex:none}.legacyFlow i{margin-left:8px}
   .section{padding:76px max(20px,env(safe-area-inset-left))}.sectionHeading{margin-bottom:36px}.sectionHeading h2,.scofHero h2{font-size:clamp(2.65rem,12vw,4rem)}
   .institutionCards,.branchGrid,.pillarGrid,.galleryGrid,.journeyTrack,.zoneCards,.scofMetrics,.valueSteps,.governanceFlow,.capitalWheel,.horizonTimeline{grid-template-columns:1fr}.institutionCards article{min-height:180px}.mapSpine{min-height:190px}.treeTrunk{height:46px}.treeTrunk:after,.treeTrunk i{display:none}.branchGrid article{min-height:104px}.verificationLegend{border-radius:18px;justify-content:flex-start}.verificationLegend>b{width:100%}
@@ -313,7 +313,7 @@ footer{padding:55px max(28px,calc((100vw - 1450px)/2)) max(32px,env(safe-area-in
   overflow:hidden;
   background:#3d1949;
 }
-.artworkScene>img{
+.artworkScene>.artworkHero{
   position:relative;
   z-index:0;
   filter:brightness(1.24) contrast(.97) saturate(1.14) sepia(.025);
@@ -321,7 +321,7 @@ footer{padding:55px max(28px,calc((100vw - 1450px)/2)) max(32px,env(safe-area-in
   transform-origin:58% 58%;
   will-change:transform,filter;
 }
-.artworkScene.isActive>img{animation:artworkBreathe 15s ease-in-out infinite alternate}
+.artworkScene.isActive>.artworkHero{animation:artworkBreathe 15s ease-in-out infinite alternate}
 .artworkScene:before{
   content:"";
   position:absolute;
@@ -380,54 +380,60 @@ footer{padding:55px max(28px,calc((100vw - 1450px)/2)) max(32px,env(safe-area-in
 @keyframes artworkBreathe{to{filter:brightness(1.3) contrast(.98) saturate(1.18) sepia(.035);transform:scale(1.045)}}
 @keyframes artworkShine{0%,24%{transform:translateX(-55%);opacity:0}36%{opacity:.72}61%,100%{transform:translateX(55%);opacity:0}}
 
-/* Landing carousel V3: fast two-window movement with visible timing */
+/* Landing carousel V3: decoded cinematic dissolve without moving slide 1 */
 .heroScene{
   z-index:1;
   opacity:0;
   visibility:hidden;
-  transform:translate3d(0,0,0) scale(.992);
+  transform:none;
   will-change:transform,opacity;
-  transition:transform .6s cubic-bezier(.22,.74,.24,1),opacity .42s ease,visibility 0s linear .6s;
+  transition:opacity .68s cubic-bezier(.22,.74,.24,1),transform .76s cubic-bezier(.22,.74,.24,1),visibility 0s linear .76s;
 }
 .heroScene.isActive{
   z-index:2;
   opacity:1;
   visibility:visible;
-  transform:translate3d(0,0,0) scale(1);
-  transition:transform .6s cubic-bezier(.22,.74,.24,1),opacity .42s ease,visibility 0s linear 0s;
+  transform:none;
+  transition:opacity .68s .06s cubic-bezier(.22,.74,.24,1),transform .76s cubic-bezier(.22,.74,.24,1),visibility 0s linear 0s;
 }
-.scene1 .artworkScene:not(.isActive){transform:translate3d(7%,0,0) scale(.992)}
-.scene2 .familyScene:not(.isActive){transform:translate3d(-7%,0,0) scale(.992)}
+.heroScene.isLeaving{z-index:3;opacity:0;visibility:visible;transform:none;pointer-events:none;transition-delay:0s}
+.artworkScene{transform:scale(1.008)}
+.artworkScene.isActive{transform:scale(1)}
+.artworkScene.isLeaving{transform:scale(1.003)}
 .deviceFrame{transition:box-shadow .6s ease,border-color .6s ease}
 .scene1 .deviceFrame{border-color:rgba(74,28,94,.18);box-shadow:0 32px 90px rgba(65,29,57,.16),0 3px 16px rgba(65,29,57,.07)}
 .scene2 .deviceFrame{border-color:rgba(226,187,83,.4);box-shadow:0 34px 100px rgba(65,29,57,.2),0 0 34px rgba(216,173,79,.14)}
-.deviceFrame:after{
-  content:"";
+.sceneTransitionVeil{
   position:absolute;
-  z-index:9;
+  z-index:8;
   inset:0;
   opacity:0;
+  visibility:hidden;
   pointer-events:none;
-  background:linear-gradient(105deg,transparent 37%,rgba(255,239,185,.34) 49%,transparent 61%);
-  transform:translateX(-105%);
+  background:radial-gradient(circle at 66% 52%,rgba(255,235,168,.46),transparent 27%),linear-gradient(115deg,rgba(67,21,79,.06),rgba(125,65,131,.34) 44%,rgba(236,197,91,.24) 56%,rgba(26,72,48,.13));
+  mix-blend-mode:screen;
+  will-change:opacity;
 }
-.scene1 .deviceFrame:after{animation:frameSweepBack .6s ease-out both}.scene2 .deviceFrame:after{animation:frameSweepForward .6s ease-out both}
-@keyframes frameSweepForward{0%{opacity:0;transform:translateX(-105%)}30%{opacity:.75}100%{opacity:0;transform:translateX(105%)}}
-@keyframes frameSweepBack{0%{opacity:0;transform:translateX(105%)}30%{opacity:.65}100%{opacity:0;transform:translateX(-105%)}}
+.carouselTransitioning .sceneTransitionVeil{visibility:visible;animation:sceneVeilForward .76s cubic-bezier(.22,.74,.24,1) both}
+.carouselTransitioning.transitionBackward .sceneTransitionVeil{animation-name:sceneVeilBackward}
+@keyframes sceneVeilForward{0%,100%{opacity:0}30%{opacity:.58}58%{opacity:.34}78%{opacity:.12}}
+@keyframes sceneVeilBackward{0%,100%{opacity:0}28%{opacity:.44}55%{opacity:.3}78%{opacity:.1}}
 
 .familyScene.isActive .heroEyebrow{animation:heroContentRise .42s .04s ease-out both}
 .familyScene.isActive .heroCopy h1{animation:heroContentRise .5s .1s ease-out both}
 .familyScene.isActive .heroLead{animation:heroContentRise .5s .18s ease-out both}
 .familyScene.isActive .heroActions{animation:heroContentRise .5s .26s ease-out both}
 .familyScene.isActive .legacyOrbitPanel{animation:heroOrbitArrive .58s .08s cubic-bezier(.22,.74,.24,1) both}
-.artworkScene.isActive .artworkCaption{animation:artworkCaptionArrive .52s .16s ease-out both}
+.carouselSettled .artworkScene.isActive .artworkCaption{animation:artworkCaptionArrive .52s ease-out both}
 @keyframes heroContentRise{from{opacity:0;transform:translate3d(0,13px,0)}to{opacity:1;transform:translate3d(0,0,0)}}
 @keyframes heroOrbitArrive{from{opacity:0;transform:translate3d(18px,0,0) scale(.96)}to{opacity:1;transform:translate3d(0,0,0) scale(1)}}
 @keyframes artworkCaptionArrive{from{opacity:0;transform:translate3d(0,14px,0)}to{opacity:1;transform:translate3d(0,0,0)}}
 
-.artworkScene.isActive>img{animation:artworkBreathe 6.5s ease-in-out infinite alternate}
+.artworkScene.isActive>.artworkHero{animation:artworkBreathe 6.5s ease-in-out infinite alternate}
 .artworkScene.isActive:after{animation:artworkShine 4.8s .35s ease-in-out infinite}
 .sceneDots{gap:7px}
+.carouselControls{transition:background-color .58s ease,border-color .58s ease,box-shadow .58s ease,color .58s ease}
+.carouselControls>button,.sceneDots button>span,.sceneDots button>i,.carouselProgress{transition:background-color .58s ease,border-color .58s ease,box-shadow .58s ease,color .58s ease,opacity .58s ease}
 .sceneDots button{width:48px;height:40px;display:grid;grid-template-columns:auto 1fr;gap:5px;align-items:center}
 .sceneDots button>span{
   width:auto;
@@ -447,16 +453,30 @@ footer{padding:55px max(28px,calc((100vw - 1450px)/2)) max(32px,env(safe-area-in
 .carouselProgress{width:84px;height:3px;display:block;overflow:hidden;border-radius:99px;background:rgba(255,255,255,.17);box-shadow:inset 0 0 0 1px rgba(255,255,255,.05)}
 .carouselProgress>i{width:100%;height:100%;display:block;transform:scaleX(0);transform-origin:left;border-radius:inherit;background:linear-gradient(90deg,#bd8f31,#ffe29a);box-shadow:0 0 9px rgba(244,210,119,.62)}
 .scene2 .carouselProgress>i{background:linear-gradient(90deg,#9a6fbe,#f1d889)}
-.carouselRunning .carouselProgress>i{animation:carouselProgressFill 3.8s linear both}.carouselPaused .carouselProgress>i{opacity:.38;transform:scaleX(0)}
+.carouselRunning .carouselProgress>i{animation:carouselProgressFill var(--scene-duration,5.2s) linear both}.carouselPaused .carouselProgress>i{opacity:.38;transform:scaleX(0)}
 @keyframes carouselProgressFill{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 
+/* Preserve the complete 16:9 legacy composition on portrait tablets and phones. */
+@media(max-width:1100px) and (orientation:portrait){
+  .artworkScene{background:radial-gradient(circle at 62% 44%,#5a2869 0,#23082d 52%,#0e0314 100%)}
+  .artworkScene>.artworkBackdrop{width:110%;height:110%;display:block;position:absolute;z-index:0;inset:-5%;object-fit:cover;object-position:62% 56%;filter:blur(18px) brightness(.48) saturate(1.28);transform:scale(1.08)}
+  .artworkScene>.artworkHero{width:calc(100% - clamp(28px,7vw,54px));height:auto;max-height:calc(100% - 230px);position:absolute;z-index:1;left:50%;top:47%;object-fit:contain;object-position:center;border:1px solid rgba(243,205,105,.4);border-radius:clamp(15px,2.8vw,24px);box-shadow:0 26px 70px rgba(7,1,10,.48),0 0 0 1px rgba(255,255,255,.08);transform:translate(-50%,-54%);transform-origin:center}
+  .artworkScene.isActive>.artworkHero{animation:artworkPosterBreathe 7.2s ease-in-out infinite alternate}
+  .artworkScene.isActive>.artworkBackdrop{animation:artworkBackdropBreathe 7.2s ease-in-out infinite alternate}
+  .artworkScene:before{background:radial-gradient(circle at 62% 72%,rgba(255,221,126,.18),transparent 22%),linear-gradient(180deg,rgba(121,61,139,.05),transparent 48%,rgba(14,3,20,.2));mix-blend-mode:screen}
+  .artworkShade{background:linear-gradient(0deg,rgba(11,2,15,.72),transparent 38%,rgba(9,2,13,.16))}
+  .artworkCaption{bottom:84px}
+}
+@keyframes artworkPosterBreathe{to{filter:brightness(1.07) saturate(1.08);transform:translate(-50%,-54%) scale(1.012)}}
+@keyframes artworkBackdropBreathe{to{filter:blur(20px) brightness(.55) saturate(1.34);transform:scale(1.12)}}
+
 @media(max-width:620px){
-  .heroScene{transition-duration:.55s,.38s,0s}.scene1 .artworkScene:not(.isActive){transform:translate3d(5%,0,0) scale(.994)}.scene2 .familyScene:not(.isActive){transform:translate3d(-5%,0,0) scale(.994)}
+  .heroScene{transition-duration:.68s,.76s,0s}
   .carouselControls{gap:4px;padding:6px}.carouselControls>button{width:38px;height:40px}.sceneDots{gap:2px}.sceneDots button{width:35px;grid-template-columns:1fr}.sceneDots button>span{display:none}.sceneDots button>i{width:20px;margin:auto}.sceneDots button.isActive>i{width:27px}.carouselProgress{width:54px}
 }
 
 @media(prefers-reduced-motion:reduce){
-  .deviceFrame:after,.familyScene.isActive .heroEyebrow,.familyScene.isActive .heroCopy h1,.familyScene.isActive .heroLead,.familyScene.isActive .heroActions,.familyScene.isActive .legacyOrbitPanel,.artworkScene.isActive .artworkCaption,.carouselProgress>i{animation:none!important}
+  .sceneTransitionVeil,.familyScene.isActive .heroEyebrow,.familyScene.isActive .heroCopy h1,.familyScene.isActive .heroLead,.familyScene.isActive .heroActions,.familyScene.isActive .legacyOrbitPanel,.artworkScene.isActive .artworkCaption,.carouselProgress>i{animation:none!important}
   .heroScene,.heroScene.isActive{transform:none!important;transition:none!important}.carouselProgress>i{opacity:.45;transform:scaleX(1)}
 }
 
@@ -511,7 +531,7 @@ footer{padding:55px max(28px,calc((100vw - 1450px)/2)) max(32px,env(safe-area-in
   .legacyOrbit{width:min(225px,68vw)}
   .orbitNode{padding:5px 7px;font-size:.43rem}.orbitNode i{width:5px;height:5px;box-shadow:0 0 0 3px rgba(216,173,79,.15)}
   .orbitCaption{margin-top:10px}.orbitCaption b{font-size:.59rem}.orbitCaption small{font-size:.44rem}
-  .artworkScene>img{filter:brightness(1.2) contrast(.98) saturate(1.11);transform-origin:62% 58%}
+  .artworkScene>.artworkHero{filter:brightness(1.2) contrast(.98) saturate(1.11);transform-origin:center}
   .artworkScene:before{background:radial-gradient(circle at 62% 72%,rgba(255,221,126,.32),transparent 18%),radial-gradient(circle at 77% 29%,rgba(237,197,97,.18),transparent 20%);}
   .artworkShade{background:linear-gradient(0deg,rgba(13,2,17,.38),rgba(13,2,17,.015) 54%)}
   .artworkCaption{left:max(22px,env(safe-area-inset-left));right:max(22px,env(safe-area-inset-right));bottom:88px;align-items:stretch;flex-direction:column;gap:10px}.artworkCaption .button{width:100%}.visionPill{width:max-content;font-size:.52rem}
@@ -520,8 +540,19 @@ footer{padding:55px max(28px,calc((100vw - 1450px)/2)) max(32px,env(safe-area-in
   .systemsSignature span{line-height:1.45}
 }
 
+@media(max-height:600px) and (orientation:landscape){
+  .deviceFrame{min-height:max(380px,calc(100svh - var(--sticky-height)))}
+  .familyScene{grid-template-columns:1fr;padding:30px max(22px,env(safe-area-inset-left)) 76px max(22px,env(safe-area-inset-right))}
+  .legacyOrbitPanel{display:none}
+  .heroCopy h1{max-width:680px;font-size:clamp(2.55rem,9.5vw,4rem);line-height:.88}
+  .heroLead{max-width:540px;margin-top:12px;font-size:.78rem;line-height:1.45}
+  .heroActions{margin-top:14px;display:flex;gap:12px}.familyScene .button.primary{width:auto;min-height:42px}.heroTextLink{min-height:42px}
+  .artworkCaption{bottom:70px;flex-direction:row;align-items:center}.artworkCaption .button{width:auto;min-height:42px}
+  .carouselControls{bottom:max(12px,env(safe-area-inset-bottom))}
+}
+
 @media(prefers-reduced-motion:reduce){
-  .orbitSweep,.orbitCore .ceremonial,.networkPulse,.artworkScene.isActive>img,.artworkScene.isActive:after{animation:none!important}
+  .orbitSweep,.orbitCore .ceremonial,.networkPulse,.artworkScene.isActive>.artworkHero,.artworkScene.isActive>.artworkBackdrop,.artworkScene.isActive:after{animation:none!important}
   .artworkScene:after{display:none}
   .productTile{transition:none!important}
 }
@@ -1837,4 +1868,327 @@ footer{padding:55px max(28px,calc((100vw - 1450px)/2)) max(32px,env(safe-area-in
 
 @media(prefers-reduced-motion:reduce){
   .footerVideoBackdrop,.finaleBrandArena{display:none}.scofValueRoster{display:none}.footerCeremonyShell{transition:none}.footerCeremonyShell.display-half,.footerCeremonyShell.display-fullscreen,.footerCeremonyShell.display-floating{position:relative;inset:auto;width:100%;height:auto;padding:0;border-radius:0;box-shadow:none}.footerCeremonyShell.display-half .footerPerformanceStage,.footerCeremonyShell.display-fullscreen .footerPerformanceStage,.footerCeremonyShell.display-floating .footerPerformanceStage{height:340px;aspect-ratio:auto}.finaleCloseMode,.finaleDragHandle{display:none!important}.footerPersistentBrandDock,.footerPersistentBrandDock *{animation:none!important}.footerPersistentBrandDock{opacity:1!important}.persistentKoMark,.persistentFirmMark{transform:none!important}
+}
+
+/* ARROR City illuminated road-sign scene */
+.artworkScene{
+  background:radial-gradient(circle at 72% 58%,#6d326c 0,#2a0b36 43%,#0d0312 100%);
+}
+.artworkScene>.artworkHero{position:absolute;inset:0;z-index:1;width:100%;height:100%;object-fit:cover;object-position:center;filter:brightness(1.05) contrast(1.02) saturate(1.08);transform-origin:58% 58%}
+.artworkScene>.artworkBackdrop{position:absolute;z-index:0}
+.arrorFloodlightRig{position:absolute;z-index:7;left:clamp(9%,12vw,15%);right:clamp(9%,12vw,15%);top:0;height:82px;display:flex;justify-content:space-between;pointer-events:none}
+.arrorFloodlight{--beam-angle:0deg;width:clamp(52px,5.4vw,78px);height:64px;position:relative;display:block;filter:drop-shadow(0 8px 7px rgba(0,0,0,.48))}
+.floodlightArm{width:4px;height:25px;position:absolute;z-index:1;left:50%;top:0;transform:translateX(-50%);border-radius:0 0 5px 5px;background:linear-gradient(90deg,#514b50,#e8e6de 45%,#676067);box-shadow:0 0 0 1px rgba(16,8,18,.6)}
+.floodlightArm:after{content:"";width:29px;height:5px;position:absolute;left:50%;top:0;transform:translateX(-50%);border-radius:0 0 5px 5px;background:#d8d5ce;box-shadow:0 2px 5px rgba(0,0,0,.4)}
+.floodlightHead{width:100%;height:clamp(26px,2.7vw,38px);position:absolute;z-index:3;left:0;top:20px;padding:4px;display:block;overflow:hidden;border:2px solid #e8e5dc;border-radius:6px;background:linear-gradient(145deg,#4b4850,#17151a 60%);box-shadow:inset 0 0 0 2px #655d68,0 0 20px rgba(225,243,255,.72),0 0 42px rgba(218,236,255,.3);transform:perspective(80px) rotateX(-11deg)}
+.floodlightHead>i{width:100%;height:100%;display:block;border-radius:3px;background:repeating-linear-gradient(90deg,transparent 0 8px,rgba(56,61,68,.75) 8px 10px),repeating-linear-gradient(0deg,#f7fdff 0 6px,#b8c7d0 6px 8px);box-shadow:inset 0 0 12px #fff,0 0 12px rgba(235,249,255,.95)}
+.floodlightBeam{width:clamp(190px,22vw,340px);height:clamp(350px,46vw,630px);position:absolute;z-index:2;left:50%;top:48px;display:block;transform:translateX(-50%) rotate(var(--beam-angle));transform-origin:50% 0;clip-path:polygon(46% 0,54% 0,100% 100%,0 100%);background:linear-gradient(180deg,rgba(247,253,255,.62),rgba(224,244,255,.25) 38%,rgba(255,232,158,.16) 72%,transparent);filter:blur(3px);mix-blend-mode:screen;opacity:.58}
+.floodlight1{--beam-angle:11deg;transform:rotate(-4deg)}.floodlight2{transform:translateY(-5px)}.floodlight3{--beam-angle:-11deg;transform:rotate(4deg)}
+.artworkScene.isActive .floodlight1 .floodlightBeam{animation:floodlightLeft 4.7s ease-in-out infinite}.artworkScene.isActive .floodlight2 .floodlightBeam{animation:floodlightCenter 5.6s .4s ease-in-out infinite}.artworkScene.isActive .floodlight3 .floodlightBeam{animation:floodlightRight 4.2s .9s ease-in-out infinite}
+@keyframes floodlightLeft{0%,100%{opacity:.46;filter:blur(3px) brightness(.98)}48%{opacity:.68;filter:blur(2px) brightness(1.16)}51%{opacity:.54}}
+@keyframes floodlightCenter{0%,100%{opacity:.6;filter:blur(2px) brightness(1.04)}55%{opacity:.78;filter:blur(3px) brightness(1.2)}}
+@keyframes floodlightRight{0%,100%{opacity:.5;filter:blur(3px) brightness(1)}31%{opacity:.7}35%{opacity:.56}68%{opacity:.74;filter:blur(2px) brightness(1.17)}}
+
+.arrorEaglePatrols{position:absolute;z-index:8;inset:7px 9px 9px;pointer-events:none}
+.arrorEagle{width:clamp(42px,5vw,76px);height:auto;position:absolute;object-fit:contain;filter:drop-shadow(0 0 5px #fff6c7) drop-shadow(0 0 13px rgba(238,190,72,.95));opacity:.9;will-change:offset-distance,transform,opacity}
+.eagleCircuit{left:3%;top:-5%}.eagleHalo{right:-2%;top:44%;transform:scale(.82)}.eagleSentinel{left:48%;bottom:-6%;transform:scale(.68)}
+@supports(offset-path:inset(0)){
+  .arrorEagle{left:0;top:0;right:auto;bottom:auto;offset-rotate:0deg}
+  .eagleCircuit{offset-path:inset(2% 1.5% round 27px);animation:eagleCircuitFlight 17s linear infinite}
+  .eagleHalo{offset-path:ellipse(49% 43% at 50% 50%);animation:eagleHaloFlight 23s linear infinite reverse}
+  .eagleSentinel{offset-path:inset(12% 18% round 46%);animation:eagleSentinelFlight 14s ease-in-out infinite}
+}
+@supports(offset-path:polygon(50% 0,98% 46%,74% 96%,26% 96%,2% 46%)){
+  .eagleSentinel{offset-path:polygon(50% 0,98% 46%,74% 96%,26% 96%,2% 46%)}
+}
+.artworkScene:not(.isActive) .arrorEagle{animation-play-state:paused}
+@keyframes eagleCircuitFlight{0%{offset-distance:0%;opacity:0;transform:scale(.72)}7%,92%{opacity:.94}48%{transform:scale(1)}100%{offset-distance:100%;opacity:0;transform:scale(.72)}}
+@keyframes eagleHaloFlight{0%{offset-distance:0%;opacity:.2;transform:scale(.58) translateY(0)}25%{opacity:.86;transform:scale(.78) translateY(-8px)}55%{opacity:1;transform:scale(.92) translateY(4px)}100%{offset-distance:100%;opacity:.2;transform:scale(.58) translateY(0)}}
+@keyframes eagleSentinelFlight{0%,100%{offset-distance:0%;opacity:.35;transform:scale(.54)}18%{offset-distance:19%;opacity:1;transform:scale(.74)}46%{offset-distance:46%;transform:scale(.62)}68%{offset-distance:71%;opacity:.96;transform:scale(.82)}86%{offset-distance:88%;transform:scale(.6)}}
+
+.artworkCaption{z-index:9;left:0;right:0;bottom:0;min-height:86px;max-width:none;padding:12px clamp(18px,4vw,58px);display:flex;align-items:center;justify-content:space-between;gap:18px;border-top:1px solid rgba(78,50,83,.16);border-radius:0;background:linear-gradient(105deg,rgba(255,255,252,.97),rgba(248,245,235,.96) 66%,rgba(239,229,205,.96));color:#28102f;box-shadow:0 -10px 30px rgba(18,3,22,.16),inset 0 1px 0 #fff;backdrop-filter:blur(16px)}
+.arrorCaptionCopy{min-width:0;display:flex;align-items:center;gap:12px}.arrorCaptionCopy .visionPill{margin:0;background:#32103e;color:#f5d77f;border-color:#6f3f75;box-shadow:none;white-space:nowrap}.arrorCaptionCopy>strong{font-family:var(--font-heritage),Georgia,serif;color:#371340;font-size:clamp(.82rem,1.15vw,1.08rem);font-weight:650;line-height:1.1}.artworkCaption .button.primary{flex:none;min-width:154px;background:#32103e;color:#fff;border-color:transparent;box-shadow:0 10px 24px rgba(50,16,62,.2)}
+.scene2 .carouselControls{z-index:12;border-color:rgba(74,28,94,.2);background:rgba(255,253,247,.95);color:#32103e;box-shadow:0 13px 34px rgba(19,4,24,.25),inset 0 1px 0 #fff}.scene2 .carouselControls>button{color:#32103e}.scene2 .carouselControls>button:hover{background:rgba(74,28,94,.1)}.scene2 .sceneDots button>span{color:#867689}.scene2 .sceneDots button.isActive>span{color:#32103e}.scene2 .carouselProgress{background:rgba(50,16,62,.16)}
+
+/* ARROR City V2: one image-bound stage, six living eagles, admiration ceremony */
+.artworkScene{
+  --arror-footer-height:92px;
+  background:#140319;
+}
+.artworkScene>.artworkBackdrop{
+  width:116%;height:116%;display:block;position:absolute;z-index:0;inset:-8%;
+  object-fit:cover;object-position:center 52%;
+  filter:blur(24px) brightness(.42) saturate(1.26);
+  transform:scale(1.04);
+}
+.arrorArtworkStage{
+  position:absolute;z-index:1;inset:0 0 var(--arror-footer-height);
+  overflow:hidden;background:#130318;
+  contain:layout paint;
+}
+.arrorArtworkStage:before{
+  content:"";position:absolute;z-index:9;inset:10px;pointer-events:none;
+  border:1px solid rgba(244,213,121,.22);border-radius:2px;
+  box-shadow:inset 0 0 28px rgba(111,48,130,.14),0 0 18px rgba(229,189,89,.08)
+}
+.arrorArtworkStage:after{
+  content:"";position:absolute;z-index:9;left:3%;right:3%;top:12%;height:1px;pointer-events:none;
+  background:linear-gradient(90deg,transparent,rgba(246,218,136,.16) 18%,rgba(142,239,195,.46) 50%,rgba(246,218,136,.16) 82%,transparent);
+  box-shadow:0 0 12px rgba(90,232,169,.32);opacity:.45;animation:arrorLedgerScan 7.2s ease-in-out infinite
+}
+@keyframes arrorLedgerScan{0%,100%{translate:0 -18px;opacity:.08}45%,58%{translate:0 52vh;opacity:.48}}
+.arrorArtworkStage>.arrorArtworkMedia{
+  width:100%;height:100%;position:absolute;z-index:1;inset:0;display:block;overflow:hidden
+}
+.arrorArtworkMedia>.artworkHero{
+  width:100%;height:100%;display:block;
+  object-fit:cover;object-position:center 48%;
+  filter:brightness(1.02) contrast(1.02) saturate(1.1);
+  transform:scale(1.006);transform-origin:58% 54%;will-change:transform,filter;
+}
+.artworkScene.isActive .arrorArtworkMedia>.artworkHero{animation:arrorArtworkBreathe 9.5s ease-in-out infinite alternate}
+.arrorArtworkStage>.artworkShade{z-index:3;inset:0;background:linear-gradient(180deg,rgba(11,2,15,.08),transparent 24%,transparent 70%,rgba(10,2,13,.22)),radial-gradient(circle at 69% 74%,rgba(255,221,126,.1),transparent 25%)}
+@keyframes arrorArtworkBreathe{to{filter:brightness(1.075) contrast(1.01) saturate(1.14);transform:scale(1.02)}}
+
+.arrorArtworkStage .arrorFloodlightRig{left:clamp(9%,12vw,15%);right:clamp(9%,12vw,15%);top:0;height:82px}
+.arrorArtworkStage .arrorEaglePatrols{position:absolute;z-index:8;inset:0;pointer-events:none}
+.arrorEagle{
+  --eagle-size:clamp(64px,6.8vw,108px);--facing:1;--wing-rate:.92s;--wing-delay:0s;
+  width:var(--eagle-size);height:var(--eagle-size);position:absolute;left:0;top:0;
+  opacity:.94;filter:drop-shadow(0 0 4px rgba(255,250,216,.82)) drop-shadow(0 0 12px rgba(224,169,42,.74));
+  will-change:offset-distance,opacity;offset-rotate:0deg;
+}
+.eagleBank{width:100%;height:100%;display:block;animation:eagleNaturalBank 4.6s ease-in-out infinite;animation-delay:var(--wing-delay)}
+.eagleWingbeat{width:100%;height:100%;display:block;background-image:var(--eagle-sprite);background-repeat:no-repeat;background-size:600% 100%;background-position:0 0;animation:eagleWingStroke var(--wing-rate) linear infinite;animation-delay:var(--wing-delay)}
+@keyframes eagleWingStroke{
+  0%,14%{background-position:0 0}17%,30%{background-position:20% 0}33%,46%{background-position:40% 0}
+  49%,62%{background-position:60% 0}65%,78%{background-position:80% 0}81%,94%{background-position:100% 0}100%{background-position:0 0}
+}
+@keyframes eagleNaturalBank{0%,100%{transform:scaleX(var(--facing)) rotate(-3deg) translateY(0)}48%{transform:scaleX(var(--facing)) rotate(4deg) translateY(-4px)}}
+
+.eagle1{--eagle-size:clamp(72px,7.1vw,112px);--wing-rate:.82s;--wing-delay:-.34s;--anchor-x:13%;--anchor-y:20%;--scatter-x:-34vw;--scatter-y:-22vh;--break-x:-11vw;--break-y:-8vh;left:3%;top:2%}
+.eagle2{--eagle-size:clamp(58px,5.9vw,92px);--facing:-1;--wing-rate:1.03s;--wing-delay:-.71s;--anchor-x:37%;--anchor-y:10%;--scatter-x:8vw;--scatter-y:-34vh;--break-x:-3vw;--break-y:-11vh;right:4%;top:12%}
+.eagle3{--eagle-size:clamp(52px,5.1vw,80px);--wing-rate:.91s;--wing-delay:-.17s;--anchor-x:68%;--anchor-y:12%;--scatter-x:38vw;--scatter-y:-26vh;--break-x:11vw;--break-y:-8vh;right:2%;top:48%}
+.eagle4{--eagle-size:clamp(68px,6.5vw,102px);--facing:-1;--wing-rate:1.16s;--wing-delay:-.92s;--anchor-x:79%;--anchor-y:55%;--scatter-x:42vw;--scatter-y:22vh;--break-x:12vw;--break-y:7vh;left:34%;bottom:2%}
+.eagle5{--eagle-size:clamp(48px,4.8vw,75px);--wing-rate:.76s;--wing-delay:-.48s;--anchor-x:53%;--anchor-y:68%;--scatter-x:5vw;--scatter-y:36vh;--break-x:2vw;--break-y:11vh;left:6%;top:48%}
+.eagle6{--eagle-size:clamp(62px,6vw,96px);--facing:-1;--wing-rate:1.28s;--wing-delay:-1.08s;--anchor-x:22%;--anchor-y:61%;--scatter-x:-39vw;--scatter-y:24vh;--break-x:-12vw;--break-y:7vh;right:12%;bottom:4%}
+
+@supports(offset-path:inset(0)){
+  .artworkScene.arrorCeremony-patrol .eagle1{offset-path:inset(3% 2% round 25px);animation:arrorRoute 18s -4s linear infinite}
+  .artworkScene.arrorCeremony-patrol .eagle2{offset-path:ellipse(47% 41% at 51% 49%);animation:arrorRoute 23s -15s linear infinite reverse}
+  .artworkScene.arrorCeremony-patrol .eagle3{offset-path:ellipse(32% 24% at 70% 45%);animation:arrorRoute 15s -8s ease-in-out infinite}
+  .artworkScene.arrorCeremony-patrol .eagle4{offset-path:inset(55% 6% 5% 22% round 48%);animation:arrorRoute 20s -11s linear infinite reverse}
+  .artworkScene.arrorCeremony-patrol .eagle5{offset-path:ellipse(39% 17% at 46% 68%);animation:arrorRoute 13.5s -2s ease-in-out infinite}
+  .artworkScene.arrorCeremony-patrol .eagle6{offset-path:inset(14% 18% 18% 14% round 44%);animation:arrorRoute 26s -19s linear infinite}
+}
+@keyframes arrorRoute{from{offset-distance:0%}to{offset-distance:100%}}
+.artworkScene:not(.isActive) .arrorEagle,.artworkScene:not(.isActive) .eagleBank,.artworkScene:not(.isActive) .eagleWingbeat{animation-play-state:paused!important}
+
+/* Let the dissolve own the compositor; ARROR comes alive only after the scene settles. */
+.heroCarousel:not(.carouselSettled) .artworkScene:after,
+.heroCarousel:not(.carouselSettled) .artworkScene>.artworkBackdrop,
+.heroCarousel:not(.carouselSettled) .artworkScene .arrorArtworkMedia>.artworkHero,
+.heroCarousel:not(.carouselSettled) .artworkScene .arrorArtworkStage:after,
+.heroCarousel:not(.carouselSettled) .artworkScene .floodlightBeam,
+.heroCarousel:not(.carouselSettled) .artworkScene .arrorEagle,
+.heroCarousel:not(.carouselSettled) .artworkScene .eagleBank,
+.heroCarousel:not(.carouselSettled) .artworkScene .eagleWingbeat,
+.heroCarousel:not(.carouselSettled) .artworkScene .arrorSnowWord,
+.heroCarousel:not(.carouselSettled) .artworkScene .arrorSnowflake,
+.heroCarousel:not(.carouselSettled) .artworkScene .artworkCaption{animation-play-state:paused!important}
+
+.artworkScene:is(.arrorCeremony-gather,.arrorCeremony-form,.arrorCeremony-break,.arrorCeremony-fireworks,.arrorCeremony-afterglow,.arrorCeremony-return,.arrorCeremony-still) .arrorEagle{
+  offset-path:none!important;left:var(--anchor-x);top:var(--anchor-y);right:auto;bottom:auto;
+}
+.artworkScene.arrorCeremony-gather .arrorEagle{animation:eagleCeremonyGather 1.05s cubic-bezier(.2,.72,.22,1) both}
+.artworkScene.arrorCeremony-gather .eagle1{animation-delay:0ms}.artworkScene.arrorCeremony-gather .eagle3{animation-delay:45ms}.artworkScene.arrorCeremony-gather .eagle5{animation-delay:90ms}.artworkScene.arrorCeremony-gather .eagle2{animation-delay:135ms}.artworkScene.arrorCeremony-gather .eagle4{animation-delay:180ms}.artworkScene.arrorCeremony-gather .eagle6{animation-delay:225ms}
+.artworkScene.arrorCeremony-form .arrorEagle{opacity:1;animation:eagleCeremonyHover 1.5s ease-in-out infinite alternate}
+.artworkScene.arrorCeremony-break .arrorEagle{animation:eagleCeremonyBreak .72s cubic-bezier(.24,.7,.32,1) both}
+.artworkScene:is(.arrorCeremony-fireworks,.arrorCeremony-afterglow) .arrorEagle{opacity:.94;transform:translate(var(--break-x),var(--break-y)) scale(.74)}
+.artworkScene.arrorCeremony-return .arrorEagle{animation:eagleCeremonyReturn 1.2s ease-out both}
+.artworkScene.arrorCeremony-still .arrorEagle{opacity:.94;transform:scale(.82)}
+@keyframes eagleCeremonyGather{from{opacity:0;transform:translate(var(--scatter-x),var(--scatter-y)) scale(.34) rotate(-16deg)}to{opacity:1;transform:translate(0,0) scale(.86) rotate(0)}}
+@keyframes eagleCeremonyHover{from{transform:translateY(-3px) scale(.82)}to{transform:translateY(5px) scale(.9)}}
+@keyframes eagleCeremonyBreak{from{opacity:1;transform:translate(0,0) scale(.86) rotate(0)}to{opacity:.94;transform:translate(var(--break-x),var(--break-y)) scale(.74) rotate(10deg)}}
+@keyframes eagleCeremonyReturn{from{opacity:.84;transform:translate(var(--break-x),var(--break-y)) scale(.7)}to{opacity:.94;transform:translate(0,0) scale(.82)}}
+
+.arrorSnowCeremony{position:absolute;z-index:7;inset:17% 18% 18%;display:grid;place-items:center;pointer-events:none;opacity:0}
+.arrorSnowWord{position:relative;z-index:2;display:flex;align-items:center;justify-content:center;gap:.24em;color:transparent;background:linear-gradient(95deg,#0d8a4d 5%,#b9f0c7 29%,#e5bd4d 54%,#fff1a8 74%,#178f51 96%);-webkit-background-clip:text;background-clip:text;font:850 clamp(2.2rem,6.8vw,7rem)/.82 var(--font-display),Georgia,serif;letter-spacing:.035em;text-align:center;text-transform:uppercase;filter:drop-shadow(0 0 8px rgba(251,235,146,.72)) drop-shadow(0 0 20px rgba(29,144,83,.52));white-space:nowrap}
+.arrorSnowWord:after{content:"❄  ✦  ❄  ✦  ❄";position:absolute;left:50%;top:105%;transform:translateX(-50%);color:#f3d873;font:700 clamp(.55rem,1.2vw,1rem)/1 sans-serif;letter-spacing:.7em;white-space:nowrap;text-shadow:0 0 8px #fff2af}
+.arrorSnowField{position:absolute;inset:-9% -5%;overflow:visible}
+.arrorSnowflake{--flake-color:#e2bb4e;position:absolute;left:var(--flake-x);top:var(--flake-y);display:block;color:var(--flake-color);font:700 calc(.62rem * var(--flake-size))/1 sans-serif;font-style:normal;opacity:0;text-shadow:0 0 6px currentColor,0 0 13px currentColor;transform:translate(var(--flake-from-x),var(--flake-from-y)) scale(.2) rotate(-90deg)}
+.arrorSnowflake:nth-child(3n+1){--flake-color:#22a760}.arrorSnowflake:nth-child(3n+2){--flake-color:#f0cf65}.arrorSnowflake:nth-child(5n){--flake-color:#efffea}
+.artworkScene.arrorCeremony-gather .arrorSnowCeremony,.artworkScene.arrorCeremony-form .arrorSnowCeremony,.artworkScene.arrorCeremony-break .arrorSnowCeremony,.artworkScene.arrorCeremony-fireworks .arrorSnowCeremony,.artworkScene.arrorCeremony-afterglow .arrorSnowCeremony,.artworkScene.arrorCeremony-still .arrorSnowCeremony{opacity:1}
+.artworkScene.arrorCeremony-gather .arrorSnowWord{opacity:0;transform:scale(.72);filter:blur(8px)}
+.artworkScene.arrorCeremony-form .arrorSnowWord{animation:arrorWordForm .72s .18s cubic-bezier(.17,.84,.28,1) both,arrorWordShimmer 1.35s 1s ease-in-out infinite alternate}
+.artworkScene[data-arror-cycle="3"].arrorCeremony-form .arrorSnowWord{filter:drop-shadow(0 0 11px #fff4ba) drop-shadow(0 0 28px rgba(31,173,96,.86));transform:scale(1.06)}
+.artworkScene.arrorCeremony-form .arrorSnowflake{animation:arrorFlakeAssemble .78s var(--flake-delay) cubic-bezier(.16,.74,.3,1) both,arrorFlakeTwinkle 1.1s calc(.9s + var(--flake-delay)) ease-in-out infinite alternate}
+.artworkScene:is(.arrorCeremony-break,.arrorCeremony-fireworks) .arrorSnowWord{opacity:1;transform:scale(1);animation:arrorWordShimmer 1.15s ease-in-out infinite alternate}
+.artworkScene:is(.arrorCeremony-break,.arrorCeremony-fireworks) .arrorSnowflake{opacity:.9;transform:none;animation:arrorFlakeTwinkle 1s var(--flake-delay) ease-in-out infinite alternate}
+.artworkScene.arrorCeremony-afterglow .arrorSnowWord{animation:arrorWordDissolve .82s ease-in both}
+.artworkScene.arrorCeremony-afterglow .arrorSnowflake{animation:arrorFlakeDissolve .9s var(--flake-delay) ease-in both}
+.artworkScene.arrorCeremony-still .arrorSnowWord{opacity:1;transform:none}.artworkScene.arrorCeremony-still .arrorSnowflake{opacity:.9;transform:none}
+@keyframes arrorWordForm{from{opacity:0;transform:scale(.7);filter:blur(9px)}to{opacity:1;transform:scale(1);filter:blur(0)}}
+@keyframes arrorWordShimmer{to{filter:drop-shadow(0 0 12px #fff5b6) drop-shadow(0 0 30px rgba(21,160,85,.78));letter-spacing:.055em}}
+@keyframes arrorWordDissolve{from{opacity:1;transform:scale(1);filter:blur(0)}to{opacity:0;transform:scale(1.13);filter:blur(8px)}}
+@keyframes arrorFlakeAssemble{from{opacity:0;transform:translate(var(--flake-from-x),var(--flake-from-y)) scale(.2) rotate(-110deg)}to{opacity:.96;transform:translate(0,0) scale(1) rotate(0)}}
+@keyframes arrorFlakeTwinkle{from{opacity:.48;scale:.82}to{opacity:1;scale:1.15}}
+@keyframes arrorFlakeDissolve{from{opacity:.96;transform:translate(0,0) scale(1)}to{opacity:0;transform:translate(var(--flake-from-x),var(--flake-from-y)) scale(.25) rotate(100deg)}}
+
+.artworkScene .artworkCaption{z-index:10;left:0;right:0;bottom:0;min-height:var(--arror-footer-height);padding:12px clamp(18px,4vw,58px);border-radius:0;background:linear-gradient(105deg,rgba(255,255,252,.98),rgba(248,245,235,.97) 66%,rgba(239,229,205,.97))}
+.artworkScene .arrorCaptionCopy{max-width:38%;display:flex}.artworkScene .artworkCaption .button.primary{min-width:154px}
+
+.arrorFireworksCanvas,.arrorFireworksReducedHalo{position:absolute;z-index:6;inset:0;width:100%;height:100%;pointer-events:none}
+.arrorFireworksCanvas{display:block;mix-blend-mode:screen;filter:saturate(1.08)}
+.arrorFireworksReducedHalo{opacity:0;background:radial-gradient(ellipse at 55% 30%,transparent 0 18%,rgba(242,206,104,.32) 19% 20%,rgba(60,204,120,.2) 21% 23%,transparent 24% 100%);transition:opacity .35s ease}
+.arrorFireworksReducedHalo.isVisible{opacity:1}
+
+.arrorSmartDisplay{
+  --tv-antenna-length:clamp(42px,5vw,65px);--tv-hover-distance:6px;--tv-hover-duration:4.8s;
+  width:clamp(210px,16vw,270px);aspect-ratio:16/9;position:absolute;z-index:11;
+  left:50%;right:auto;top:auto;bottom:clamp(20px,2.8vh,32px);pointer-events:none;
+  transform:translateX(-50%);transform-origin:center bottom
+}
+.arrorTvHover{width:100%;height:100%;position:absolute;inset:0;transform-origin:center bottom;filter:drop-shadow(0 18px 24px rgba(5,1,8,.34))}
+.heroCarousel:not(.carouselSettled) .artworkScene.isEntering .arrorSmartDisplay{opacity:0;transform:translateX(-50%) translateY(22px) scale(.96)}
+.carouselSettled .artworkScene.isActive .arrorSmartDisplay{animation:arrorTvArrival .72s .12s cubic-bezier(.18,.82,.24,1) both}
+.carouselSettled .artworkScene.isActive .arrorTvHover{animation:arrorTvHover var(--tv-hover-duration) .96s ease-in-out infinite both}
+.arrorTvCabinet{position:absolute;z-index:2;inset:0;padding:6px;border:1px solid rgba(247,219,134,.74);border-radius:16px;background:linear-gradient(145deg,#1c0923,#08050b 58%,#2a1032);box-shadow:inset 0 0 0 2px rgba(255,255,255,.06),inset 0 0 18px rgba(229,189,89,.1),0 0 20px rgba(229,189,89,.13)}
+.arrorTvCabinet:before{content:"";position:absolute;z-index:4;left:12%;right:12%;bottom:-5px;height:5px;border-radius:0 0 8px 8px;background:linear-gradient(90deg,#29102f,#d8b75d 48%,#29102f);box-shadow:0 3px 8px rgba(7,1,10,.45)}
+.arrorTvScreen{height:100%;position:relative;overflow:hidden;padding:clamp(12px,1.6vw,21px);display:flex;flex-direction:column;justify-content:center;border:1px solid rgba(134,238,183,.28);border-radius:11px;background:radial-gradient(circle at 78% 20%,rgba(79,218,142,.17),transparent 25%),linear-gradient(145deg,rgba(18,4,24,.97),rgba(37,11,43,.94) 58%,rgba(11,35,24,.92));box-shadow:inset 0 0 32px rgba(5,1,8,.62);color:#fff;text-shadow:0 2px 10px rgba(0,0,0,.72)}
+.arrorTvScreen:before{content:"";position:absolute;z-index:0;inset:-18% 53% 35% -18%;transform:rotate(-17deg);background:linear-gradient(110deg,transparent,rgba(255,255,255,.14),transparent 62%);opacity:.62}
+.arrorTvScreen:after{content:"";position:absolute;z-index:0;left:4%;right:4%;top:8%;height:1px;background:linear-gradient(90deg,transparent,rgba(133,239,186,.62),transparent);box-shadow:0 0 8px rgba(89,238,158,.62);animation:arrorTvScan 4.8s ease-in-out infinite}
+.arrorTvScreen small,.arrorTvScreen strong,.arrorTvScreen>span{position:relative;z-index:1;display:block}.arrorTvScreen small{color:#d9c478;font:850 clamp(.42rem,.58vw,.57rem)/1.25 var(--font-mono),monospace;letter-spacing:.12em;text-transform:uppercase}.arrorTvScreen strong{margin-top:8px;font:720 clamp(1.05rem,1.8vw,1.8rem)/.95 var(--font-display),serif;letter-spacing:-.025em;text-transform:uppercase}.arrorTvScreen>span{margin-top:8px;color:#bde6ca;font:760 clamp(.48rem,.68vw,.65rem)/1.2 var(--font-mono),monospace;letter-spacing:.13em;text-transform:uppercase}
+.arrorTvSignalBars{height:15px;position:absolute;z-index:2;right:13px;bottom:11px;display:flex;align-items:flex-end;gap:2px}.arrorTvSignalBars b{width:3px;border-radius:2px;background:#69e3a0;box-shadow:0 0 5px rgba(105,227,160,.75)}.arrorTvSignalBars b:nth-child(1){height:5px}.arrorTvSignalBars b:nth-child(2){height:9px}.arrorTvSignalBars b:nth-child(3){height:14px}
+.arrorTvStatusLed{width:5px;height:5px;position:absolute;z-index:5;right:8px;bottom:1px;border-radius:50%;background:#5ee495;box-shadow:0 0 5px #5ee495,0 0 10px rgba(94,228,149,.75)}
+.arrorTvAerials{height:var(--tv-antenna-length);position:absolute;z-index:1;left:50%;right:0;top:calc(var(--tv-antenna-length) * -1 + 5px);transform:translateX(-50%);width:72%}
+.arrorTvAerial{width:3px;height:var(--tv-antenna-length);position:absolute;left:50%;bottom:0;display:block;transform-origin:50% 100%;border-radius:999px;background:linear-gradient(90deg,#4b464d,#f0eee5 43%,#777078 70%,#2e2930);box-shadow:0 0 0 1px rgba(8,3,10,.38),0 0 7px rgba(232,215,174,.28)}
+.arrorTvAerial b{width:9px;height:9px;position:absolute;left:50%;top:-5px;transform:translateX(-50%);border:1px solid rgba(255,255,255,.8);border-radius:50%;background:#e8c65f;box-shadow:0 0 6px #fff1ac,0 0 15px rgba(232,198,95,.82)}
+.arrorTvAerial.aerialLeft{transform:translateX(-50%) rotate(-28deg)}.arrorTvAerial.aerialRight{transform:translateX(-50%) rotate(28deg)}.arrorTvAerial.aerialRight b{background:#54d990;box-shadow:0 0 6px #caffdf,0 0 15px rgba(84,217,144,.86)}
+.arrorTvAerialMount{width:25px;height:13px;position:absolute;z-index:3;left:50%;bottom:-2px;transform:translateX(-50%);border:1px solid rgba(239,209,120,.62);border-radius:13px 13px 5px 5px;background:linear-gradient(#472052,#120719);box-shadow:0 0 10px rgba(229,189,89,.2)}
+.arrorSmartDisplay.tv-countdown{--tv-hover-distance:3px;--tv-hover-duration:5.4s}.arrorSmartDisplay.tv-live{--tv-hover-distance:8px;--tv-hover-duration:3.7s}.arrorSmartDisplay.tv-transmit{--tv-hover-distance:4px;--tv-hover-duration:2.8s}.arrorSmartDisplay.tv-complete{--tv-hover-distance:2px;--tv-hover-duration:5.6s}
+.arrorSmartDisplay.tv-countdown .aerialLeft{animation:arrorAerialSearchLeft 2.15s ease-in-out infinite}.arrorSmartDisplay.tv-countdown .aerialRight{animation:arrorAerialSearchRight 2.55s .22s ease-in-out infinite}.arrorSmartDisplay.tv-countdown .arrorTvScreen{box-shadow:inset 0 0 34px rgba(49,170,103,.2)}
+.arrorSmartDisplay.tv-live .aerialLeft{animation:arrorAerialLockLeft 1.15s ease-in-out infinite alternate}.arrorSmartDisplay.tv-live .aerialRight{animation:arrorAerialLockRight 1.15s .08s ease-in-out infinite alternate}.arrorSmartDisplay.tv-live .arrorTvCabinet{box-shadow:inset 0 0 0 2px rgba(255,255,255,.08),0 0 24px rgba(229,189,89,.34)}
+.arrorSmartDisplay.tv-transmit .aerialLeft{animation:arrorAerialTransmitLeft .72s ease-out infinite}.arrorSmartDisplay.tv-transmit .aerialRight{animation:arrorAerialTransmitRight .72s .1s ease-out infinite}.arrorSmartDisplay.tv-transmit .arrorTvStatusLed{animation:arrorTvSignalPulse .55s ease-out infinite}.arrorSmartDisplay.tv-transmit .arrorTvScreen{box-shadow:inset 0 0 38px rgba(66,219,137,.24),0 0 18px rgba(229,189,89,.18)}.arrorSmartDisplay.tv-transmit .arrorTvSignalBars{animation:arrorTvBarsPulse .7s ease-in-out infinite alternate}
+.arrorSmartDisplay.tv-complete .arrorTvHover{opacity:.88}.arrorSmartDisplay.tv-complete .arrorTvAerial{transition:transform .8s ease}
+@keyframes arrorTvArrival{0%{opacity:0;transform:translateX(-50%) translateY(22px) scale(.96)}68%{opacity:1;transform:translateX(-50%) translateY(-3px) scale(1.012)}100%{opacity:1;transform:translateX(-50%) translateY(0) scale(1)}}
+@keyframes arrorTvHover{0%,100%{transform:translateY(0);filter:drop-shadow(0 18px 24px rgba(5,1,8,.34))}50%{transform:translateY(calc(var(--tv-hover-distance) * -1));filter:drop-shadow(0 25px 29px rgba(5,1,8,.25))}}
+@keyframes arrorTvScan{0%,100%{translate:0 -4px;opacity:.15}48%,58%{translate:0 105px;opacity:.65}}
+@keyframes arrorAerialSearchLeft{0%,100%{transform:translateX(-50%) rotate(-28deg)}38%{transform:translateX(-50%) rotate(-12deg)}67%{transform:translateX(-50%) rotate(-38deg)}}
+@keyframes arrorAerialSearchRight{0%,100%{transform:translateX(-50%) rotate(28deg)}32%{transform:translateX(-50%) rotate(39deg)}71%{transform:translateX(-50%) rotate(10deg)}}
+@keyframes arrorAerialLockLeft{0%,100%{transform:translateX(-50%) rotate(-11deg)}46%{transform:translateX(-50%) rotate(3deg)}68%{transform:translateX(-50%) rotate(-4deg)}}
+@keyframes arrorAerialLockRight{0%,100%{transform:translateX(-50%) rotate(11deg)}46%{transform:translateX(-50%) rotate(-3deg)}68%{transform:translateX(-50%) rotate(4deg)}}
+@keyframes arrorAerialTransmitLeft{0%,100%{transform:translateX(-50%) rotate(-32deg)}48%{transform:translateX(-50%) rotate(-43deg)}}
+@keyframes arrorAerialTransmitRight{0%,100%{transform:translateX(-50%) rotate(32deg)}48%{transform:translateX(-50%) rotate(43deg)}}
+@keyframes arrorTvSignalPulse{70%{box-shadow:0 0 5px #5ee495,0 0 24px rgba(94,228,149,0);transform:scale(1.5)}}
+@keyframes arrorTvBarsPulse{to{filter:brightness(1.45);transform:scaleY(1.12)}}
+
+@media(max-width:1100px) and (orientation:portrait){
+  .artworkScene{--arror-footer-height:122px}
+  .artworkScene>.artworkBackdrop{width:118%;height:118%;inset:-9%;object-position:66% 52%;filter:blur(25px) brightness(.43) saturate(1.24)}
+  .arrorArtworkStage{inset:0 0 var(--arror-footer-height);width:auto;height:auto;aspect-ratio:auto;background:#100214}
+  .arrorArtworkMedia>.artworkHero{object-fit:cover;object-position:66% 50%;transform:none;filter:brightness(1.03) contrast(1.015) saturate(1.08)}
+  .artworkScene.isActive .arrorArtworkMedia>.artworkHero{animation:arrorPortraitArtworkBreathe 9.5s ease-in-out infinite alternate}
+  .arrorArtworkStage>.artworkShade{background:linear-gradient(90deg,rgba(12,2,16,.5),transparent 56%),linear-gradient(180deg,rgba(11,2,15,.05),transparent 54%,rgba(10,2,13,.36))}
+  .arrorArtworkStage .arrorFloodlightRig{left:10%;right:10%;top:0}
+  .arrorSmartDisplay{--tv-antenna-length:clamp(38px,6vw,52px);--tv-hover-distance:5px;width:clamp(180px,26vw,220px);bottom:clamp(16px,2.4vh,24px)}
+  .artworkScene .artworkCaption{min-height:122px;padding:12px 16px 54px}.artworkScene .arrorCaptionCopy{max-width:58%;display:grid;gap:3px}.artworkScene .artworkCaption .button.primary{min-width:140px}
+  .arrorSnowCeremony{inset:15% 8% 20%}.arrorSnowWord{font-size:clamp(1.7rem,8vw,4.7rem)}
+  .arrorEagle{--eagle-size:clamp(44px,9vw,74px)}
+}
+@keyframes arrorPortraitArtworkBreathe{to{filter:brightness(1.08) contrast(1.01) saturate(1.12);transform:scale(1.008)}}
+
+@media(min-width:621px) and (max-width:860px) and (orientation:portrait){
+  .arrorArtworkMedia>.artworkHero{object-position:50% 40%}
+}
+
+@media(max-width:620px) and (orientation:portrait){
+  .artworkScene{--arror-footer-height:148px}
+  .arrorArtworkMedia>.artworkHero{object-position:50% 50%}
+  .arrorArtworkStage:before{inset:7px;border-color:rgba(244,213,121,.26)}.arrorArtworkStage:after{left:5%;right:5%}
+  .arrorArtworkStage .arrorFloodlightRig{left:24px;right:24px;height:58px}.arrorArtworkStage .arrorFloodlight{width:clamp(42px,12vw,56px);height:54px}.arrorArtworkStage .floodlightHead{top:16px;height:25px;padding:3px}.arrorArtworkStage .floodlightArm{height:20px}.arrorArtworkStage .floodlightBeam{top:39px;width:clamp(150px,46vw,230px);height:min(68%,470px);filter:blur(2px)}
+  .arrorSmartDisplay{--tv-antenna-length:clamp(28px,8vw,38px);--tv-hover-distance:4px;width:clamp(146px,42vw,178px);bottom:clamp(12px,2vh,18px)}
+  .arrorTvCabinet{padding:4px;border-radius:12px}.arrorTvScreen{padding:10px;border-radius:8px}.arrorTvScreen small{font-size:.38rem;letter-spacing:.09em}.arrorTvScreen strong{margin-top:5px;font-size:clamp(.88rem,4.5vw,1.18rem)}.arrorTvScreen>span{margin-top:5px;font-size:.39rem;letter-spacing:.09em}.arrorTvSignalBars{right:9px;bottom:8px;scale:.78}.arrorTvStatusLed{right:6px;bottom:0}
+  .arrorEagle{--eagle-size:clamp(34px,11vw,48px)}
+  .arrorSnowCeremony{inset:16% 5% 24%}.arrorSnowWord{display:grid;gap:0;font-size:clamp(1.72rem,10vw,3rem);line-height:.75;white-space:normal}.arrorSnowWord:after{top:109%;font-size:.52rem;letter-spacing:.42em}
+  .arrorSnowField{inset:-6% -2%}.arrorSnowflake:nth-child(2n){display:none}.arrorSnowflake{font-size:calc(.68rem * var(--flake-size))}
+  .artworkScene .artworkCaption{min-height:148px;padding:10px 12px 56px;display:grid;align-content:start;gap:7px}.artworkScene .arrorCaptionCopy{max-width:none;gap:3px}.artworkScene .arrorCaptionCopy .visionPill{padding:7px 9px;font-size:.45rem}.artworkScene .arrorCaptionCopy>strong{font-size:.8rem}.artworkScene .artworkCaption .button.primary{width:100%;min-width:0;min-height:40px}
+  .scene2 .carouselControls{bottom:max(8px,env(safe-area-inset-bottom));max-width:calc(100vw - 14px)}
+  .eagle1{--anchor-x:7%;--anchor-y:18%}.eagle2{--anchor-x:36%;--anchor-y:5%}.eagle3{--anchor-x:70%;--anchor-y:18%}.eagle4{--anchor-x:76%;--anchor-y:58%}.eagle5{--anchor-x:42%;--anchor-y:70%}.eagle6{--anchor-x:8%;--anchor-y:59%}
+}
+
+@media(max-width:430px) and (orientation:portrait){
+  .artworkScene{--arror-footer-height:132px}
+  .arrorArtworkMedia>.artworkHero{object-position:50% 50%}
+  .arrorSmartDisplay{width:clamp(142px,42vw,166px);bottom:14px}
+  .artworkScene .arrorCaptionCopy>strong{display:none}.artworkScene .artworkCaption{min-height:132px;padding-top:8px;padding-bottom:54px}
+}
+
+@media(max-width:380px) and (orientation:portrait){
+  .artworkScene{--arror-footer-height:128px}
+  .arrorArtworkMedia>.artworkHero{object-position:50% 50%}
+  .arrorArtworkStage .arrorFloodlightRig{left:18px;right:18px}
+  .arrorSmartDisplay{--tv-antenna-length:26px;--tv-hover-distance:3px;width:clamp(136px,40vw,150px);bottom:12px}
+  .artworkScene .artworkCaption{min-height:128px;padding-inline:10px;padding-bottom:52px}
+}
+
+@media(max-height:600px) and (orientation:landscape){
+  .artworkScene{--arror-footer-height:66px}.arrorArtworkStage{inset:0 0 66px;height:auto;aspect-ratio:auto}.arrorArtworkMedia>.artworkHero{object-fit:cover;object-position:center 49%}
+  .arrorArtworkStage .arrorFloodlightRig{left:16%;right:16%;top:0}.arrorArtworkStage .arrorFloodlight{width:50px}.arrorArtworkStage .floodlightHead{top:14px;height:24px}.arrorArtworkStage .floodlightArm{height:18px}.arrorArtworkStage .floodlightBeam{top:36px;width:29vw;height:290px}
+  .arrorSmartDisplay{--tv-antenna-length:28px;--tv-hover-distance:3px;width:clamp(145px,21vw,170px);bottom:clamp(10px,2vh,14px)}.arrorTvScreen{padding:9px}.arrorTvScreen small{font-size:.36rem}.arrorTvScreen strong{font-size:.88rem}.arrorTvScreen>span{font-size:.36rem}.arrorEagle{--eagle-size:42px}.arrorSnowCeremony{inset:13% 19% 20%}.arrorSnowWord{font-size:clamp(1.9rem,6.5vw,4rem)}
+  .artworkScene .artworkCaption{min-height:66px;padding:8px 14px;display:flex}.artworkScene .arrorCaptionCopy{max-width:42%;display:flex}.artworkScene .arrorCaptionCopy>strong{display:none}.artworkScene .artworkCaption .button.primary{width:auto;min-height:40px}
+  .scene2 .carouselControls{bottom:max(8px,env(safe-area-inset-bottom))}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .artworkScene.isActive .arrorArtworkMedia>.artworkHero,.artworkScene .arrorArtworkStage:after,.artworkScene .arrorEagle,.artworkScene .eagleBank,.artworkScene .eagleWingbeat,.artworkScene .arrorSnowWord,.artworkScene .arrorSnowflake,.artworkScene .floodlightBeam{animation:none!important}
+  .arrorSmartDisplay,.arrorSmartDisplay .arrorTvHover,.arrorSmartDisplay .arrorTvAerial,.arrorSmartDisplay .arrorTvScreen:after,.arrorSmartDisplay .arrorTvStatusLed,.arrorSmartDisplay .arrorTvSignalBars{animation:none!important}
+  .arrorSmartDisplay{opacity:1!important;transform:translateX(-50%)!important}.arrorSmartDisplay .arrorTvHover{transform:none!important;filter:drop-shadow(0 18px 24px rgba(5,1,8,.34))!important}
+  .artworkScene .arrorEagle{offset-path:none!important}.artworkScene.arrorCeremony-patrol .eagle1{left:4%;top:5%}.artworkScene.arrorCeremony-patrol .eagle2{left:29%;top:3%}.artworkScene.arrorCeremony-patrol .eagle3{left:72%;top:8%}.artworkScene.arrorCeremony-patrol .eagle4{left:78%;top:58%}.artworkScene.arrorCeremony-patrol .eagle5{left:45%;top:72%}.artworkScene.arrorCeremony-patrol .eagle6{left:9%;top:61%}
+  .eagleWingbeat{background-position:40% 0}.eagleBank{transform:scaleX(var(--facing))}.artworkScene.arrorCeremony-still .arrorSnowCeremony{opacity:1}.artworkScene.arrorCeremony-still .arrorSnowWord{opacity:1}.artworkScene.arrorCeremony-still .arrorSnowflake{opacity:.8;transform:none}
+}
+
+/* Whole-page mobile hardening: compact phones, touch rails, and long content. */
+@media(max-width:620px){
+  html,body{max-width:100%;overflow-x:clip}
+  button,a{touch-action:manipulation}
+  .siteHeader,.brandRace,.brandWords,.section,.productDock,.rootPerson>div,.operationsNotice>div,.footerIdentity{min-width:0}
+  .carouselControls{
+    max-width:calc(100vw - 12px);overflow-x:auto;overscroll-behavior-inline:contain;
+    scrollbar-width:none;-webkit-overflow-scrolling:touch
+  }
+  .carouselControls::-webkit-scrollbar{display:none}
+  .carouselControls>*{flex:0 0 auto}
+  .carouselControls>button,.sceneDots button{min-height:44px}
+  .productRail,.legacyFlow,.finaleMediaControls{overscroll-behavior-inline:contain;-webkit-overflow-scrolling:touch}
+  .conceptTag,.roleBadge{max-width:100%;white-space:normal;line-height:1.4}
+  .rootPerson h3,.rootPerson p,.operationsNotice b,.operationsNotice p,.systemsSignature span{overflow-wrap:anywhere}
+  .operationsNotice>span{flex:0 0 auto}
+}
+
+@media(max-width:430px){
+  .carouselControls{gap:3px;padding:5px}
+  .carouselControls>button{width:38px;height:44px}
+  .sceneDots{gap:1px}.sceneDots button{width:36px;height:44px}
+  .carouselProgress{display:none}
+  .rootPerson{padding:20px 18px;align-items:flex-start;gap:13px}
+  .personIcon{width:49px;height:49px;font-size:1.42rem}
+  .rootPerson h3{font-size:clamp(1.34rem,7vw,1.58rem)}
+  .operationsNotice{padding:18px 16px;gap:11px}
+  .siteFooter>.footerLinks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:100%;gap:4px 14px}
+  .siteFooter>.footerLinks a{min-width:0}
+  .finaleNowPlaying{width:calc(100vw - 16px);gap:5px;padding-left:9px}
+  .finaleNowPlaying button{min-width:38px;padding-inline:7px}
+}
+
+@media(max-width:380px){
+  .siteHeader{padding-inline:max(10px,env(safe-area-inset-left)) max(10px,env(safe-area-inset-right));gap:8px}
+  .brandRace{gap:8px}.partnerCue{display:none}.brandWords strong{font-size:.78rem}.brandWords small{font-size:.46rem}
+  .menuButton{width:44px;flex:0 0 44px}
+  .liveFlag{width:98px;flex-basis:98px;padding-inline:7px}.tickerItem{padding-inline:15px}
+  .section{padding-inline:max(16px,env(safe-area-inset-left)) max(16px,env(safe-area-inset-right))}
+  .productDock{padding-inline:max(16px,env(safe-area-inset-left)) max(16px,env(safe-area-inset-right))}
+  .familyScene{padding-inline:max(18px,env(safe-area-inset-left)) max(18px,env(safe-area-inset-right))}
+  .heroCopy h1{font-size:clamp(2.55rem,14.6vw,3.15rem)}
+  .finaleNowPlaying b{font-size:.74rem}.finaleNowPlaying .nowPlayingUnlock{max-width:72px;line-height:1.1}
 }

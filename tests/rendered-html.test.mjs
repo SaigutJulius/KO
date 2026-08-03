@@ -5,6 +5,7 @@ import { fileURLToPath } from "node:url";
 import sharp from "sharp";
 
 const mimeTypes = {
+  ".avif": "image/avif",
   ".jpg": "image/jpeg",
   ".mp4": "video/mp4",
   ".png": "image/png",
@@ -73,6 +74,11 @@ test("serves every visible brand asset directly with the correct media type", as
     ["/brand/kap-ossen/ko-crest-arena-trimmed-768.png", "image/png"],
     ["/brand/kap-ossen/ko-crest-arena-trimmed-768.webp", "image/webp"],
     ["/og-family-embassy.png", "image/png"],
+    ["/artwork/arror-city-mobile-portrait-v1.avif", "image/avif"],
+    ["/artwork/arror-city-mobile-portrait-v1.webp", "image/webp"],
+    ["/artwork/arror-city-tablet-portrait-v1.avif", "image/avif"],
+    ["/artwork/arror-city-tablet-portrait-v1.webp", "image/webp"],
+    ["/artwork/golden-eagle-wingbeat-v2.webp", "image/webp"],
     ["/brand/kap-ossen/ko-crest-3d-plum-1200.jpg", "image/jpeg"],
     ["/showcase/st-firm-partner.webp", "image/webp"],
     ["/showcase/ssos-symbol.webp", "image/webp"],
@@ -94,6 +100,56 @@ test("serves every visible brand asset directly with the correct media type", as
     assert.equal(response.headers.get("content-type"), expectedType);
     assert.ok((await response.arrayBuffer()).byteLength > 1_000, `${path} should not be blank`);
   }
+});
+
+test("keeps the golden eagle wingbeat as a six-frame transparent sprite", async () => {
+  const sprite = new URL("../public/artwork/golden-eagle-wingbeat-v2.webp", import.meta.url);
+  const metadata = await sharp(fileURLToPath(sprite)).metadata();
+  assert.equal(metadata.width, 1536);
+  assert.equal(metadata.height, 256);
+  assert.equal(metadata.channels, 4);
+  assert.equal(metadata.hasAlpha, true);
+});
+
+test("keeps art-directed ARROR artwork for phone and tablet portrait layouts", async () => {
+  const phone = await sharp(fileURLToPath(new URL("../public/artwork/arror-city-mobile-portrait-v1.webp", import.meta.url))).metadata();
+  const tablet = await sharp(fileURLToPath(new URL("../public/artwork/arror-city-tablet-portrait-v1.webp", import.meta.url))).metadata();
+  assert.deepEqual([phone.width, phone.height], [941, 1672]);
+  assert.deepEqual([tablet.width, tablet.height], [1122, 1402]);
+  assert.ok((phone.width ?? 0) / (phone.height ?? 1) < 0.58, "phone artwork should remain 9:16 portrait");
+  assert.ok((tablet.width ?? 0) / (tablet.height ?? 1) > 0.79, "tablet artwork should remain 4:5 portrait");
+});
+
+test("keeps the landing transition decoded, phased and independent from slide 1 layout", async () => {
+  const [hero, css] = await Promise.all([
+    readFile(new URL("../app/HeroCarousel.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
+  ]);
+
+  assert.match(hero, /const SCENE_TRANSITION_MS = 760/);
+  assert.match(hero, /type SceneTransitionPhase = "settled" \| "preparing" \| "transitioning"/);
+  assert.match(hero, /image\.currentSrc \|\| image\.src/);
+  assert.match(hero, /image\.decode\(\)/);
+  assert.match(hero, /ref=\{arrorArtworkImageRef\}/);
+  assert.match(hero, /data-transition-phase=\{sceneTransition\.phase\}/);
+  assert.match(hero, /data-transition-direction=\{sceneTransition\.direction\}/);
+  assert.match(hero, /className="sceneTransitionVeil"/);
+  assert.match(hero, /sceneTransition\.phase === "transitioning"[\s\S]*?"isLeaving"/);
+  assert.match(hero, /sceneTransition\.phase === "transitioning"[\s\S]*?"isEntering"/);
+
+  assert.match(css, /\.heroScene\.isLeaving\{[^}]*transform:none/);
+  assert.match(css, /\.artworkScene\{transform:scale\(1\.008\)\}/);
+  assert.match(css, /\.carouselTransitioning \.sceneTransitionVeil/);
+  assert.match(css, /@keyframes sceneVeilForward/);
+  assert.match(css, /@keyframes sceneVeilBackward/);
+  assert.match(css, /\.heroCarousel:not\(\.carouselSettled\) \.artworkScene \.arrorArtworkMedia>\.artworkHero/);
+  assert.match(css, /\.carouselControls\{transition:background-color \.58s/);
+  assert.doesNotMatch(css, /\.scene1 \.artworkScene:not\(\.isActive\)/);
+  assert.doesNotMatch(css, /\.scene2 \.familyScene:not\(\.isActive\)/);
+
+  assert.match(css, /@media\(max-width:620px\)\{[\s\S]*?\.familyScene\{[\s\S]*?grid-template-columns:1fr;[\s\S]*?grid-template-rows:auto 1fr;/);
+  assert.match(css, /\.heroCopy h1\{max-width:320px;font-size:clamp\(2\.8rem,13\.5vw,3\.65rem\)/);
+  assert.match(css, /\.legacyOrbit\{width:min\(225px,68vw\)\}/);
 });
 
 test("keeps the 94-second finale master equipped with video and audio tracks", async () => {
@@ -139,7 +195,7 @@ test("returns a controlled response when the optional image binding is absent", 
 });
 
 test("keeps required experience, governance and mobile safeguards in source", async () => {
-  const [page, chrome, hero, signal, ceremony, brandRace, footer, css, layout, timeline, scofConfig, roster, finaleArena] = await Promise.all([
+  const [page, chrome, hero, signal, ceremony, brandRace, footer, css, layout, timeline, scofConfig, roster, finaleArena, arrorFireworks] = await Promise.all([
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/SiteChrome.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/HeroCarousel.tsx", import.meta.url), "utf8"),
@@ -153,6 +209,7 @@ test("keeps required experience, governance and mobile safeguards in source", as
     readFile(new URL("../app/scofValueConfig.ts", import.meta.url), "utf8"),
     readFile(new URL("../app/ScofValueRoster.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/FinaleBrandArena.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/ArrorFireworks.tsx", import.meta.url), "utf8"),
   ]);
 
   for (const id of ["family-tree", "gallery", "land-vision", "governance", "sustainability", "scof-value"]) {
@@ -163,7 +220,7 @@ test("keeps required experience, governance and mobile safeguards in source", as
   assert.match(hero, /aria-roledescription="carousel"/);
   assert.match(hero, /prefers-reduced-motion/);
   assert.match(hero, /IntersectionObserver/);
-  assert.match(hero, /const SCENE_DURATION = 3_800/);
+  assert.match(hero, /const SCENE_DURATIONS = \[5_200, 9_500\]/);
   assert.match(hero, /const SWIPE_THRESHOLD = 45/);
   assert.match(hero, /const IDLE_TRIGGER_TIME = 24_000/);
   assert.match(hero, /const SIGNAL_WARNING_TIME = 18_000/);
@@ -176,6 +233,99 @@ test("keeps required experience, governance and mobile safeguards in source", as
   assert.doesNotMatch(hero, /setInterval/);
   assert.doesNotMatch(hero, /\bhovered\b|\bfocusWithin\b/);
   assert.match(hero, /loading="eager" fetchPriority="high"/);
+  assert.match(hero, /className="artworkBackdrop"/);
+  assert.match(hero, /className="artworkHero"/);
+  assert.match(hero, /className="arrorArtworkStage"/);
+  assert.match(hero, /className="arrorArtworkMedia"/);
+  assert.match(hero, /arror-city-mobile-portrait-v1\.avif/);
+  assert.match(hero, /arror-city-mobile-portrait-v1\.webp/);
+  assert.match(hero, /arror-city-tablet-portrait-v1\.avif/);
+  assert.match(hero, /arror-city-tablet-portrait-v1\.webp/);
+  assert.match(hero, /arrorArtworkStage[\s\S]*?className=\{`arrorSmartDisplay tv-\$\{arrorTvMode\}`\}/);
+  assert.doesNotMatch(hero, /arrorMobileStory/);
+  assert.match(hero, /ARROR NODE \/\/ LIVE/);
+  assert.match(hero, /className="arrorTvHover"/);
+  assert.match(hero, /className="arrorTvAerial aerialLeft"/);
+  assert.match(hero, /className="arrorTvAerial aerialRight"/);
+  assert.match(hero, /className="arrorFloodlightRig"/);
+  assert.doesNotMatch(hero, /HO-FH-200W-CW|24,000 lm/);
+  assert.doesNotMatch(hero, /className="arrorBillboardFrame"/);
+  assert.match(hero, /const arrorEagles = Array\.from\(\{ length: 6 \}/);
+  assert.match(hero, /className=\{`arrorEagle eagle\$\{eagle\}`\}/);
+  assert.match(hero, /golden-eagle-wingbeat-v2\.webp/);
+  assert.match(hero, /const arrorSnowflakes = Array\.from\(\{ length: 72 \}/);
+  assert.match(hero, /const ARROR_STILLNESS_MS = 10_000/);
+  assert.match(hero, /const ARROR_SHOW_DURATION_MS = 25_700/);
+  assert.match(hero, /const ARROR_COOLDOWN_MS = 10_000/);
+  assert.match(hero, /\{ at: 0, phase: "gather", cycle: 1 \}/);
+  assert.equal((hero.match(/phase: "break", cycle: [123]/g) ?? []).length, 3);
+  assert.equal((hero.match(/phase: "fireworks", cycle: [123]/g) ?? []).length, 3);
+  assert.equal((hero.match(/phase: "form", cycle: [123]/g) ?? []).length, 3);
+  assert.match(hero, /phase: "afterglow", cycle: 3/);
+  assert.match(hero, /schedule\(beginShow, ARROR_COOLDOWN_MS\)/);
+  assert.match(hero, /"pointermove", "pointerdown", "touchstart", "keydown", "wheel", "focusin"/);
+  assert.match(hero, /setArrorIdleNonce\(\(value\) => value \+ 1\)/);
+  assert.match(hero, /active !== 1 \|\| !userPaused \|\| documentHidden \|\| !inView \|\| legacyActive/);
+  assert.match(hero, /<ArrorFireworks active=\{active === 1/);
+  assert.match(hero, /data-arror-sequence=\{arrorShowSequence\}/);
+  assert.match(css, /\.artworkCaption\{z-index:9;[^}]*background:linear-gradient\(105deg,rgba\(255,255,252,\.97\)/);
+  assert.match(css, /@keyframes floodlightLeft/);
+  assert.match(css, /@keyframes floodlightCenter/);
+  assert.match(css, /@keyframes floodlightRight/);
+  assert.match(css, /@keyframes eagleCircuitFlight/);
+  assert.match(css, /@keyframes eagleHaloFlight/);
+  assert.match(css, /@keyframes eagleSentinelFlight/);
+  assert.match(css, /@keyframes eagleWingStroke/);
+  assert.match(css, /@keyframes arrorRoute/);
+  assert.match(css, /@keyframes arrorFlakeAssemble/);
+  assert.match(css, /\.arrorFireworksCanvas,\.arrorFireworksReducedHalo\{[^}]*z-index:6/);
+  assert.match(css, /\.arrorSmartDisplay\{[\s\S]*?z-index:11/);
+  assert.match(css, /\.arrorSmartDisplay\{[\s\S]*?left:50%;right:auto;top:auto;bottom:clamp\(20px,2\.8vh,32px\)[\s\S]*?transform:translateX\(-50%\);transform-origin:center bottom/);
+  const tvPositionBlocks = [...css.matchAll(/\.arrorSmartDisplay\{([^}]*)\}/g)].map((match) => match[1]);
+  assert.ok(tvPositionBlocks.length >= 6);
+  for (const block of tvPositionBlocks) {
+    assert.doesNotMatch(block, /left:(?!50%)/);
+    assert.doesNotMatch(block, /top:(?!auto)/);
+  }
+  assert.match(css, /\.arrorTvHover\{[^}]*transform-origin:center bottom/);
+  assert.match(css, /@keyframes arrorTvArrival/);
+  assert.match(css, /@keyframes arrorTvHover/);
+  assert.match(css, /\.carouselSettled \.artworkScene\.isActive \.arrorSmartDisplay\{animation:arrorTvArrival/);
+  assert.match(css, /\.carouselSettled \.artworkScene\.isActive \.arrorTvHover\{animation:arrorTvHover/);
+  assert.match(css, /width:clamp\(180px,26vw,220px\);bottom:clamp\(16px,2\.4vh,24px\)/);
+  assert.match(css, /width:clamp\(146px,42vw,178px\);bottom:clamp\(12px,2vh,18px\)/);
+  assert.match(css, /width:clamp\(145px,21vw,170px\);bottom:clamp\(10px,2vh,14px\)/);
+  assert.match(css, /@keyframes arrorAerialSearchLeft/);
+  assert.match(css, /@keyframes arrorAerialSearchRight/);
+  assert.match(css, /@keyframes arrorAerialTransmitLeft/);
+  assert.match(css, /@keyframes arrorAerialTransmitRight/);
+  assert.doesNotMatch(css, /arrorMobileStory/);
+  assert.match(css, /\.arrorArtworkStage\{[^}]*position:absolute;[^}]*overflow:hidden/);
+  assert.match(css, /\.arrorArtworkStage:after\{/);
+  assert.match(css, /@keyframes arrorLedgerScan/);
+  assert.match(css, /\.arrorArtworkStage\{inset:0 0 var\(--arror-footer-height\);width:auto;height:auto;aspect-ratio:auto/);
+  assert.match(css, /\.arrorArtworkStage>\.arrorArtworkMedia\{/);
+  assert.match(css, /\.arrorArtworkMedia>\.artworkHero\{object-fit:cover;object-position:66% 50%/);
+  assert.match(css, /@media\(max-width:620px\) and \(orientation:portrait\)\{[\s\S]*?\.arrorArtworkMedia>\.artworkHero\{object-position:50% 50%\}/);
+  assert.doesNotMatch(css, /height:57\.143vw/);
+  assert.doesNotMatch(css, /artworkMobileCityPan|scale\(1\.055\) translateX/);
+  assert.match(css, /\.artworkScene\.arrorCeremony-form \.arrorSnowWord/);
+  for (let eagle = 1; eagle <= 6; eagle += 1) assert.match(css, new RegExp(`\\.eagle${eagle}\\{`));
+  assert.match(arrorFireworks, /function addCometFan/);
+  assert.match(arrorFireworks, /function addRadial/);
+  assert.match(arrorFireworks, /const GOLD = "#f2ce68"/);
+  assert.match(arrorFireworks, /const EMERALD = "#3ccc78"/);
+  assert.match(arrorFireworks, /const IVORY = "#fffbed"/);
+  assert.match(arrorFireworks, /window\.requestAnimationFrame/);
+  assert.match(arrorFireworks, /new ResizeObserver/);
+  assert.match(arrorFireworks, /Math\.min\(window\.devicePixelRatio \|\| 1, width < 620 \? 1\.25 : 1\.75\)/);
+  assert.match(arrorFireworks, /data-firework-act=\{cycle\}/);
+  assert.doesNotMatch(arrorFireworks, /Math\.random/);
+  assert.match(css, /@media\(max-width:620px\) and \(orientation:portrait\)/);
+  assert.match(css, /prefers-reduced-motion:reduce/);
+  assert.match(css, /\.arrorSmartDisplay,\.arrorSmartDisplay \.arrorTvHover[^}]*animation:none!important/);
+  assert.match(css, /\.arrorSmartDisplay\{opacity:1!important;transform:translateX\(-50%\)!important\}/);
+  assert.match(hero, /--scene-duration/);
   assert.match(hero, /className="carouselProgress"/);
   assert.match(hero, /className=\{`heroCarousel scene\$\{active \+ 1\}/);
   assert.match(hero, /className="legacyOrbit"/);
@@ -327,11 +477,13 @@ test("keeps required experience, governance and mobile safeguards in source", as
   assert.match(css, /@keyframes koEcosystemSet/);
   assert.match(css, /\.phase-declaration \.koFinalDeclaration/);
   assert.match(css, /\.productDock\{/);
-  assert.match(css, /\.artworkScene\.isActive>img\{animation:artworkBreathe/);
+  assert.match(css, /\.artworkScene\.isActive>\.artworkHero\{animation:artworkBreathe/);
   assert.match(css, /@keyframes artworkShine/);
-  assert.match(css, /\.scene1 \.artworkScene:not\(\.isActive\)/);
-  assert.match(css, /\.scene2 \.familyScene:not\(\.isActive\)/);
-  assert.match(css, /\.carouselRunning \.carouselProgress>i\{animation:carouselProgressFill 3\.8s/);
+  assert.doesNotMatch(css, /\.scene1 \.artworkScene:not\(\.isActive\)/);
+  assert.doesNotMatch(css, /\.scene2 \.familyScene:not\(\.isActive\)/);
+  assert.match(css, /\.carouselRunning \.carouselProgress>i\{animation:carouselProgressFill var\(--scene-duration,5\.2s\)/);
+  assert.match(css, /@media\(max-width:1100px\) and \(orientation:portrait\)/);
+  assert.match(css, /@media\(max-height:600px\) and \(orientation:landscape\)/);
   assert.match(css, /artworkBreathe 6\.5s/);
   assert.match(css, /artworkShine 4\.8s/);
   assert.match(css, /filter:brightness\(1\.24\)/);
@@ -393,10 +545,17 @@ test("keeps required experience, governance and mobile safeguards in source", as
   assert.match(css, /\.footerAlliance\{/);
   assert.doesNotMatch(css, /\.footerAlliance\{[^}]*opacity:0/);
   assert.match(css, /\.productRail\{display:flex;[^}]*overflow-x:auto/);
-  assert.match(css, /\.orbitSweep,\.orbitCore \.ceremonial,\.networkPulse,\.artworkScene\.isActive>img,\.artworkScene\.isActive:after\{animation:none!important\}/);
+  assert.match(css, /\.orbitSweep,\.orbitCore \.ceremonial,\.networkPulse,\.artworkScene\.isActive>\.artworkHero,\.artworkScene\.isActive>\.artworkBackdrop,\.artworkScene\.isActive:after\{animation:none!important\}/);
   assert.match(css, /env\(safe-area-inset-top\)/);
   assert.match(css, /@media\(max-width:620px\)/);
   assert.match(css, /@media\(prefers-reduced-motion:reduce\)/);
+  assert.match(css, /Whole-page mobile hardening/);
+  assert.match(css, /\.carouselControls\{[\s\S]*?overflow-x:auto;overscroll-behavior-inline:contain/);
+  assert.match(css, /\.carouselControls::-webkit-scrollbar\{display:none\}/);
+  assert.match(css, /@media\(max-width:430px\)\{[\s\S]*?\.carouselProgress\{display:none\}/);
+  assert.match(css, /@media\(max-width:380px\)\{[\s\S]*?\.partnerCue\{display:none\}/);
+  assert.match(css, /\.conceptTag,\.roleBadge\{max-width:100%;white-space:normal/);
+  assert.match(css, /\.rootPerson h3,\.rootPerson p,\.operationsNotice b,\.operationsNotice p,\.systemsSignature span\{overflow-wrap:anywhere\}/);
   assert.match(layout, /viewportFit:\s*"cover"/);
   assert.match(layout, /<body[\s\S]*suppressHydrationWarning/);
   assert.match(layout, /Bodoni_Moda/);
