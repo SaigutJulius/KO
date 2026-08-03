@@ -2352,3 +2352,151 @@ footer{padding:55px max(28px,calc((100vw - 1450px)/2)) max(32px,env(safe-area-in
 @media(prefers-reduced-motion:reduce){
   .patronWorldRoute b:after{animation:none!important;left:50%;opacity:.72}
 }
+
+/* Page rhythm V1: compact section handoffs without shrinking real content. */
+:root{
+  --section-space-start:clamp(44px,4.2vw,64px);
+  --section-space-end:clamp(26px,2.6vw,38px);
+  --section-heading-gap:clamp(32px,3.2vw,44px);
+  --section-compact-start:clamp(36px,3.2vw,50px);
+  --section-compact-end:clamp(22px,2.2vw,32px);
+}
+.section{padding-block:var(--section-space-start) var(--section-space-end)}
+.sectionHeading{margin-bottom:var(--section-heading-gap)}
+.productDock{padding-bottom:22px}
+.journeySection blockquote{margin-top:clamp(32px,3vw,40px)}
+.scofSection{padding-top:clamp(52px,4.8vw,72px);padding-bottom:clamp(38px,3.5vw,54px)}
+.governanceSection{padding-bottom:var(--section-compact-end)}
+.sustainabilitySection{padding-top:var(--section-compact-start)}
+.horizonSection{padding-bottom:var(--section-compact-end)}
+.siteFooter.footerSpectacle{padding-top:24px}
+.footerCeremonyHome{min-height:0}
+
+/* Solomon Ops: a centered, unmistakable campaign-governance boundary. */
+.operationsNotice{
+  max-width:1180px;
+  margin:clamp(20px,2.4vw,32px) auto 0;
+  padding:clamp(28px,4vw,52px) clamp(22px,5vw,72px);
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  display:grid;
+  justify-items:center;
+  gap:clamp(15px,2vw,24px);
+  border:1px solid rgba(44,122,76,.25);
+  border-top:4px solid transparent;
+  border-radius:clamp(24px,3vw,36px);
+  background:
+    linear-gradient(#fffdf7,#fffdf7) padding-box,
+    linear-gradient(90deg,#15864e,#e0b64d 50%,#6b2c78) border-box;
+  box-shadow:0 24px 65px rgba(38,16,45,.12),inset 0 1px 0 #fff;
+  text-align:center;
+}
+.operationsNotice:before{
+  content:"";
+  width:clamp(170px,20vw,280px);
+  aspect-ratio:1;
+  position:absolute;
+  z-index:-1;
+  left:50%;
+  top:clamp(-92px,-6vw,-54px);
+  translate:-50% 0;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(36,158,91,.18),rgba(224,182,77,.09) 48%,transparent 72%);
+  filter:blur(2px);
+}
+.operationsTusker{
+  display:block;
+  font-size:clamp(5.5rem,8.5vw,9rem);
+  line-height:.78;
+  filter:drop-shadow(0 14px 18px rgba(15,87,49,.18)) drop-shadow(0 0 18px rgba(224,182,77,.22));
+  transform-origin:50% 100%;
+  animation:operationsTuskerFloat 6s ease-in-out infinite;
+}
+.operationsCopy{max-width:850px;min-width:0}
+.operationsBoundary{
+  width:max-content;
+  max-width:100%;
+  margin-inline:auto;
+  padding:8px 12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  border:1px solid rgba(23,126,72,.22);
+  border-radius:999px;
+  background:linear-gradient(135deg,rgba(18,137,76,.1),rgba(226,181,67,.12));
+  color:#176b43;
+  font:800 .72rem/1.35 var(--font-mono),monospace;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+}
+.operationsBoundary i{font-size:1rem;font-style:normal}
+.operationsNotice h3{
+  margin:clamp(15px,2vw,22px) 0 0;
+  color:#3c1447;
+  font-family:var(--font-display),var(--font-heritage),Georgia,serif;
+  font-size:clamp(2rem,3.4vw,3.35rem);
+  font-weight:720;
+  line-height:1;
+  letter-spacing:-.04em;
+  text-wrap:balance;
+  overflow-wrap:anywhere;
+}
+.operationsNotice p{
+  max-width:76ch;
+  margin:clamp(14px,1.8vw,20px) auto 0;
+  color:#5b4b60;
+  font-size:clamp(1rem,.28vw + .94rem,1.14rem);
+  line-height:1.72;
+  text-wrap:pretty;
+  overflow-wrap:anywhere;
+}
+@keyframes operationsTuskerFloat{
+  0%,100%{transform:translateY(0) rotate(-1deg)}
+  50%{transform:translateY(-7px) rotate(1deg)}
+}
+
+@media(max-width:620px){
+  :root{
+    --section-space-start:40px;
+    --section-space-end:24px;
+    --section-heading-gap:30px;
+    --section-compact-start:34px;
+    --section-compact-end:20px;
+  }
+  .productDock{padding-bottom:20px}
+  .journeySection blockquote{margin-top:30px;padding:22px 16px}
+  .scofSection{padding-top:48px;padding-bottom:36px}
+  .siteFooter.footerSpectacle{padding-top:18px}
+  .operationsNotice{padding:27px 17px 30px;gap:15px;border-radius:24px}
+  .operationsTusker{font-size:clamp(4.5rem,24vw,6.25rem)}
+  .operationsBoundary{padding:7px 10px;font-size:.64rem;letter-spacing:.065em}
+  .operationsNotice h3{font-size:clamp(1.9rem,9.5vw,2.65rem)}
+  .operationsNotice p{font-size:1rem;line-height:1.66}
+}
+
+@media(max-width:380px){
+  :root{--section-space-start:36px;--section-space-end:22px;--section-heading-gap:27px}
+  .operationsNotice{padding-inline:14px}
+  .operationsBoundary{width:100%;font-size:.6rem}
+  .operationsNotice h3{font-size:clamp(1.78rem,9.5vw,2.2rem)}
+}
+
+@media(max-height:600px) and (orientation:landscape){
+  :root{
+    --section-space-start:36px;
+    --section-space-end:24px;
+    --section-heading-gap:28px;
+    --section-compact-start:30px;
+    --section-compact-end:20px;
+  }
+  .scofSection{padding-top:44px;padding-bottom:32px}
+  .siteFooter.footerSpectacle{padding-top:16px}
+  .operationsNotice{padding-block:24px}
+  .operationsTusker{font-size:4.8rem}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .operationsTusker{animation:none!important}
+}

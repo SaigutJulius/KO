@@ -307,7 +307,14 @@ export default function Home() {
             </article>
           </div>
         </div>
-        <div className="operationsNotice"><span>🗳️</span><div><b>Solomon Ops remains separate.</b><p>It is the dedicated operation for Hon. Solomon Saigut Cherogony&apos;s 2027 MP bid and UDA nomination cycle, planned from 1 August 2026 through the applicable 2027 electoral phase. It needs its own authority, data, finance, team and compliance records.</p></div></div>
+        <aside className="operationsNotice" aria-labelledby="solomon-ops-title">
+          <span className="operationsTusker" aria-hidden="true">🐘</span>
+          <div className="operationsCopy">
+            <span className="operationsBoundary"><i aria-hidden="true">🗳️</i> 2027 campaign boundary</span>
+            <h3 id="solomon-ops-title">Solomon Ops remains separate.</h3>
+            <p>It is the dedicated operation for Hon. Solomon Saigut Cherogony&apos;s 2027 MP bid and UDA nomination cycle, planned from 1 August 2026 through the applicable 2027 electoral phase. It needs its own authority, data, finance, team and compliance records.</p>
+          </div>
+        </aside>
       </section>
 
       <section className="section sustainabilitySection" id="sustainability">
