@@ -240,7 +240,58 @@ export default function Home() {
           <p>The vision becomes credible when roles, permissions, records and money are governed before public claims or major commitments are made.</p>
         </header>
         <div className="governanceGrid">
-          <article className="patronCard"><span className="roleBadge">Proposed Patron</span><div className="portraitPlaceholder" aria-hidden="true">SC</div><h3>Hon. Solomon Saigut Cherogony</h3><p>Proposed family patron and unifying senior steward, subject to formal family consultation, acceptance and documented appointment.</p><small>No appointment is implied until that process is completed.</small></article>
+          <article className="patronCard">
+            <div className="patronCardTop">
+              <span className="roleBadge">Proposed Patron</span>
+              <span className="patronConsultationStatus"><i /> Family consultation pending</span>
+            </div>
+
+            <figure className="patronPortrait">
+              <picture>
+                <source
+                  media="(max-width: 620px)"
+                  srcSet={withBasePath("/people/hon-solomon-saigut-cherogony-uda-2027-mobile.webp")}
+                />
+                <img
+                  src={withBasePath("/people/hon-solomon-saigut-cherogony-uda-2027.webp")}
+                  width="1536"
+                  height="1024"
+                  loading="lazy"
+                  decoding="async"
+                  alt="Hon. Solomon Saigut Cherogony standing beside UDA campaign branding for the 2027 Eldama Ravine parliamentary campaign."
+                />
+              </picture>
+              <figcaption>Submitted portrait · Campaign-branded source</figcaption>
+            </figure>
+
+            <div className="patronCardBody">
+              <div className="patronSloganBlock">
+                <span>Vision slogan</span>
+                <blockquote>
+                  <span>Taking Ravine</span>{" "}
+                  <em>to the world</em>{" — "}
+                  <span>and bringing the world</span>{" "}
+                  <strong>to Ravine.</strong>
+                </blockquote>
+                <div className="patronWorldRoute" aria-hidden="true">
+                  <span><i />Ravine</span><b /><span><i />World</span><b /><span><i />Ravine</span>
+                </div>
+              </div>
+
+              <h3>Hon. Solomon Saigut Cherogony</h3>
+              <p className="patronRoleCopy">Proposed family patron and unifying senior steward, subject to formal family consultation, acceptance and documented appointment.</p>
+
+              <div className="patronNotice patronAppointment">
+                <span>Appointment status</span>
+                <p>No appointment is implied until that process is completed.</p>
+              </div>
+
+              <div className="patronNotice patronBoundary">
+                <span>Governance boundary</span>
+                <p>The supplied portrait and vision slogan reflect campaign identity. Political campaign activity remains operationally separate from the proposed family-governance role.</p>
+              </div>
+            </div>
+          </article>
           <div className="governanceFlow">
             <article><span>01</span><div><h3>Family Assembly</h3><p>Shared mandate, major approvals and intergenerational voice.</p></div></article>
             <article><span>02</span><div><h3>Family Council</h3><p>Representation, policy oversight and conflict handling.</p></div></article>

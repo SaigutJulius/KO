@@ -2308,3 +2308,47 @@ footer{padding:55px max(28px,calc((100vw - 1450px)/2)) max(32px,env(safe-area-in
 @media(prefers-reduced-motion:reduce){
   .scofCoinBackdrop *,.scofSection .scofPathNode:before{animation:none!important}.scofCoinOrbit{transform:translate3d(0,0,0) rotate(-2deg) scale(1)!important}.scofCoinGlint:before{display:none}.scofValueBeam:after{transform:scaleX(1);opacity:.68}
 }
+
+/* Proposed Patron: campaign portrait, vision slogan, and governance safeguards. */
+.governanceSection{overflow:hidden}
+.governanceGrid{grid-template-columns:minmax(440px,520px) minmax(0,1fr);gap:clamp(22px,3vw,42px);align-items:start}
+.patronCard{min-width:0;padding:0;overflow:hidden;border:1px solid rgba(216,173,79,.56);border-radius:32px;background:linear-gradient(150deg,#431652 0%,#260b32 57%,#073c27 100%);box-shadow:0 35px 90px rgba(46,17,54,.22),inset 0 1px rgba(255,255,255,.13);color:#fff}
+.patronCardTop{padding:21px clamp(22px,2.3vw,32px);display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid rgba(255,255,255,.12);background:linear-gradient(90deg,rgba(255,255,255,.08),rgba(13,104,61,.18))}
+.patronCard .roleBadge{flex:0 0 auto;padding:8px 11px;border-color:rgba(240,203,104,.62);background:rgba(240,203,104,.08);color:#ffe29b;font-size:.72rem}
+.patronConsultationStatus{min-width:0;display:flex;align-items:center;justify-content:flex-end;gap:8px;color:#cce9d7;font:720 .67rem/1.4 var(--font-mono),monospace;letter-spacing:.06em;text-align:right;text-transform:uppercase}.patronConsultationStatus i{width:8px;height:8px;flex:0 0 8px;border-radius:50%;background:#efc85f;box-shadow:0 0 0 5px rgba(239,200,95,.11),0 0 15px rgba(239,200,95,.48)}
+.patronPortrait{position:relative;margin:0;background:#06160f}.patronPortrait picture{display:block;aspect-ratio:3/2;overflow:hidden}.patronPortrait img{display:block;width:100%;height:100%;object-fit:contain;background:#09251a}.patronPortrait figcaption{margin:0;padding:10px clamp(22px,2.3vw,32px);border-top:1px solid rgba(255,255,255,.11);background:#0b2118;color:#bcd5c5;font:690 .66rem/1.4 var(--font-mono),monospace;letter-spacing:.06em;text-transform:uppercase}
+.patronCardBody{padding:clamp(26px,3vw,40px);min-width:0}
+.patronSloganBlock{padding-bottom:clamp(26px,3vw,36px);border-bottom:1px solid rgba(255,255,255,.15)}.patronSloganBlock>span{display:block;color:#a6e4c0;font:780 .72rem/1.4 var(--font-mono),monospace;letter-spacing:.14em;text-transform:uppercase}.patronSloganBlock blockquote{margin:15px 0 0;color:#fffaf0;font:560 clamp(2.35rem,3.2vw,3.65rem)/.98 var(--font-heritage),Georgia,serif;letter-spacing:-.045em;text-wrap:balance}.patronSloganBlock blockquote span,.patronSloganBlock blockquote em,.patronSloganBlock blockquote strong{font:inherit}.patronSloganBlock blockquote em{color:#f1ce6f;font-style:normal}.patronSloganBlock blockquote strong{color:#a6edc7;font-weight:620}
+.patronWorldRoute{margin-top:24px;display:grid;grid-template-columns:auto minmax(20px,1fr) auto minmax(20px,1fr) auto;align-items:center;gap:9px}.patronWorldRoute span{display:flex;align-items:center;gap:7px;color:#d9eee1;font:740 .66rem/1.3 var(--font-mono),monospace;letter-spacing:.08em;text-transform:uppercase}.patronWorldRoute span:nth-of-type(2){color:#f3d680}.patronWorldRoute i{width:9px;height:9px;border:2px solid #fff;border-radius:50%;background:#19a65f;box-shadow:0 0 13px rgba(44,217,128,.55)}.patronWorldRoute span:nth-of-type(2) i{background:#c08a24;box-shadow:0 0 13px rgba(240,203,104,.65)}.patronWorldRoute b{position:relative;height:2px;overflow:hidden;background:linear-gradient(90deg,#29c879,#f1ce6f)}.patronWorldRoute b:after{content:"";position:absolute;top:-2px;width:22px;height:6px;border-radius:50%;background:#fff7d9;box-shadow:0 0 13px #f2ce72;animation:patronRouteLight 5.8s ease-in-out infinite}.patronWorldRoute b:nth-of-type(2):after{animation-delay:2.9s}
+.patronCardBody>h3{margin:clamp(28px,3.5vw,42px) 0 0;color:#fffaf0;font-size:clamp(2rem,2.8vw,3.15rem);font-weight:590;line-height:.98;letter-spacing:-.04em;text-wrap:balance}.patronRoleCopy{max-width:48ch;margin:20px 0 0;color:#e1d6e5!important;font-size:clamp(1rem,.24vw + .95rem,1.1rem)!important;line-height:1.72!important}
+.patronNotice{margin-top:16px;padding:17px 18px;border-radius:17px}.patronNotice>span{display:block;font:780 .7rem/1.35 var(--font-mono),monospace;letter-spacing:.1em;text-transform:uppercase}.patronNotice p{margin:8px 0 0!important;font-size:clamp(.92rem,.18vw + .88rem,1rem)!important;line-height:1.62!important}.patronAppointment{border:1px solid rgba(240,203,104,.42);background:rgba(255,250,235,.96);color:#351040}.patronAppointment>span{color:#8b6517}.patronAppointment p{color:#4c3652!important}.patronBoundary{border:1px solid rgba(94,213,147,.28);background:rgba(4,37,25,.66)}.patronBoundary>span{color:#9ce4ba}.patronBoundary p{color:#d9e9df!important}
+.governanceFlow{min-width:0;grid-template-columns:repeat(2,minmax(0,1fr));align-content:start}.governanceFlow article{min-width:0;min-height:190px}.operationsNotice b,.operationsNotice p{overflow-wrap:anywhere}
+@keyframes patronRouteLight{0%,100%{left:-24px;opacity:0}12%{opacity:1}82%{opacity:1}94%{left:calc(100% + 4px);opacity:0}}
+
+@media(max-width:1240px){
+  .governanceGrid{grid-template-columns:minmax(410px,480px) minmax(0,1fr);gap:24px}.patronCardBody{padding:30px}.patronSloganBlock blockquote{font-size:clamp(2.2rem,3.25vw,3.2rem)}.governanceFlow article{padding:22px;grid-template-columns:40px minmax(0,1fr)}
+}
+
+@media(max-width:1080px){
+  .governanceGrid{grid-template-columns:1fr}.patronCard{width:100%;max-width:780px;margin-inline:auto}.governanceFlow{grid-template-columns:repeat(2,minmax(0,1fr))}.governanceFlow article{min-height:175px}
+}
+
+@media(max-width:620px){
+  .patronCard{max-width:none;border-radius:25px}.patronCardTop{padding:17px 18px;align-items:flex-start;flex-direction:column}.patronConsultationStatus{justify-content:flex-start;text-align:left}.patronPortrait figcaption{padding:9px 18px;font-size:.6rem}.patronCardBody{padding:25px 21px 27px}.patronSloganBlock blockquote{font-size:clamp(1.65rem,8vw,2.3rem);line-height:1.03;letter-spacing:-.035em}.patronWorldRoute{margin-top:20px;gap:6px}.patronWorldRoute span{gap:5px;font-size:.58rem;letter-spacing:.05em}.patronWorldRoute i{width:8px;height:8px}.patronCardBody>h3{font-size:clamp(2rem,10vw,2.7rem);line-height:1.02}.patronRoleCopy{font-size:1rem!important}.patronNotice{padding:16px}.patronNotice p{font-size:.94rem!important}.governanceFlow{grid-template-columns:1fr}.governanceFlow article{min-height:0}
+}
+
+@media(max-width:430px){
+  .patronCardTop{padding:15px 16px}.patronCard .roleBadge{font-size:.66rem}.patronConsultationStatus{font-size:.6rem}.patronPortrait figcaption{padding-inline:16px;letter-spacing:.035em}.patronCardBody{padding:22px 17px 24px}.patronSloganBlock{padding-bottom:24px}.patronSloganBlock blockquote{font-size:clamp(1.68rem,8.6vw,2.08rem)}.patronWorldRoute{grid-template-columns:auto minmax(12px,1fr) auto minmax(12px,1fr) auto}.patronWorldRoute span{font-size:.53rem}.patronWorldRoute b{min-width:12px}.patronCardBody>h3{font-size:clamp(1.9rem,10vw,2.35rem)}.patronNotice{padding:15px 14px}
+}
+
+@media(max-width:380px){
+  .patronSloganBlock blockquote{font-size:clamp(1.6rem,8.8vw,1.92rem)}.patronWorldRoute span{font-size:.48rem;letter-spacing:.025em}.patronCardBody>h3{font-size:clamp(1.78rem,10vw,2.08rem)}.patronRoleCopy{overflow-wrap:anywhere}
+}
+
+@media(max-height:600px) and (orientation:landscape) and (max-width:920px){
+  .governanceSection{padding-top:58px;padding-bottom:64px}.patronCard{max-width:720px}.patronCardTop{padding-block:14px}.patronCardBody{padding:22px 24px}.patronSloganBlock{padding-bottom:20px}.patronSloganBlock blockquote{font-size:clamp(1.7rem,4.2vw,2.35rem)}.patronWorldRoute{margin-top:16px}.patronCardBody>h3{margin-top:24px;font-size:clamp(1.9rem,4.7vw,2.5rem)}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .patronWorldRoute b:after{animation:none!important;left:50%;opacity:.72}
+}

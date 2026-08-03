@@ -6,6 +6,7 @@ import sharp from "sharp";
 
 const mimeTypes = {
   ".avif": "image/avif",
+  ".jpeg": "image/jpeg",
   ".jpg": "image/jpeg",
   ".mp4": "video/mp4",
   ".png": "image/png",
@@ -61,6 +62,11 @@ test("server-renders the Kap Ossen Family Embassy", async () => {
   assert.match(html, /KSh 545/i);
   assert.match(html, /€45/i);
   assert.match(html, /Proposed Patron/i);
+  assert.match(html, /Taking Ravine[\s\S]*?to the world/i);
+  assert.match(html, /bringing the world[\s\S]*?to Ravine/i);
+  assert.match(html, /Family consultation pending/i);
+  assert.match(html, /No appointment is implied until that process is completed/i);
+  assert.match(html, /Political campaign activity remains operationally separate/i);
   assert.match(html, /Berlin, Deutschland/i);
   assert.match(html, /INTERNAL REVIEW/i);
   assert.doesNotMatch(html, /\/_vinext\/image/i);
@@ -91,6 +97,9 @@ test("serves every visible brand asset directly with the correct media type", as
     ["/showcase/scof-coin-transparent.png", "image/png"],
     ["/showcase/scof-coin-transparent.webp", "image/webp"],
     ["/showcase/scof-coin-transparent-mobile.webp", "image/webp"],
+    ["/Hon.Solo UDA.jpeg", "image/jpeg"],
+    ["/people/hon-solomon-saigut-cherogony-uda-2027.webp", "image/webp"],
+    ["/people/hon-solomon-saigut-cherogony-uda-2027-mobile.webp", "image/webp"],
     ["/audio/finale/kap-ossen-finale-master-94s.mp4", "video/mp4"],
   ];
 
@@ -485,6 +494,27 @@ test("keeps required experience, governance and mobile safeguards in source", as
   assert.doesNotMatch(footer, /Math\.random/);
   assert.match(page, /className="productDock"/);
   assert.match(page, /className="legacySnapshot"/);
+  assert.match(page, /className="patronPortrait"/);
+  assert.match(page, /hon-solomon-saigut-cherogony-uda-2027-mobile\.webp/);
+  assert.match(page, /hon-solomon-saigut-cherogony-uda-2027\.webp/);
+  assert.match(page, /Hon\. Solomon Saigut Cherogony standing beside UDA campaign branding/);
+  assert.match(page, /<blockquote>/);
+  assert.match(page, /Taking Ravine/);
+  assert.match(page, /to the world/);
+  assert.match(page, /and bringing the world/);
+  assert.match(page, /to Ravine\./);
+  assert.match(page, /Family consultation pending/);
+  assert.match(page, /No appointment is implied until that process is completed/);
+  assert.match(page, /Political campaign activity remains operationally separate/);
+  assert.doesNotMatch(page, /className="portraitPlaceholder"/);
+  assert.match(css, /Proposed Patron: campaign portrait, vision slogan, and governance safeguards/);
+  assert.match(css, /\.patronPortrait picture\{[^}]*aspect-ratio:3\/2/);
+  assert.match(css, /\.patronSloganBlock blockquote\{/);
+  assert.match(css, /@keyframes patronRouteLight/);
+  assert.match(css, /@media\(max-width:1080px\)\{[\s\S]*?\.governanceGrid\{grid-template-columns:1fr/);
+  assert.match(css, /@media\(max-width:620px\)\{[\s\S]*?\.governanceFlow\{grid-template-columns:1fr/);
+  assert.match(css, /@media\(max-height:600px\) and \(orientation:landscape\) and \(max-width:920px\)/);
+  assert.match(css, /@media\(prefers-reduced-motion:reduce\)\{[\s\S]*?\.patronWorldRoute b:after\{animation:none!important/);
   assert.match(css, /position:sticky/);
   assert.match(css, /\.legacyOrbit\{/);
   assert.match(css, /\.orbitNodes\{position:absolute;inset:0/);
