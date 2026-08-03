@@ -96,6 +96,24 @@ test("serves every visible brand asset directly with the correct media type", as
   }
 });
 
+test("keeps the 94-second finale master equipped with video and audio tracks", async () => {
+  const bytes = await readFile(new URL("../public/audio/finale/kap-ossen-finale-master-94s.mp4", import.meta.url));
+  const atoms = bytes.toString("latin1");
+  for (const atom of ["ftyp", "moov", "mdat", "vide", "soun", "avc1", "mp4a"]) {
+    assert.equal(atoms.includes(atom), true, `${atom} should be present in the finale master`);
+  }
+
+  const movieHeaderType = bytes.indexOf(Buffer.from("mvhd"));
+  assert.ok(movieHeaderType > 0, "the finale master should include a movie header");
+  const movieHeader = movieHeaderType + 4;
+  const version = bytes[movieHeader];
+  const timescale = version === 0 ? bytes.readUInt32BE(movieHeader + 12) : bytes.readUInt32BE(movieHeader + 20);
+  const duration = version === 0
+    ? bytes.readUInt32BE(movieHeader + 16)
+    : Number(bytes.readBigUInt64BE(movieHeader + 24));
+  assert.equal(duration / timescale, 94);
+});
+
 test("keeps the SCOF coin as a real transparent cut-out", async () => {
   const input = fileURLToPath(new URL("../public/showcase/scof-coin-transparent.png", import.meta.url));
   const image = sharp(input);
@@ -239,11 +257,31 @@ test("keeps required experience, governance and mobile safeguards in source", as
   assert.match(finaleArena, /ko-crest-arena-trimmed-768\.webp/);
   assert.match(finaleArena, /requestAnimationFrame/);
   assert.match(finaleArena, /ResizeObserver/);
-  assert.match(finaleArena, /width < 260 \? 80 : width < 620 \? 220 : 420/);
-  assert.match(finaleArena, /if \(time < 31\) return perimeterPoint/);
+  assert.match(finaleArena, /width < 260 \? 150 : width < 620 \? 480 : 900/);
+  assert.match(finaleArena, /const INTRO_END = 10/);
+  assert.match(finaleArena, /if \(time < 0\.4\) return mixPoint\(edge, kap/);
+  assert.match(finaleArena, /if \(time < 2\.4\) return kap/);
+  assert.match(finaleArena, /if \(time < 8\.3\) return mixPoint\(scatter, firm/);
+  assert.match(finaleArena, /time >= 4\.9 && time < 5\.6/);
+  assert.match(finaleArena, /const pieces = 24/);
+  assert.match(finaleArena, /function drawRadialFragments/);
+  assert.match(finaleArena, /function drawGridFragments/);
+  assert.match(finaleArena, /function createSnowflakeSprite/);
+  assert.match(finaleArena, /function keyframePath/);
+  assert.match(finaleArena, /function drawFormationUnderlay/);
+  assert.match(finaleArena, /context\.lineWidth = 2\.8/);
+  assert.match(finaleArena, /const baseSize = bounds\.width < 260 \? 7 : bounds\.width < 620 \? 10\.5 : 14/);
+  assert.match(finaleArena, /\(time - INTRO_END\) \/ 21/);
+  assert.match(finaleArena, /time - INTRO_END - 0\.55/);
   assert.match(finaleArena, /if \(time < 63\)/);
-  assert.match(finaleArena, /if \(time < 76\) return perimeterPoint/);
+  assert.match(finaleArena, /const angle = -progress \* TAU \+ Math\.PI/);
+  assert.match(finaleArena, /if \(time < 76\)/);
+  assert.match(finaleArena, /const zigzag = Math\.sin/);
+  assert.match(finaleArena, /drawBounceImpact/);
+  assert.match(finaleArena, /\(time - 31\) \/ 32/);
+  assert.match(finaleArena, /\(time - 63\) \/ 13/);
   assert.match(finaleArena, /fillText\("KAP OSSEN"/);
+  assert.match(finaleArena, /"ST-FIRM"/);
   assert.match(finaleArena, /fillText\("F A M I L Y"/);
   assert.match(finaleArena, /fillText\("SCOF"/);
   assert.match(finaleArena, /time >= 92\.4/);
@@ -328,6 +366,9 @@ test("keeps required experience, governance and mobile safeguards in source", as
   assert.match(css, /\.horizonKesEquivalent/);
   assert.match(css, /\.footerPersistentBrandDock\{[\s\S]*?z-index:18/);
   assert.match(css, /\.finaleBrandArena\{[^}]*z-index:9/);
+  assert.match(css, /\.scene-awakening \.finaleBrandArena/);
+  assert.match(css, /\.finaleBrandArena:before/);
+  assert.match(css, /\.scene-current \.scofValueRoster/);
   assert.match(css, /\.scene-constellation \.finaleBrandArena/);
   assert.match(css, /\.persistentKoMark\{width:68px;height:68px/);
   assert.match(css, /\.persistentFirmMark\{width:54px;height:54px/);
